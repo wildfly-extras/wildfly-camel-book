@@ -8,7 +8,7 @@ Is the umbrella project for [Apache Camel](http://camel.apache.org/) integration
 
 It is the home of the Camel subsystem, integration test suite, installer, documentation, etc.
 
-## Compatibility
+## WildFly Compatibility
 
 |           | 8.1.0.Final |
 | --------- |:-----------:|
