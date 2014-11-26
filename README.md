@@ -4,3 +4,4 @@ This is the umbrella project for [Apache Camel](http://camel.apache.org/) integr
 
 It is the home of the Camel subsystem, integration test suite, installer, documentation, etc.
 
+Test
