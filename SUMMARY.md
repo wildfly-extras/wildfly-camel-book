@@ -5,7 +5,7 @@
 * [Features](features/README.md)
    * [Camel Context Definitions](features/context-definitions.md)
    * [Camel Context Deployments](features/context-deployments.md)
-   * [Hawt.io Console](features/hawtio.md)
+   * [Management Console](features/hawtio.md)
    * [Arquillian Test Support](features/arquillian.md)
 * [JavaEE Integration](javaee/README.md)
    * [Dependency Injection (CDI)](javaee/cdi.md)
