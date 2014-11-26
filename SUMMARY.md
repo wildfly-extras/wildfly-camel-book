@@ -11,7 +11,7 @@
    * [Management (JMX)](javaee/jmx.md)
    * [Messaging (JMS)](javaee/jms)
    * [Naming (JNDI)](javaee/jndi.md)
-   * [RESTful WebServices (JAX-RS)](javaee/jaxrs.md)
+   * [REST (JAX-RS)](javaee/jaxrs.md)
    * [WebServices (JAX-WS)](javaee/jaxws.md)
 * Camel Components
 * [Cloud](cloud/README.md)
