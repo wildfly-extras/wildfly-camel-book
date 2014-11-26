@@ -9,8 +9,8 @@
    * [Messaging (JMS)](javaee/jms)
    * [WebServices (JAX-WS)](javaee/jaxws.md)
 * Camel Components
+* [Cloud](cloud/README.md)
 * [User Guide](user_guide/README.md)
    * [Docker](user_guide/docker.md)
 * [Developer Guide](developer_guide/README.md)
-* [Cloud](cloud/README.md)
 
