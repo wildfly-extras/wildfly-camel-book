@@ -29,7 +29,7 @@ Here is a simple example that uses a plain wildfly-camel distro image
 
 Navigate to [Elastic Beanstalk](https://eu-west-1.console.aws.amazon.com/elasticbeanstalk/home?region=eu-west-1) and start creating an application.
 
-![create app][beanstalk-step-00]
+![create app](https://raw.githubusercontent.com/wildflyext/wildfly-camel-book/master/images/beanstalk-step-00.png)
 
 Select the environment tpe. In this case we use a simple WebServer tier with docker as a single instance.
 
