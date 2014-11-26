@@ -10,7 +10,7 @@
    * [WebServices (JAX-WS)](javaee/jaxws.md)
 * Camel Components
 * [Cloud](cloud/README.md)
-   * [AAWS Elastic Bean Stalk](cloud)
+   * [AWS Elastic Bean Stalk](cloud)
 * [User Guide](user_guide/README.md)
    * [Docker](user_guide/docker.md)
 * [Developer Guide](developer_guide/README.md)
