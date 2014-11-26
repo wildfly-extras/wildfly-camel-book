@@ -4,6 +4,7 @@
 * [Features](features/README.md)
    * Camel Context Definitions
    * Camel Context Deployments
+   * Arquillian Test Support
 * Integration with JavaEE
 * Camel Components
 * [User Guide](user_guide/README.md)
