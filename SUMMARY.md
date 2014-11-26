@@ -16,7 +16,7 @@
    * [REST (JAX-RS)](javaee/jaxrs.md)
    * [WebServices (JAX-WS)](javaee/jaxws.md)
    * [XML Binding (JAXB)](javaee/jaxb.md)
-* Camel Components
+* [Camel Components](components/README.md)
 * [Cloud](cloud/README.md)
    * [AWS Elastic Bean Stalk](cloud)
 * [Developer Guide](developer/README.md)
