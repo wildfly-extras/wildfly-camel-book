@@ -8,7 +8,7 @@
    * [Arquillian Test Support](features/arquillian.md)
    * [Hawt.io Console](features/hawtio.md)
 * [JavaEE Integration](javaee/README.md)
-   * [Context Dependency Injection (CDI)](javaee/cdi.md)
+   * [Dependency Injection (CDI)](javaee/cdi.md)
    * [Management (JMX)](javaee/jmx.md)
    * [Messaging (JMS)](javaee/jms)
    * [Naming (JNDI)](javaee/jndi.md)
