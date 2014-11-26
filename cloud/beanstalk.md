@@ -1,6 +1,6 @@
 ## AWS Elastic Beanstalk
 
-WildFly Camel also comes as [docker image](https://registry.hub.docker.com/u/tdiesler/wildfly-camel/). This allows you to run the certified WildFly JavaEE server with Camel Integration in any managed environment that supports [Docker](https://www.docker.com/).
+WildFly Camel also comes as [docker image](https://registry.hub.docker.com/u/wildflyext/wildfly-camel/). This allows you to run the certified WildFly JavaEE server with Camel Integration in any managed environment that supports [Docker](https://www.docker.com/).
 
 Here is an easy 3-Step process to run WildFly Camel on Elastic Beanstalk
 
@@ -14,7 +14,7 @@ Here is a simple example that uses a plain wildfly-camel distro image
 {
   "AWSEBDockerrunVersion": "1",
   "Image": {
-    "Name": "tdiesler/wildfly-camel:2.0.0.Alpha1",
+    "Name": "wildflyext/wildfly-camel",
     "Update": "false"
   },
   "Ports": [
@@ -59,16 +59,16 @@ The [Hawt.io](http://hawt.io/) console should show the camel context from subsys
 
 ![hawtio][beanstalk-hawtio-camel]
 
-[beanstalk-step-00]: https://raw.githubusercontent.com/tdiesler/wildfly-camel/master/docs/gitbook/images/beanstalk-step-00.png
+[beanstalk-step-00]: images/beanstalk-step-00.png
 
-[beanstalk-step-01]: https://raw.githubusercontent.com/tdiesler/wildfly-camel/master/docs/gitbook/images/beanstalk-step-01.png
+[beanstalk-step-01]: https://images/beanstalk-step-01.png
 
-[beanstalk-step-02]: https://raw.githubusercontent.com/tdiesler/wildfly-camel/master/docs/gitbook/images/beanstalk-step-02.png
+[beanstalk-step-02]: images/beanstalk-step-02.png
 
-[beanstalk-step-03]: https://raw.githubusercontent.com/tdiesler/wildfly-camel/master/docs/gitbook/images/beanstalk-step-03.png
+[beanstalk-step-03]: images/beanstalk-step-03.png
 
-[beanstalk-step-05]: https://raw.githubusercontent.com/tdiesler/wildfly-camel/master/docs/gitbook/images/beanstalk-step-05.png
+[beanstalk-step-05]: images/beanstalk-step-05.png
 
-[beanstalk-step-final]: https://raw.githubusercontent.com/tdiesler/wildfly-camel/master/docs/gitbook/images/beanstalk-step-final.png
+[beanstalk-step-final]: images/beanstalk-step-final.png
 
-[beanstalk-hawtio-camel]: https://raw.githubusercontent.com/tdiesler/wildfly-camel/master/docs/gitbook/images/beanstalk-hawtio-camel-01.png
+[beanstalk-hawtio-camel]: images/beanstalk-hawtio-camel-01.png
