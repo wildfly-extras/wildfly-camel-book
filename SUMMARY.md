@@ -1,6 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
+   * Camel Components
 * [Features](features/README.md)
    * Camel Context Definitions
    * Camel Context Deployments
