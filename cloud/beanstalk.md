@@ -55,6 +55,3 @@ Launch the the application - this may take few minutes.
 
 Finally, you should be able to access the wildfly-camel application on http://wildfly-camel.elasticbeanstalk.com.
 
-The [Hawt.io](http://hawt.io/) console should show the camel context from subsystem configuration.
-
-![hawtio](../images/beanstalk-hawtio-camel-01.png)
