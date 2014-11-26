@@ -11,6 +11,7 @@
    * [Messaging (JMS)](javaee/jms)
    * [Naming (JNDI)](javaee/jndi.md)
    * [WebServices (JAX-WS)](javaee/jaxws.md)
+   * [Context Dependency Injection (CDI)](javaee/cdi.md)
 * Camel Components
 * [Cloud](cloud/README.md)
    * [AWS Elastic Bean Stalk](cloud)
