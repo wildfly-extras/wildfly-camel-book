@@ -59,16 +59,16 @@ The [Hawt.io](http://hawt.io/) console should show the camel context from subsys
 
 ![hawtio][beanstalk-hawtio-camel]
 
-[beanstalk-step-00]: images/beanstalk-step-00.png
+[beanstalk-step-00]: https://raw.githubusercontent.com/wildflyext/wildfly-camel-book/master/images/beanstalk-step-00.png
 
-[beanstalk-step-01]: https://images/beanstalk-step-01.png
+[beanstalk-step-01]: https://raw.githubusercontent.com/wildflyext/wildfly-camel-book/master/images/beanstalk-step-01.png
 
-[beanstalk-step-02]: images/beanstalk-step-02.png
+[beanstalk-step-02]: https://raw.githubusercontent.com/wildflyext/wildfly-camel-book/master/images/beanstalk-step-02.png
 
-[beanstalk-step-03]: images/beanstalk-step-03.png
+[beanstalk-step-03]: https://raw.githubusercontent.com/wildflyext/wildfly-camel-book/master/images/beanstalk-step-03.png
 
-[beanstalk-step-05]: images/beanstalk-step-05.png
+[beanstalk-step-05]: https://raw.githubusercontent.com/wildflyext/wildfly-camel-book/master/images/beanstalk-step-05.png
 
-[beanstalk-step-final]: images/beanstalk-step-final.png
+[beanstalk-step-final]: https://raw.githubusercontent.com/wildflyext/wildfly-camel-book/master/images/beanstalk-step-final.png
 
-[beanstalk-hawtio-camel]: images/beanstalk-hawtio-camel-01.png
+[beanstalk-hawtio-camel]: https://raw.githubusercontent.com/wildflyext/wildfly-camel-book/master/images/beanstalk-hawtio-camel-01.png
