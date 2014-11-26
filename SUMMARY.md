@@ -9,6 +9,7 @@
    * [Messaging (JMS)](javaee/jms)
    * [Naming (JNDI)](javaee/jndi.md)
    * [WebServices (JAX-WS)](javaee/jaxws.md)
+   * [Management (JMX)](javaee/jmx.md)
 * Camel Components
 * [Cloud](cloud/README.md)
    * [AWS Elastic Bean Stalk](cloud)
