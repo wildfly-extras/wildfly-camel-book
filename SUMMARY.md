@@ -3,7 +3,7 @@
 * [Introduction](README.md)
 * [Features](features/README.md)
    * [Camel Context Definitions](features/camel-context-definitions.md)
-   * Camel Context Deployments
+   * [Camel Context Deployments](features/camel-context-deployments.md)
    * Arquillian Test Support
 * Integration with JavaEE
 * Camel Components
