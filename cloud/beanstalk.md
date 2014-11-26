@@ -33,23 +33,23 @@ Navigate to [Elastic Beanstalk](https://eu-west-1.console.aws.amazon.com/elastic
 
 Select the environment tpe. In this case we use a simple WebServer tier with docker as a single instance.
 
-![env type][../images/beanstalk-step-01.png]
+![env type](../images/beanstalk-step-01.png)
 
 Upload the ```Dockerrun.aws.json``` file from above.
 
-![app version][beanstalk-step-02]
+![app version](../images/beanstalk-step-02.png)
 
 Give the environment a name.
 
-![env name][beanstalk-step-03]
+![env name](../images/beanstalk-step-03.png)
 
 Add more configuration. Here I select my EC2 key pair so that I can SSH into the EC2 instance if needed.
 
-![conf details][beanstalk-step-05]
+![conf details](../images/beanstalk-step-05.png)
 
 Launch the the application - this may take few minutes.
 
-![launch][beanstalk-step-final]
+![launch](../images/beanstalk-step-final.png)
 
 ### Accessing the WildFly Camel Application
 
@@ -57,18 +57,4 @@ Finally, you should be able to access the wildfly-camel application on http://wi
 
 The [Hawt.io](http://hawt.io/) console should show the camel context from subsystem configuration.
 
-![hawtio][beanstalk-hawtio-camel]
-
-[beanstalk-step-00]: 
-
-[beanstalk-step-01]: https://raw.githubusercontent.com/wildflyext/wildfly-camel-book/master/images/beanstalk-step-01.png
-
-[beanstalk-step-02]: https://raw.githubusercontent.com/wildflyext/wildfly-camel-book/master/images/beanstalk-step-02.png
-
-[beanstalk-step-03]: https://raw.githubusercontent.com/wildflyext/wildfly-camel-book/master/images/beanstalk-step-03.png
-
-[beanstalk-step-05]: https://raw.githubusercontent.com/wildflyext/wildfly-camel-book/master/images/beanstalk-step-05.png
-
-[beanstalk-step-final]: https://raw.githubusercontent.com/wildflyext/wildfly-camel-book/master/images/beanstalk-step-final.png
-
-[beanstalk-hawtio-camel]: https://raw.githubusercontent.com/wildflyext/wildfly-camel-book/master/images/beanstalk-hawtio-camel-01.png
+![hawtio](../images/beanstalk-hawtio-camel-01.png)
