@@ -7,7 +7,7 @@ This chapter takes you through the first steps of getting WildFly Camel and prov
 WildFly Camel is distributed as
 
 1. WildFly Patch - [wildfly-camel-patch](https://repository.jboss.org/nexus/content/groups/public-jboss/org/wildfly/camel/wildfly-camel-patch/)
-2. Docker Image - [tdiesler/wildfly-camel](https://registry.hub.docker.com/u/tdiesler/wildfly-camel/)
+2. Docker Image - [tdiesler/wildfly-camel](https://registry.hub.docker.com/u/wildflyext/wildfly-camel/)
 
 
 ## Installing the Camel Subsystem
