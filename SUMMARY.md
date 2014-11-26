@@ -6,7 +6,7 @@
    * [Camel Context Definitions](features/context-definitions.md)
    * [Camel Context Deployments](features/context-deployments.md)
    * [Arquillian Test Support](features/arquillian.md)
-* Integration with JavaEE
+* [JavaEE Integration](javaee)
    * [Management (JMX)](javaee/jmx.md)
    * [Messaging (JMS)](javaee/jms)
    * [Naming (JNDI)](javaee/jndi.md)
