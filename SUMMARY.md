@@ -7,11 +7,11 @@
    * [Camel Context Deployments](features/context-deployments.md)
    * [Arquillian Test Support](features/arquillian.md)
 * [JavaEE Integration](javaee/README.md)
+   * [Context Dependency Injection (CDI)](javaee/cdi.md)
    * [Management (JMX)](javaee/jmx.md)
    * [Messaging (JMS)](javaee/jms)
    * [Naming (JNDI)](javaee/jndi.md)
    * [WebServices (JAX-WS)](javaee/jaxws.md)
-   * [Context Dependency Injection (CDI)](javaee/cdi.md)
 * Camel Components
 * [Cloud](cloud/README.md)
    * [AWS Elastic Bean Stalk](cloud)
