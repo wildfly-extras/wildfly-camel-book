@@ -15,25 +15,6 @@ WildFly Camel is distributed as
 Simply apply the patch to the respective wildfly version.
 
 
-
-## Camel Feature Provisioning
-
-WildFly Camel provides feature provisioning similar to Karaf features. A feature is defined as set of abstract Resources with associated Capabilities/Requirements. All known features are stored in a Repository. At runtime the Provisioner gets a set of Resource candidates from the Repository and uses the Resolver to find a consistent wiring solution for the current state of the Environment. After this no-impact analysis, the Provisioner installs the required set of Resources to the Environment if a consistent wiring solution can be found by the Resolver.
-
-The initial set of supported features is part of the WildFly Camel repository content definition. Resources that are already part of the WildFly environment are defined as part of the environment content
-
-A good starting point to work with WildFly Camel feature provisioning is ProvisionerSupport and references to it.
-
-The concepts of Resource, Capability, Requirement, Resolver, Repository, Provisioner are all provided by the Gravia project, which is a rewrite of the same functionality that used to be available in WildFly as part of the JBoss OSGi integration.
-
-WildFly Camel feature provisioning has no dependency on OSGi.
-
-```java
-ProvisionerSupport provisionerSupport = new ProvisionerSupport(provisioner);
-provisionerSupport.installCapabilities(IdentityNamespace.IDENTITY_NAMESPACE, "camel.cxf.feature");
-...
-```
-
 ## Integration with JAX-WS
 
 WebService support is provided through the [camel-cxf](http://camel.apache.org/cxf.html) component which integrates with the WildFly WebServices subsystem that also uses [Apache CXF](http://cxf.apache.org/).
