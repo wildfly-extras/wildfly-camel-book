@@ -29,11 +29,11 @@ Here is a simple example that uses a plain wildfly-camel distro image
 
 Navigate to [Elastic Beanstalk](https://eu-west-1.console.aws.amazon.com/elasticbeanstalk/home?region=eu-west-1) and start creating an application.
 
-![create app](https://raw.githubusercontent.com/wildflyext/wildfly-camel-book/master/images/beanstalk-step-00.png)
+![create app](../images/beanstalk-step-00.png)
 
 Select the environment tpe. In this case we use a simple WebServer tier with docker as a single instance.
 
-![env type][beanstalk-step-01]
+![env type][../images/beanstalk-step-01.png]
 
 Upload the ```Dockerrun.aws.json``` file from above.
 
@@ -59,7 +59,7 @@ The [Hawt.io](http://hawt.io/) console should show the camel context from subsys
 
 ![hawtio][beanstalk-hawtio-camel]
 
-[beanstalk-step-00]: https://raw.githubusercontent.com/wildflyext/wildfly-camel-book/master/images/beanstalk-step-00.png
+[beanstalk-step-00]: 
 
 [beanstalk-step-01]: https://raw.githubusercontent.com/wildflyext/wildfly-camel-book/master/images/beanstalk-step-01.png
 
