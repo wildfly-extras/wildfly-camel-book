@@ -14,6 +14,5 @@
 * Camel Components
 * [Cloud](cloud/README.md)
    * [AWS Elastic Bean Stalk](cloud)
-* [User Guide](user_guide/README.md)
 * [Developer Guide](developer/README.md)
 
