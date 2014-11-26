@@ -1,4 +1,4 @@
-## Run in AWS Elastic Beanstalk
+## AWS Elastic Beanstalk
 
 WildFly Camel also comes as [docker image](https://registry.hub.docker.com/u/tdiesler/wildfly-camel/). This allows you to run the certified WildFly JavaEE server with Camel Integration in any managed environment that supports [Docker](https://www.docker.com/).
 
