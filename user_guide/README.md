@@ -16,32 +16,6 @@ Simply apply the patch to the respective wildfly version.
 
 
 
-
-## Integration with JNDI
-
-The [WildFlyCamelContext](https://github.com/tdiesler/wildfly-camel/blob/master/subsystem/src/main/java/org/wildfly/camel/WildflyCamelContext.java) provides integration with the WildFly Naming subsystem.
-
-```java
-WildflyCamelContext camelctx = contextFactory.createWildflyCamelContext(getClass().getClassLoader());
-
-// Bind a bean to JNDI
-Context context = camelctx.getNamingContext();
-context.bind("helloBean", new HelloBean());
-camelctx.addRoutes(new RouteBuilder() {
-    @Override
-    public void configure() throws Exception {
-        from("direct:start").beanRef("helloBean");
-    }
-});
-camelctx.start();
-
-ProducerTemplate producer = camelctx.createProducerTemplate();
-String result = producer.requestBody("direct:start", "Kermit", String.class);
-Assert.assertEquals("Hello Kermit", result);
-
-context.unbind("helloBean");
-```
-
 ## Integration with JMX
 
 Management support is provided through the [camel-jmx](http://camel.apache.org/jmx.html) component which integrates with the WildFly JMX subsystem.
