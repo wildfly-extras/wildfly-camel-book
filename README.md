@@ -11,6 +11,6 @@ It is the home of the Camel subsystem, integration test suite, installer, docume
 ## Compatibility
 
 |             | 1.0.0.CR3 |
-| ----------- | --------- |
+| ----------- | :-------: |
 | 8.1.0.Final |     x     |
 
