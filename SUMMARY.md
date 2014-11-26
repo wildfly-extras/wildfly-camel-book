@@ -7,8 +7,8 @@
    * [Arquillian Test Support](features/arquillian.md)
 * Integration with JavaEE
    * [Messaging (JMS)](javaee/jms)
-   * [WebServices (JAX-WS)](javaee/jaxws.md)
    * [Naming (JNDI)](javaee/jndi.md)
+   * [WebServices (JAX-WS)](javaee/jaxws.md)
 * Camel Components
 * [Cloud](cloud/README.md)
    * [AWS Elastic Bean Stalk](cloud)
