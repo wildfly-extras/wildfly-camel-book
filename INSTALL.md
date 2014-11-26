@@ -13,6 +13,3 @@ WildFly Camel is distributed as
 ## Installing the Camel Subsystem
 
 Simply apply the patch to the respective wildfly version.
-
-
-
