@@ -13,6 +13,7 @@
    * [Naming (JNDI)](javaee/jndi.md)
    * [REST (JAX-RS)](javaee/jaxrs.md)
    * [WebServices (JAX-WS)](javaee/jaxws.md)
+   * [XML Binding (JAXB)](javaee/jaxb.md)
 * Camel Components
 * [Cloud](cloud/README.md)
    * [AWS Elastic Bean Stalk](cloud)
