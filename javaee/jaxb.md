@@ -1,3 +1,3 @@
-# Integration with JAXB
+## Integration with JAXB
 
 [TODO]
