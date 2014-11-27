@@ -12,7 +12,7 @@
    * [CDI](javaee/cdi.md)
    * [JMX](javaee/jmx.md)
    * [JMS](javaee/jms.md)
-   * [Naming (JNDI)](javaee/jndi.md)
+   * [JNDI](javaee/jndi.md)
    * [Persistence (JPA)](javaee/jpa.md)
    * [REST (JAX-RS)](javaee/jaxrs.md)
    * [WebServices (JAX-WS)](javaee/jaxws.md)
