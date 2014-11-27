@@ -1,6 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
+   * [Getting Started](start)
 * [Installation](INSTALL.md)
 * [Features](features/README.md)
    * [Camel Context Definitions](features/context-definitions.md)
