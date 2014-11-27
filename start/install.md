@@ -8,4 +8,4 @@ WildFly Camel is distributed as
 
 ## Installing the Camel Subsystem
 
-Simply apply the patch to the respective wildfly version.
+Simply apply the patch to the respective wildfly version. For possible WildFly target versions, see the [compatibility page](compatibility.md)
