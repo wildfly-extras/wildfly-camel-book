@@ -18,6 +18,7 @@
    * [JNDI](javaee/jndi.md)
    * [JPA](javaee/jpa.md)
 * [Camel Components](components/README.md)
+   * [camel-cdi](components/camel-cdi.md)
 * [Cloud](cloud/README.md)
    * [AWS Elastic Bean Stalk](cloud)
 * [Developer Guide](developer/README.md)
