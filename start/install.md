@@ -10,7 +10,7 @@ WildFly Camel is distributed as
 
 Simply apply the patch to the respective wildfly version. For possible WildFly target versions, see the [compatibility page](compatibility.md)
 
-## Running Standalone
+## Standalone Server
 
 In your WildFly home directory run ...
 
@@ -23,3 +23,5 @@ $ bin/standalone.sh -c standalone-camel.xml
 10:50:02,849 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015951: Admin console listening on http://127.0.0.1:9990
 10:50:02,849 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015874: WildFly 8.1.0.Final "Kenny" started in 10804ms
 ```
+
+## Domain Mode
