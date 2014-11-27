@@ -1,3 +1,3 @@
-## Naming (JNDI)
+## Integration with JNDI
 
 [TODO]
