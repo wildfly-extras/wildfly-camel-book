@@ -3,7 +3,7 @@
 WildFly Camel is distributed as
 
 1. WildFly Patch - [wildfly-camel-patch](https://repository.jboss.org/nexus/content/groups/public-jboss/org/wildfly/camel/wildfly-camel-patch/)
-2. Docker Image - [tdiesler/wildfly-camel](https://registry.hub.docker.com/u/wildflyext/wildfly-camel/)
+2. Docker Image - [wildflyext/wildfly-camel](https://registry.hub.docker.com/u/wildflyext/wildfly-camel/)
 
 
 ## Installing the Camel Subsystem
@@ -30,4 +30,12 @@ Similarly, for the WildFly Domain Mode run ...
 
 ```
 $ bin/domain.sh -c domain-camel.xml
+```
+
+## Docker Image
+
+The easiest and most portable way to run WildFly-Camel is to use the [wildflyext/wildfly-camel](https://registry.hub.docker.com/u/wildflyext/wildfly-camel/) distribution. 
+
+```
+$ docker run -ti -p 8080:8080 wildflyext/wildfly-camel
 ```
