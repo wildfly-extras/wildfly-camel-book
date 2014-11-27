@@ -1,5 +1,7 @@
 # JavaEE Integration
 
+This chapter details information about integration points with JavaEE. 
+
 * [Dependency Injection (CDI)](javaee/cdi.md)
 * [Management (JMX)](javaee/jmx.md)
 * [Messaging (JMS)](javaee/jms.md)
