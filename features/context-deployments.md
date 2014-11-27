@@ -19,7 +19,7 @@ When deployed as XML file, you should see
 10:20:01,963 INFO  [org.jboss.as.server] (management-handler-thread - 7) JBAS018559: Deployed "simple-transform-camel-context.xml" (runtime-name : "simple-transform-camel-context.xml")
 ```
 
-When deployed as part of another deployment, you should something similar
+When deployed as part of another deployment, you should see something similar
 
 ```
 10:24:02,649 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) JBAS015876: Starting deployment of "camel-module.jar"
