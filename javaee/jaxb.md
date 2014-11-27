@@ -1,3 +1,3 @@
-# XML Binding (JAXB)
+# Integration with JAXB
 
 [TODO]
