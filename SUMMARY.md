@@ -1,7 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
-* [Getting Started](start)
+* [Getting Started](start/README.md)
    * [Compatibility](start/compatibility.md)
 * [Features](features/README.md)
    * [Camel Context Definitions](features/context-definitions.md)
