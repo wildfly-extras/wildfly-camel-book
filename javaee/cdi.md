@@ -1,3 +1,3 @@
-## Dependency Injection (CDI)
+## Integration with CDI
 
 [TODO]
