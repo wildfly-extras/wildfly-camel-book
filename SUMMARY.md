@@ -16,6 +16,7 @@
    * [JMX](javaee/jmx.md)
    * [JNDI](javaee/jndi.md)
    * [JPA](javaee/jpa.md)
+   * [JAXB](javaee/jaxb.md)
 * [Camel Components](components/README.md)
    * [camel-cdi](components/camel-cdi.md)
    * [camel-cxf](components/camel-cxf.md)
