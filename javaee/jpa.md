@@ -1,3 +1,3 @@
-## Persistence (JPA)
+## Integration with JPA
 
 [TODO]
