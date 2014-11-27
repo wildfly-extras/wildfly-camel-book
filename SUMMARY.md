@@ -20,6 +20,7 @@
 * [Camel Components](components/README.md)
    * [camel-cdi](components/camel-cdi.md)
    * [camel-cxf](components/camel-cxf.md)
+   * [camel-jaxb](components/camel-jaxb.md)
 * [Cloud](cloud/README.md)
    * [AWS Elastic Bean Stalk](cloud)
 * [Developer Guide](developer/README.md)
