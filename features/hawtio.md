@@ -1,4 +1,4 @@
-# Management Console
+## Management Console
 
 By default, access to management consoles is secured. We therefore need to setup an Application User first.
 
