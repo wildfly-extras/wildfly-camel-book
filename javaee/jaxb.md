@@ -96,7 +96,4 @@ ProducerTemplate producer = camelctx.createProducerTemplate();
 Customer customer = new Customer("John", "Doe");
 String customerXML = producer.requestBody("direct:start", customer, String.class); 
 Assert.assertEquals(readCustomerXml(), customerXML);
-```
-# camel-jaxb
-
-[TODO] camel-jaxb
+```aaa
