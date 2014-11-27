@@ -1,3 +1,3 @@
-# Context Dependency Injection (CDI)
+# Dependency Injection (CDI)
 
 [TODO]
