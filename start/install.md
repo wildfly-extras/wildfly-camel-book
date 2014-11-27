@@ -25,3 +25,9 @@ $ bin/standalone.sh -c standalone-camel.xml
 ```
 
 ## Domain Mode
+
+Similarly, for the WildFly Domain Mode run ...  
+
+```
+$ bin/domain.sh -c domain-camel.xml
+```
