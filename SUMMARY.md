@@ -22,6 +22,7 @@
    * [camel-jaxb](components/camel-jaxb.md)
    * [camel-jms](components/camel-jms.md)
    * [camel-jmx](components/camel-jmx.md)
+   * [camel-jpa](components/camel-jpa.md)
 * [Cloud](cloud/README.md)
    * [AWS Elastic Bean Stalk](cloud)
 * [Developer Guide](developer/README.md)
