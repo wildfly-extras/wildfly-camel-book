@@ -5,6 +5,7 @@ JAXB support is provided through the [Camel JAXB data format](http://camel.apach
 Camel supports unmarshalling XML data to JAXB annotated classes and marshalling from classes to XML. What follows demonstrates a simple Camel route for marshalling and unmarshalling with the Camel JAXB data format class.  
 
 ## JAXB Annotated class
+
 ```java
 @XmlRootElement(name = "customer")
 @XmlAccessorType(XmlAccessType.FIELD)
