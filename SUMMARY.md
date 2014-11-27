@@ -15,7 +15,7 @@
    * [JNDI](javaee/jndi.md)
    * [JPA](javaee/jpa.md)
    * [JAX-RS](javaee/jaxrs.md)
-   * [WebServices (JAX-WS)](javaee/jaxws.md)
+   * [JAX-WS](javaee/jaxws.md)
    * [XML Binding (JAXB)](javaee/jaxb.md)
 * [Camel Components](components/README.md)
 * [Cloud](cloud/README.md)
