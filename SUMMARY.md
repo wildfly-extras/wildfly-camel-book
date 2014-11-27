@@ -10,7 +10,7 @@
    * [Arquillian Test Support](features/arquillian.md)
 * [JavaEE Integration](javaee/README.md)
    * [CDI](javaee/cdi.md)
-   * [Management (JMX)](javaee/jmx.md)
+   * [JMX](javaee/jmx.md)
    * [Messaging (JMS)](javaee/jms.md)
    * [Naming (JNDI)](javaee/jndi.md)
    * [Persistence (JPA)](javaee/jpa.md)
