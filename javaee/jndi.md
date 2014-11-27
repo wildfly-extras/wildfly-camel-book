@@ -1,3 +1,3 @@
-# Naming (JNDI)
+## Naming (JNDI)
 
 [TODO]
