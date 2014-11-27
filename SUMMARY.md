@@ -10,7 +10,6 @@
    * [Arquillian Test Support](features/arquillian.md)
 * [JavaEE Integration](javaee/README.md)
    * [CDI](javaee/cdi.md)
-   * [JAXB](javaee/jaxb.md)
    * [JAX-RS](javaee/jaxrs.md)
    * [JAX-WS](javaee/jaxws.md)
    * [JMS](javaee/jms.md)
