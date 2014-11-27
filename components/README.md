@@ -1,6 +1,6 @@
 # Camel Components
 
-The set of support camel components
+This chapter details information about supported camel components
 
 * [camel-cdi](components/camel-cdi.md)
 * [camel-cxf](components/camel-cxf.md)
