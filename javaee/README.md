@@ -2,11 +2,11 @@
 
 This chapter details information about integration points with JavaEE. 
 
-* [Dependency Injection (CDI)](javaee/cdi.md)
-* [Management (JMX)](javaee/jmx.md)
-* [Messaging (JMS)](javaee/jms.md)
-* [Naming (JNDI)](javaee/jndi.md)
-* [REST (JAX-RS)](javaee/jaxrs.md)
-* [WebServices (JAX-WS)](javaee/jaxws.md)
-* [XML Bunding (JAXB)](javaee/jaxb.md)
+* [CDI](javaee/cdi.md)
+* [JAX-RS](javaee/jaxrs.md)
+* [JAX-WS](javaee/jaxws.md)
+* [JMS](javaee/jms.md)
+* [JMX](javaee/jmx.md)
+* [JNDI](javaee/jndi.md)
+* [JPA](javaee/jpa.md)
 
