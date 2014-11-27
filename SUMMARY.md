@@ -11,7 +11,7 @@
 * [JavaEE Integration](javaee/README.md)
    * [CDI](javaee/cdi.md)
    * [JMX](javaee/jmx.md)
-   * [Messaging (JMS)](javaee/jms.md)
+   * [JMS](javaee/jms.md)
    * [Naming (JNDI)](javaee/jndi.md)
    * [Persistence (JPA)](javaee/jpa.md)
    * [REST (JAX-RS)](javaee/jaxrs.md)
