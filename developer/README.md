@@ -14,9 +14,7 @@ http://174.129.32.31:8080/job/wildfly-camel
 
 ## Downloads
 
-[TODO] download location
-
-https://repository.jboss.org/nexus/content/groups/public-jboss/org/wildfly/camel
+https://github.com/wildflyext/wildfly-camel/releases
 
 ## Forums, Lists, IRC
 
