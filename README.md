@@ -1,7 +1,7 @@
 # WildFly Camel
 
 <small>
-Version: 1.0.0.CR3
+Version: 2.0.0.CR1
 </small>
 
 Provides [Apache Camel](http://camel.apache.org/) integration with the [WildFly Application Server](http://wildfly.org/).
