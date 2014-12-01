@@ -2,12 +2,12 @@
 
 This chapter details information about supported camel components
 
-* [camel-cdi](components/camel-cdi.md)
-* [camel-cxf](components/camel-cxf.md)
-* [camel-jaxb](components/camel-jaxb.md)
-* [camel-jms](components/camel-jms.md)
-* [camel-jmx](components/camel-jmx.md)
-* [camel-jpa](components/camel-jpa.md)
+* [camel-cdi](camel-cdi.md)
+* [camel-cxf](camel-cxf.md)
+* [camel-jaxb](camel-jaxb.md)
+* [camel-jms](camel-jms.md)
+* [camel-jmx](camel-jmx.md)
+* [camel-jpa](camel-jpa.md)
 
 ## Adding Components
 
