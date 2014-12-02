@@ -65,25 +65,33 @@ A simple Pod configuration for a Redis master container might look like this:
 
 ```
 {
-  "apiVersion": "v1beta1",
-  "kind": "Pod",
-  "id": "camel-master-pod",
-  "desiredState": {
-    "manifest": {
-      "version": "v1beta1",
-      "id": "camel-master-pod",
-      "containers": [{
-        "name": "camel-master",
-        "image": "wildflyext/wildfly-camel",
-        "ports": [{ "name": "wildfly-camel", "containerPort": 8080 }]
-      }]
-    }
-  },
-  "labels": { "name": "camel", "role": "master" }
+id: "wildfly-camel-rest",
+kind: "Config",
+apiVersion: "v1beta1",
+name: "wildfly-camel-rest",
+description: "Creates a WildFly Camel Pod running the Rest example",
+items: [ 
+	{
+	  "apiVersion": "v1beta1",
+	  "kind": "Pod",
+	  "id": "camel-pod",
+	  "desiredState": {
+	    "manifest": {
+	      "version": "v1beta1",
+	      "id": "camel-pod",
+	      "containers": [{
+	        "name": "camel-pod",
+	        "image": "wildflyext/example-camel-rest",
+	        "ports": [{ "name": "wildfly-camel", "containerPort": 8080 }]
+	      }]
+	    }
+	  },
+	  "labels": { "name": "camel", "role": "pod" }
+	}
+]
 }
 ```
 
-<script src="https://gist.github.com/tdiesler/b151749599212312e478.js"></script>
 
 ### REST Endpoint Replicated
 
