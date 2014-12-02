@@ -2,7 +2,7 @@
 
 In this guide we show how to run a set of WildFly Camel servers on [OpenShift V3](https://github.com/openshift/origin). Target platforms are iOS and Fedora. When done, we have a set of portable [Docker](https://www.docker.io/) containers that can be deployed onto a production platform.
 
-![](images/architecture.png)
+![](images/example-rest-design.png)
 
 The example architecture consists of a set of three high available (HA) servers running REST endpoints. For server replication and failover we use [Kubernetes](http://kubernetes.io). Each server runs in a dedicated [Pod](https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/pods.md) that we access via [Services](https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/services.md).
 
