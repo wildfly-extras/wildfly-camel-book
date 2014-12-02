@@ -61,7 +61,7 @@ kubernetes v0.4-dev
 
 ### Running a single Pod
 
-A simple Pod configuration for a Redis master container might look like this:
+A simple Pod configuration for a WildFly Camel container might look like
 
 ```
 {
@@ -82,7 +82,7 @@ items: [
 	      "containers": [{
 	        "name": "camel-pod",
 	        "image": "wildflyext/example-camel-rest",
-	        "ports": [{ "name": "wildfly-camel", "containerPort": 8080 }]
+	        "ports": [{ "name": "http", "containerPort": 8080 }]
 	      }]
 	    }
 	  },
@@ -92,6 +92,11 @@ items: [
 }
 ```
 
+To create the Pod in OpenShift we do
+
+```
+alias kube="docker run --rm -i --net=host openshift/origin kube"
+```
 
 ### REST Endpoint Replicated
 
