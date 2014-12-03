@@ -14,7 +14,7 @@ items: [
         selector: { name: "camel-pod"}
     },
     {
-      "id": "restController",
+      "id": "rest-controller",
       "kind": "ReplicationController",
       "apiVersion": "v1beta1",
       "desiredState": {
@@ -23,7 +23,7 @@ items: [
         "podTemplate": {
           "desiredState": {
              "manifest": {
-               "id": "restSlaveController",
+               "id": "rest-pod",
                "version": "v1beta1",
                "containers": [{
                  "name": "camel-cnt",
