@@ -134,7 +134,7 @@ Name                                   Image(s)                        Host     
 
 The entry point into the system is a Kubernetes Service as in [wildfly-camel-step03.json](../sources/wildfly-camel-step03.json)
 
-To create a Service taht accesses replicated Pods do
+To create a Service that accesses replicated Pods do
 
 [TODO] use ref to master
 
