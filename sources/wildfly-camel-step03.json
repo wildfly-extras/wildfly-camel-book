@@ -1,0 +1,39 @@
+{
+id: "wildfly-camel-rest",
+kind: "Config",
+apiVersion: "v1beta1",
+name: "wildfly-camel-rest",
+description: "Creates a WildFly Camel Pod running the Rest example",
+items: [
+    {
+        id: "wildfly-camel-service",
+        kind: "Service",
+        apiVersion: "v1beta1",
+        containerPort: 8080,
+        port: 8081,
+        selector: { name: "camel-pod"}
+    },
+    {
+      "id": "restSlaveController",
+      "kind": "ReplicationController",
+      "apiVersion": "v1beta1",
+      "desiredState": {
+        "replicas": 3,
+        "replicaSelector": {"name": "camel-pod"},
+        "podTemplate": {
+          "desiredState": {
+             "manifest": {
+               "id": "restSlaveController",
+               "version": "v1beta1",
+               "containers": [{
+                 "name": "camel-cnt",
+                 "image": "wildflyext/example-camel-rest",
+	             "ports": [{ "name": "http", "containerPort": 8080 }]
+               }]
+             }
+           },
+           "labels": {"name": "camel-pod"}
+          }},
+      "labels": {"name": "camel-ctrl"}
+    }]
+}
