@@ -30,6 +30,14 @@ $ sudo service docker restart
 
 > <small>You may have to logout/login for this change to take effect</small>
 
+In my case I also had to add a host mapping like this
+
+```
+[ec2-user@ip-172-30-0-233 ~]$ sudo cat /etc/hosts
+127.0.0.1   localhost localhost.localdomain
+172.30.0.233	ip-172-30-0-233
+```
+
 ### REST Endpoint Standalone
 
 Part of the WildFly-Camel project is a [camel-rest](https://github.com/wildflyext/wildfly-camel/tree/master/examples/camel-rest) example that is also published as a [wildflyext/example-camel-rest](https://registry.hub.docker.com/u/wildflyext/example-camel-rest/) image.
@@ -66,7 +74,7 @@ kubernetes v0.4-dev
 We may also wnat to create an alias to the Kubernetes client
 
 ```
-$ kube apply -c https://github.com/wildfly-extras/wildfly-camel-book/blob/2.1/sources/wildfly-camel-step01.json
+alias kube="docker run --rm --net=host -i openshift/origin kube"
 ```
 
 ### Running a single Pod
@@ -104,8 +112,26 @@ items: [
 
 To create the Pod in OpenShift we do
 
+[TODO] use ref to master
+
 ```
-alias kube="docker run --rm -i --net=host openshift/origin kube"
+$ kube apply -c https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/2.1/sources/wildfly-camel-step01.json
+I1203 11:58:28.876288 00001 kubecfg.go:613] Creation succeeded for Pod with name camel-pod
+```
+
+You can see the running Pod like this
+
+```
+$ kube get pods/camel-pod
+Name                Image(s)                        Host                Labels                Status
+----------          ----------                      ----------          ----------            ----------
+camel-pod           wildflyext/example-camel-rest   ip-172-30-0-233/    name=camel,role=pod   Running
+```
+
+and delete it again with 
+
+```
+$ kube delete pods/camel-pod
 ```
 
 ### REST Endpoint Replicated
