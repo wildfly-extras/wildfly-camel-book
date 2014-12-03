@@ -6,7 +6,7 @@ name: "wildfly-camel-rest",
 description: "Creates a WildFly Camel cluster running the REST example",
 items: [
     {
-        id: "wildfly-camel-service",
+        id: "rest-service",
         kind: "Service",
         apiVersion: "v1beta1",
         containerPort: 8080,
