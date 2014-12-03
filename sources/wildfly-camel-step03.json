@@ -15,26 +15,26 @@ items: [
         labels: {"name": "camel-srv"}
     },
     {
-      "id": "rest-controller",
-      "kind": "ReplicationController",
-      "apiVersion": "v1beta1",
-      "desiredState": {
-        "replicas": 3,
-        "replicaSelector": {"name": "camel-pod"},
-        "podTemplate": {
-          "desiredState": {
-             "manifest": {
-               "id": "rest-pod",
-               "version": "v1beta1",
-               "containers": [{
-                 "name": "rest-cnt",
-                 "image": "wildflyext/example-camel-rest",
-	             "ports": [{ "name": "http", "containerPort": 8080 }]
+      id: "rest-controller",
+      kind: "ReplicationController",
+      apiVersion: "v1beta1",
+      desiredState: {
+        replicas: 3,
+        replicaSelector: {"name": "camel-pod"},
+        podTemplate: {
+          desiredState: {
+             manifest: {
+               id: "rest-pod",
+               version: "v1beta1",
+               containers: [{
+                 name: "rest-cnt",
+                 image: "wildflyext/example-camel-rest",
+	             ports: [{ "name": "http", "containerPort": 8080 }]
                }]
              }
            },
-           "labels": {"name": "camel-pod"}
+           labels: {"name": "camel-pod"}
           }},
-      "labels": {"name": "camel-ctrl"}
+      labels: {"name": "camel-ctrl"}
     }]
 }
