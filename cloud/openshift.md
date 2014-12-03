@@ -115,7 +115,7 @@ To create the replicated Pod in OpenShift we do
 
 ```
 $ kube apply -c https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/2.1/sources/wildfly-camel-step02.json
-I1203 13:19:56.780955 00001 kubecfg.go:613] Creation succeeded for ReplicationController with name restPodController
+I1203 13:19:56.780955 00001 kubecfg.go:613] Creation succeeded for ReplicationController with name restSlaveController
 ```
 
 ### REST Endpoint Replicated
