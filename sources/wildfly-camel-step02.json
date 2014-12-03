@@ -11,21 +11,21 @@ items: [
       "apiVersion": "v1beta1",
       "desiredState": {
         "replicas": 3,
-        "replicaSelector": {"name": "camel-pod"},
+        "replicaSelector": {"name": "camel"},
         "podTemplate": {
           "desiredState": {
              "manifest": {
                "id": "restSlaveController",
                "version": "v1beta1",
                "containers": [{
-                 "name": "rest-endpoint",
+                 "name": "camel-pod",
                  "image": "wildflyext/example-camel-rest",
 	             "ports": [{ "name": "http", "containerPort": 8080 }]
                }]
              }
            },
-           "labels": {"name": "camel-pod"}
+           "labels": {"name": "camel"}
           }},
-      "labels": {"name": "camel-ctrl"}
+      "labels": {"name": "camel"}
     }]
 }
