@@ -65,7 +65,7 @@ kubernetes v0.4-dev
 
 ### Running a single Pod
 
-A simple Pod configuration for a WildFly Camel container might look like
+A simple Pod configuration for a WildFly Camel container might be defined as in [wildfly-camel-step01.json](../sources/wildfly-camel-step01.json)
 
 ```
 {
