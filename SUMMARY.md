@@ -25,6 +25,6 @@
    * [camel-jmx](components/camel-jmx.md)
    * [camel-jpa](components/camel-jpa.md)
 * [Cloud](cloud/README.md)
-   * [AWS Elastic Bean Stalk](cloud)
+   * [AWS Elastic Bean Stalk](cloud/beanstalk.md)
 * [Developer Guide](developer/README.md)
 
