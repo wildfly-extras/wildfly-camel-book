@@ -58,9 +58,15 @@ $ docker run -rm -v /var/run/docker.sock:/var/run/docker.sock --net=host --privi
 and verify the OpenShift version 
 
 ```
-$ docker run -i --net=host openshift/origin version
+$ docker run -i openshift/origin version
 openshift version 0.1, build 725d9ca
 kubernetes v0.4-dev
+```
+
+We may also wnat to create an alias to the Kubernetes client
+
+```
+alias kube="docker run --rm -i openshift/origin kube"
 ```
 
 ### Running a single Pod
