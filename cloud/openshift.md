@@ -60,7 +60,7 @@ Hello Kermit
 Now we can start OpenShift Origin as a Docker container
 
 ```
-$ docker run -rm -v /var/run/docker.sock:/var/run/docker.sock --net=host --privileged openshift/origin start
+$ docker run --rm -v /var/run/docker.sock:/var/run/docker.sock --net=host --privileged openshift/origin start
 ```
 
 and verify the OpenShift version 
