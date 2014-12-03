@@ -6,7 +6,7 @@ name: "wildfly-camel-rest",
 description: "Creates a WildFly Camel cluster running the REST example",
 items: [
     {
-        id: "camelService",
+        id: "wildfly-camel-service",
         kind: "Service",
         apiVersion: "v1beta1",
         containerPort: 8080,
@@ -23,7 +23,7 @@ items: [
         "podTemplate": {
           "desiredState": {
              "manifest": {
-               "id": "restPod",
+               "id": "restSlaveController",
                "version": "v1beta1",
                "containers": [{
                  "name": "camel-cnt",
