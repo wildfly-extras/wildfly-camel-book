@@ -3,10 +3,10 @@ id: "wildfly-camel-rest",
 kind: "Config",
 apiVersion: "v1beta1",
 name: "wildfly-camel-rest",
-description: "Creates a WildFly Camel Pod running the Rest example",
+description: "Creates a WildFly Camel cluster running the REST example",
 items: [
     {
-        id: "wildfly-camel-service",
+        id: "camelService",
         kind: "Service",
         apiVersion: "v1beta1",
         containerPort: 8080,
@@ -14,7 +14,7 @@ items: [
         selector: { name: "camel-pod"}
     },
     {
-      "id": "restSlaveController",
+      "id": "restController",
       "kind": "ReplicationController",
       "apiVersion": "v1beta1",
       "desiredState": {
