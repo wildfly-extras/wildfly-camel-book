@@ -37,13 +37,14 @@ Part of the WildFly-Camel project is a [camel-rest](https://github.com/wildflyex
 You can run the standalone container like this
 
 ```
-docker run --rm -ti --name example -p 8080:8080 wildflyext/example-camel-rest
+docker run --rm -ti --name camel-rest -p 8080:8080 wildflyext/example-camel-rest
 ```
 
-and access the REST endpoint on http://[yourhost]:8080/example-camel-rest/rest/greet/hello/Kermit
-
+and access the REST endpoint like this
 
 ```
+$ curl http://localhost:8080/example-camel-rest/rest/greet/hello/Kermit
+Hello Kermit
 ```
 
 ### Starting OpenShift Origin
