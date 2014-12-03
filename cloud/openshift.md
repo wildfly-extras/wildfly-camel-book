@@ -66,7 +66,7 @@ kubernetes v0.4-dev
 We may also wnat to create an alias to the Kubernetes client
 
 ```
-alias kube="docker run --rm -i openshift/origin kube"
+$ kube apply -c https://github.com/wildfly-extras/wildfly-camel-book/blob/2.1/sources/wildfly-camel-step01.json
 ```
 
 ### Running a single Pod
