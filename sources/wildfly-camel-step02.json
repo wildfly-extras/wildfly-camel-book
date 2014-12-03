@@ -18,7 +18,7 @@ items: [
                "id": "restSlaveController",
                "version": "v1beta1",
                "containers": [{
-                 "name": "rest-endpoint"
+                 "name": "rest-endpoint",
                  "image": "wildflyext/example-camel-rest",
 	             "ports": [{ "name": "http", "containerPort": 8080 }]
                }]
