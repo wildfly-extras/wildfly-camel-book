@@ -28,6 +28,8 @@ $ sudo usermod -a -G docker ec2-user
 $ sudo service docker restart
 ``` 
 
+> <small>You may have to logout/login for this change to take effect</small>
+
 ### REST Endpoint Standalone
 
 Part of the WildFly-Camel project is a [camel-rest](https://github.com/wildflyext/wildfly-camel/tree/master/examples/camel-rest) example that is also published as a [wildflyext/example-camel-rest](https://registry.hub.docker.com/u/wildflyext/example-camel-rest/) image.
@@ -38,9 +40,11 @@ You can run the standalone container like this
 docker run --rm -ti --name example -p 8080:8080 wildflyext/example-camel-rest
 ```
 
-and access the REST endpoint on http://192.168.59.103:8080/example-camel-rest/rest/greet/hello/Kermit
+and access the REST endpoint on http://[yourhost]:8080/example-camel-rest/rest/greet/hello/Kermit
 
-> Note, the IP is the network address of the boot2docker VM. It is returned by `boot2docker ip`  
+
+```
+```
 
 ### Starting OpenShift Origin
 
