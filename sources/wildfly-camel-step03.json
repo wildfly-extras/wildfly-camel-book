@@ -23,7 +23,7 @@ items: [
         "podTemplate": {
           "desiredState": {
              "manifest": {
-               "id": "restSlaveController",
+               "id": "restPod",
                "version": "v1beta1",
                "containers": [{
                  "name": "camel-cnt",
