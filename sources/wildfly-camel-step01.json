@@ -3,24 +3,24 @@ id: "wildfly-camel-rest",
 kind: "Config",
 apiVersion: "v1beta1",
 name: "wildfly-camel-rest",
-description: "Creates a WildFly Camel Pod running the Rest example",
+description: "Creates a WildFly Camel cluster running the REST example",
 items: [ 
 	{
-	  "apiVersion": "v1beta1",
-	  "kind": "Pod",
-	  "id": "camel-pod",
-	  "desiredState": {
-	    "manifest": {
-	      "version": "v1beta1",
-	      "id": "camel-pod",
-	      "containers": [{
-	        "name": "camel-pod",
-	        "image": "wildflyext/example-camel-rest",
-	        "ports": [{ "name": "http", "containerPort": 8080 }]
+	  id: "camel-pod",
+	  kind: "Pod",
+	  apiVersion: "v1beta1",
+	  desiredState: {
+	    manifest: {
+	      version: "v1beta1",
+	      id: "camel-pod",
+	      containers: [{
+	        name: "camel-cnt",
+	        image: "wildflyext/example-camel-rest",
+	        ports: [{ "name": "http", "containerPort": 8080 }]
 	      }]
 	    }
 	  },
-	  "labels": { "name": "camel", "role": "pod" }
+	  labels: { "name": "camel", "role": "pod" }
 	}
 ]
 }
