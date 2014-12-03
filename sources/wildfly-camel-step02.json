@@ -3,7 +3,7 @@ id: "wildfly-camel-rest",
 kind: "Config",
 apiVersion: "v1beta1",
 name: "wildfly-camel-rest",
-description: "Creates a WildFly Camel Pod running the Rest example",
+description: "Creates a WildFly Camel cluster running the REST example",
 items: [
     {
       "id": "restSlaveController",
