@@ -134,6 +134,8 @@ and delete it again with
 $ kube delete pods/camel-pod
 ```
 
+### Adding a ReplicationController
+
 ### REST Endpoint Replicated
 
 With OpenShift started we can now ask Kubernetes to create a Pod containing three example-camel-rest container instances. The Kubernetes JSON configuration can be found [here](http://git.io/xxWK2g).
