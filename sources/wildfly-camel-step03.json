@@ -12,6 +12,7 @@ items: [
         containerPort: 8080,
         port: 8081,
         selector: { name: "camel-pod"}
+        labels: {"name": "camel-srv"}
     },
     {
       "id": "rest-controller",
