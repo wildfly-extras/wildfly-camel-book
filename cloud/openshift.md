@@ -1,6 +1,6 @@
 ## Introduction
 
-In this guide we show how to run a set of WildFly Camel servers on [OpenShift V3](https://github.com/openshift/origin). Target platforms are iOS and Fedora. When done, we have a set of portable [Docker](https://www.docker.io/) containers that can be deployed onto a production platform.
+In this guide we show how to run a set of WildFly Camel servers on [OpenShift V3](https://github.com/openshift/origin). The target platform is Linux on an Amazon EC2 instance. When done, we have a set of portable [Docker](https://www.docker.io/) containers that can be deployed onto a production platform.
 
 ![](../images/example-rest-design.png)
 
@@ -8,26 +8,25 @@ The example architecture consists of a set of three high available (HA) servers 
 
 ### Installing Docker
 
-To install Docker on Fedora, follow this [installation guide](https://docs.docker.com/installation/fedora/). 
-
-Docker on iOS requires a Docker enabled VM. [Boot2docker](http://boot2docker.io) is a lightweight Linux distribution based on [Tiny Core Linux](http://tinycorelinux.net/) made specifically to run [Docker](https://www.docker.io/) containers.
-
-After you installed [boot2docker](http://boot2docker.io) you can start the Docker VM like this
+SSH into your instance and type 
 
 ```
-$ boot2docker up
-```
+$ sudo yum install -y docker
+$ sudo service docker start
+``` 
 
-To work with docker in other terminal sessions we need to set a few environment variables. This can be done via `vi ~/.profile`
+to install and start Docker.
+
+### Giving non-root access
+
+The docker daemon always runs as the root user, and the docker daemon binds to a Unix socket instead of a TCP port. By default that Unix socket is owned by the user root, and so, by default, you can access it with sudo.
+
+If you have a Unix group called `docker` and add users to it, then the docker daemon will make the ownership of the Unix socket read/writable by the `docker` group when the daemon starts. The docker daemon must always run as the root user, but if you run the docker client as a user in the `docker` group then you don't need to add sudo to all the client commands.
 
 ```
-export DOCKER_TLS_VERIFY=1
-export DOCKER_IP=`boot2docker ip 2> /dev/null`
-export DOCKER_HOST=tcp://$DOCKER_IP:2376
-export DOCKER_CERT_PATH=~/.boot2docker/certs/boot2docker-vm
-```
-
-After you set those environment variables, you can run `docker info` to verify your Docker installation.
+$ sudo usermod -a -G docker ec2-user
+$ sudo service docker restart
+``` 
 
 ### REST Endpoint Standalone
 
