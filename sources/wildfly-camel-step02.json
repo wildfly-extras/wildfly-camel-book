@@ -11,7 +11,7 @@ items: [
       "apiVersion": "v1beta1",
       "desiredState": {
         "replicas": 3,
-        "replicaSelector": {"name": "camel"},
+        "replicaSelector": {"name": "camel-pod"},
         "podTemplate": {
           "desiredState": {
              "manifest": {
@@ -24,7 +24,7 @@ items: [
                }]
              }
            },
-           "labels": {"name": "camel"}
+           "labels": {"name": "camel-pod"}
           }},
       "labels": {"name": "camel"}
     }]
