@@ -118,7 +118,7 @@ $ kube apply -c https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-b
 I1203 13:19:56.780955 00001 kubecfg.go:613] Creation succeeded for ReplicationController with name restSlaveController
 ```
 
-As you can see, we now have three Pods each running an instance of our container
+We now have three Pods each running an instance of our container
 
 ```
 $ kube list pods
@@ -142,5 +142,17 @@ To create a Service taht accesses replicated Pods do
 $ kube apply -c https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/2.1/sources/wildfly-camel-step03.json
 I1203 14:28:44.860519 00001 kubecfg.go:613] Creation succeeded for Service with name rest-service
 I1203 14:28:44.860770 00001 kubecfg.go:613] Creation succeeded for ReplicationController with name rest-controller
+```
+
+We now have a service
+
+```
+$ kube list services
+Name                                   Image(s)                        Host                Labels              Status
+----------                             ----------                      ----------          ----------          ----------
+13520066-7aef-11e4-9ea2-0624f808fac8   wildflyext/example-camel-rest   ip-172-30-0-233/    name=camel          Running
+1351d659-7aef-11e4-9ea2-0624f808fac8   wildflyext/example-camel-rest   ip-172-30-0-233/    name=camel          Running
+1352aa99-7aef-11e4-9ea2-0624f808fac8   wildflyext/example-camel-rest   ip-172-30-0-233/    name=camel          Running
+
 ```
 
