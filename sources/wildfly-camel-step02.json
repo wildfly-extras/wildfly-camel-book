@@ -26,6 +26,6 @@ items: [
            },
            "labels": {"name": "camel-pod"}
           }},
-      "labels": {"name": "camel"}
+      "labels": {"name": "camel-ctrl"}
     }]
 }
