@@ -81,35 +81,6 @@ alias kube="docker run --rm --net=host -i openshift/origin kube"
 
 A simple Pod configuration for a WildFly Camel container might be defined as in [wildfly-camel-step01.json](../sources/wildfly-camel-step01.json)
 
-```
-{
-id: "wildfly-camel-rest",
-kind: "Config",
-apiVersion: "v1beta1",
-name: "wildfly-camel-rest",
-description: "Creates a WildFly Camel Pod running the Rest example",
-items: [ 
-	{
-	  "apiVersion": "v1beta1",
-	  "kind": "Pod",
-	  "id": "camel-pod",
-	  "desiredState": {
-	    "manifest": {
-	      "version": "v1beta1",
-	      "id": "camel-pod",
-	      "containers": [{
-	        "name": "camel-pod",
-	        "image": "wildflyext/example-camel-rest",
-	        "ports": [{ "name": "http", "containerPort": 8080 }]
-	      }]
-	    }
-	  },
-	  "labels": { "name": "camel", "role": "pod" }
-	}
-]
-}
-```
-
 To create the Pod in OpenShift we do
 
 [TODO] use ref to master
@@ -138,7 +109,13 @@ $ kube delete pods/camel-pod
 
 To achieve high availability (HA), lets replicate this Pod using a ReplicationController as in [wildfly-camel-step02.json](../sources/wildfly-camel-step02.json)
 
+To create the replicated Pod in OpenShift we do
+
+[TODO] use ref to master
+
 ```
+$ kube apply -c https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/2.1/sources/wildfly-camel-step02.json
+I1203 13:19:56.780955 00001 kubecfg.go:613] Creation succeeded for ReplicationController with name restPodController
 ```
 
 ### REST Endpoint Replicated
