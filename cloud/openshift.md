@@ -147,12 +147,16 @@ I1203 14:28:44.860770 00001 kubecfg.go:613] Creation succeeded for ReplicationCo
 We now have a service
 
 ```
-$ kube list services
-Name                                   Image(s)                        Host                Labels              Status
-----------                             ----------                      ----------          ----------          ----------
-13520066-7aef-11e4-9ea2-0624f808fac8   wildflyext/example-camel-rest   ip-172-30-0-233/    name=camel          Running
-1351d659-7aef-11e4-9ea2-0624f808fac8   wildflyext/example-camel-rest   ip-172-30-0-233/    name=camel          Running
-1352aa99-7aef-11e4-9ea2-0624f808fac8   wildflyext/example-camel-rest   ip-172-30-0-233/    name=camel          Running
+$ kube -l name=camel-srv list services
+Name                Labels              Selector            IP                  Port
+----------          ----------          ----------          ----------          ----------
+rest-service        name=camel-srv      name=camel-pod      172.121.17.3        8081
+```
 
+that we can access like this
+
+```
+$ curl http://172.121.17.3:8081/example-camel-rest/rest/greet/hello/Kermit
+Hello Kermit 
 ```
 
