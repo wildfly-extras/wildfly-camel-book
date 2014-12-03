@@ -130,33 +130,17 @@ Name                                   Image(s)                        Host     
 
 ```
 
-### REST Endpoint Replicated
+### Adding a Service
 
-With OpenShift started we can now ask Kubernetes to create a Pod containing three example-camel-rest container instances. The Kubernetes JSON configuration can be found [here](http://git.io/xxWK2g).
+The entry point into the system is a Kubernetes Service as in [wildfly-camel-step03.json](../sources/wildfly-camel-step03.json)
 
-```
-KUBE="docker run --rm -i --net=host openshift/origin kube"
-$KUBE apply -c http://git.io/xxWK2g
-```
+To create a Service taht accesses replicated Pods do
 
-In order to test out the application, we need the IP address of the Pod containing our three WildFly-Camel servers. To get the IP run:
+[TODO] use ref to master
 
 ```
-$KUBE list services
+$ kube apply -c https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/2.1/sources/wildfly-camel-step03.json
+I1203 14:28:44.860519 00001 kubecfg.go:613] Creation succeeded for Service with name rest-service
+I1203 14:28:44.860770 00001 kubecfg.go:613] Creation succeeded for ReplicationController with name rest-controller
 ```
 
-You should see some output on the console like the following:
-
-```
-Name                    Labels              Selector                                  IP                  Port
-----------              ----------          ----------                                ----------          ----------
-kubernetes                                  component=apiserver,provider=kubernetes   172.121.17.2        443
-kubernetes-ro                               component=apiserver,provider=kubernetes   172.121.17.1        80
-wildfly-camel-service                       name=wildfly-camel-rest-pod               172.121.17.3        8081
-```
-
-The last entry in the list named 'wildfly-camel-service' is our pod running the camel-rest demo. The IP address is 172.121.17.3 and the host port is 8081. With this information, you can open a browser and hit the Camel REST endpoint URL:
-
-http://172.121.17.3:8081/example-camel-rest/rest/greet/hello/kermit
-
-You should see a greeting displayed in the browser of 'Hello kermit'.
