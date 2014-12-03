@@ -136,6 +136,11 @@ $ kube delete pods/camel-pod
 
 ### Adding a ReplicationController
 
+To achieve high availability (HA), lets replicate this Pod using a ReplicationController as in [wildfly-camel-step02.json](../sources/wildfly-camel-step02.json)
+
+```
+```
+
 ### REST Endpoint Replicated
 
 With OpenShift started we can now ask Kubernetes to create a Pod containing three example-camel-rest container instances. The Kubernetes JSON configuration can be found [here](http://git.io/xxWK2g).
