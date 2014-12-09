@@ -26,6 +26,5 @@
    * [camel-jpa](components/camel-jpa.md)
 * [Cloud](cloud/README.md)
    * [AWS Elastic Bean Stalk](cloud/beanstalk.md)
-* Docker Image
 * [Developer Guide](developer/README.md)
 
