@@ -71,7 +71,7 @@ openshift version 0.1, build 725d9ca
 kubernetes v0.4-dev
 ```
 
-We may also wnat to create an alias to the Kubernetes client
+We may also want to create an alias to the Kubernetes client
 
 ```
 alias kube="docker run --rm --net=host -i openshift/origin kube"
