@@ -66,7 +66,7 @@ $ docker run --rm -v /var/run/docker.sock:/var/run/docker.sock --net=host --priv
 and verify the OpenShift version 
 
 ```
-$ docker run -i openshift/origin version
+$ docker run --rm openshift/origin version
 openshift version 0.1, build 725d9ca
 kubernetes v0.4-dev
 ```
