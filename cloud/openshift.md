@@ -74,7 +74,7 @@ kubernetes v0.4-dev
 We may also want to create an alias to the Kubernetes client
 
 ```
-alias kube="docker run --rm --net=host -i openshift/origin kube"
+alias kube="docker run --rm --net=host openshift/origin kube"
 ```
 
 ### Running a single Pod
