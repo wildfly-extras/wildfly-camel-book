@@ -61,7 +61,7 @@ items: [
                version: "v1beta1",
                containers: [{
                  name: "domain-slave",
-                 image: "jboss/wildfly",
+                 image: "wildflyext/wildfly-camel",
                  env: [{ name: "WILDFLY_MANAGEMENT_USER", value: "admin"}, { name: "WILDFLY_MANAGEMENT_PASSWORD", value: "admin"}],
                  command: [ "/bin/bash", "set" ]
                }]
