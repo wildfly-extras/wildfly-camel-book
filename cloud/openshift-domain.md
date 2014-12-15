@@ -6,3 +6,16 @@ Running multiple servers in a cloud environment is all the more useful when thes
 
 ![](../images/example-domain-design.png)
 
+### Starting OpenShift Origin
+
+To start OpenShift Origin as a Docker container run
+
+```
+$ docker run --rm -v /var/run/docker.sock:/var/run/docker.sock --net=host --privileged openshift/origin start
+```
+
+We may also want to create an alias to the Kubernetes client
+
+```
+alias kube="docker run --rm --net=host openshift/origin kube"
+```
