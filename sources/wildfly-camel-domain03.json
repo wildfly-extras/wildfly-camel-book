@@ -10,7 +10,7 @@ items: [
         kind: "Service",
         apiVersion: "v1beta1",
         containerPort: 9990,
-        port: 9990,
+        port: 19990,
         publicIPs: [ "54.154.82.232" ],
         selector: { name: "ctrl-pod" }
     },
