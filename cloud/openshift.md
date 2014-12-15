@@ -1,7 +1,6 @@
 ## OpenShift Integration
 
-* [Standalone Setup](openshift-standalone.md)
-* [Domain Setup](openshift-domain.md)
+This chapter gets you started on WildFly-Camel in OpenShift  
 
 ### Installing Docker
 
