@@ -58,7 +58,7 @@ items: [
       kind: "ReplicationController",
       apiVersion: "v1beta1",
       desiredState: {
-        replicas: 1,
+        replicas: 3,
         replicaSelector: { name: rest-pod },
         podTemplate: {
           desiredState: {
