@@ -20,7 +20,7 @@ items: [
       apiVersion: "v1beta1",
       desiredState: {
         replicas: 1,
-        replicaSelector: { name: ctrl-pod},
+        replicaSelector: { name: ctrl-pod },
         podTemplate: {
           desiredState: {
              manifest: {
