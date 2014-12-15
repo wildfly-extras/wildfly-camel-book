@@ -15,6 +15,15 @@ items: [
         labels: { name: "ctrl-srv" }
     },
     {
+        id: "rest-service",
+        kind: "Service",
+        apiVersion: "v1beta1",
+        containerPort: 8080,
+        port: 8080,
+        selector: { name: "rest-pod" },
+        labels: { name: "rest-srv" }
+    },
+    {
       id: "admin-controller",
       kind: "ReplicationController",
       apiVersion: "v1beta1",
@@ -44,11 +53,11 @@ items: [
       apiVersion: "v1beta1",
       desiredState: {
         replicas: 3,
-        replicaSelector: { name: host-pod},
+        replicaSelector: { name: rest-pod},
         podTemplate: {
           desiredState: {
              manifest: {
-               id: "host-pod",
+               id: "rest-pod",
                version: "v1beta1",
                containers: [{
                  name: "domain-slave",
@@ -59,7 +68,7 @@ items: [
                }]
              }
            },
-           labels: {name: "host-pod"}
+           labels: {name: "rest-pod"}
           }}
     }
     ]
