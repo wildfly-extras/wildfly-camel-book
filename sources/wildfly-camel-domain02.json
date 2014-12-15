@@ -46,7 +46,7 @@ items: [
                  image: "wildflyext/wildfly-camel",
                  env: [{ name: "WILDFLY_MANAGEMENT_USER", value: "admin"}, { name: "WILDFLY_MANAGEMENT_PASSWORD", value: "admin"}],
                  command: [ "--domain-config", "domain-camel.xml", "--host-config", "host-camel.xml", "-b", "0.0.0.0", "-bmanagement", "0.0.0.0" ],
-                 ports: [{ name: "http", containerPort: 9990 }]
+                 ports: [{ name: "http", containerPort: 9990 }, { name: "native", containerPort: 9999 }]
                }]
              }
            },
