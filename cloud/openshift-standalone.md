@@ -7,6 +7,20 @@ In this guide we show how to run a set of WildFly Camel servers on [OpenShift V3
 The example architecture consists of a set of three high available (HA) servers running REST endpoints. For server replication and failover we use [Kubernetes](http://kubernetes.io). Each server runs in a dedicated [Pod](https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/pods.md) that we access via [Services](https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/services.md).
 
 
+### Starting OpenShift Origin
+
+To start OpenShift Origin as a Docker container run
+
+```
+$ docker run --rm -v /var/run/docker.sock:/var/run/docker.sock --net=host --privileged openshift/origin start
+```
+
+We may also want to create an alias to the Kubernetes client
+
+```
+alias kube="docker run --rm --net=host openshift/origin kube"
+```
+
 ### Running a single Pod
 
 A simple Pod configuration for a WildFly Camel container might be defined as in [wildfly-camel-step01.json](../sources/wildfly-camel-step01.json)
