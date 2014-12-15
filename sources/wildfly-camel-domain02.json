@@ -53,7 +53,7 @@ items: [
       apiVersion: "v1beta1",
       desiredState: {
         replicas: 3,
-        replicaSelector: { name: rest-pod},
+        replicaSelector: { name: rest-pod },
         podTemplate: {
           desiredState: {
              manifest: {
