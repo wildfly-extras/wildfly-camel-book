@@ -35,7 +35,7 @@ items: [
                }]
              }
            },
-           labels: {name: "ctrl-pod"}
+           labels: {name: "master-pod"}
           }}
     }
     ]
