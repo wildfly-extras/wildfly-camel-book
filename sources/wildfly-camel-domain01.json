@@ -11,8 +11,8 @@ items: [
         apiVersion: "v1beta1",
         containerPort: 9990,
         port: 9990,
-        selector: { name: ctrl-pod},
-        labels: { name: ctrl-srv}
+        selector: { name: "ctrl-pod" },
+        labels: { name: "ctrl-srv" }
     },
     {
       id: "admin-controller",
@@ -31,11 +31,11 @@ items: [
                  image: "wildflyext/wildfly-camel",
                  envvar: [{}]
                  command: [ "--domain-config", "domain-camel.xml", "--host-config", "host-camel.xml", "-b", "0.0.0.0", "-bmanagement", "0.0.0.0" ],
-                 ports: [{ name: http, containerPort: 9990 }]
+                 ports: [{ name: "http", containerPort: 9990 }]
                }]
              }
            },
-           labels: {name: ctrl-pod}
+           labels: {name: "ctrl-pod"}
           }}
     }]
 }
