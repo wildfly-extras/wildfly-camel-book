@@ -37,30 +37,6 @@ items: [
            },
            labels: {name: "ctrl-pod"}
           }}
-    },
-    {
-      id: "host-controller",
-      kind: "ReplicationController",
-      apiVersion: "v1beta1",
-      desiredState: {
-        replicas: 3,
-        replicaSelector: { name: host-pod},
-        podTemplate: {
-          desiredState: {
-             manifest: {
-               id: "host-pod",
-               version: "v1beta1",
-               containers: [{
-                 name: "domain-slave",
-                 image: "wildflyext/wildfly-camel",
-                 env: [{ name: "WILDFLY_MANAGEMENT_USER", value: "admin"}, { name: "WILDFLY_MANAGEMENT_PASSWORD", value: "admin"}],
-                 command: [ "--domain-config", "domain-camel.xml", "--host-config", "host-camel-slave.xml", "-b", "0.0.0.0", "-bmanagement", "0.0.0.0" ],
-                 ports: [{ name: "http", containerPort: 8080 }]
-               }]
-             }
-           },
-           labels: {name: "host-pod"}
-          }}
     }
     ]
 }
