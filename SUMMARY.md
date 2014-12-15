@@ -28,6 +28,6 @@
    * [AWS Elastic Bean Stalk](cloud/beanstalk.md)
    * [OpenShift](cloud/openshift.md)
        * Standalone Setup
-       * Domain Setup
+       * [Domain Setup](openshift-domain.md)
 * [Developer Guide](developer/README.md)
 
