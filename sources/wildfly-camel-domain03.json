@@ -27,7 +27,7 @@ items: [
         kind: "Service",
         apiVersion: "v1beta1",
         containerPort: 8080,
-        port: 8080,
+        port: 8081,
         publicIPs: [ "54.154.82.232" ],
         selector: { name: "rest-pod" }
     },
