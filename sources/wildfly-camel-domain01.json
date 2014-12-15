@@ -29,13 +29,13 @@ items: [
                containers: [{
                  name: "domain-controller",
                  image: "wildflyext/wildfly-camel",
+                 envvar: [{}]
                  command: [ "--domain-config", "domain-camel.xml", "--host-config", "host-camel.xml", "-b", "0.0.0.0", "-bmanagement", "0.0.0.0" ],
-                 ports: [{ "name": "http", "containerPort": 9990 }]
+                 ports: [{ name: http, containerPort: 9990 }]
                }]
              }
            },
-           labels: {"name": "ctrl-pod"}
-          }},
-      labels: {"name": "admin-ctrl"}
+           labels: {name: ctrl-pod}
+          }}
     }]
 }
