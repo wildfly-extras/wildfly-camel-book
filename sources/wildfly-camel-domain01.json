@@ -28,7 +28,7 @@ items: [
                version: "v1beta1",
                containers: [{
                  name: "domain-controller",
-                 image: "wildflyext/example-camel-rest",
+                 image: "wildflyext/wildfly-camel",
 	             ports: [{ "name": "http", "containerPort": 8080 }]
                }]
              }
