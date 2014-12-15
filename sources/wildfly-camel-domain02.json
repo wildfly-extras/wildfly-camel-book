@@ -6,20 +6,12 @@ name: "wildfly-camel-domain",
 description: "Creates a WildFly Camel domain",
 items: [
     {
-        id: "public-management-service",
+        id: "management-service",
         kind: "Service",
         apiVersion: "v1beta1",
         containerPort: 9990,
         port: 9990,
         selector: { name: "ctrl-pod" }
-    },
-    {
-        id: "public-rest-service",
-        kind: "Service",
-        apiVersion: "v1beta1",
-        containerPort: 8080,
-        port: 8080,
-        selector: { name: "rest-pod" }
     },
     {
         id: "domain-controller",
@@ -28,6 +20,14 @@ items: [
         containerPort: 9999,
         port: 9999,
         selector: { name: "ctrl-pod" }
+    },
+    {
+        id: "rest-service",
+        kind: "Service",
+        apiVersion: "v1beta1",
+        containerPort: 8080,
+        port: 8080,
+        selector: { name: "rest-pod" }
     },
     {
       id: "master-replicator",
