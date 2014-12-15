@@ -24,7 +24,7 @@ items: [
         podTemplate: {
           desiredState: {
              manifest: {
-               id: "rest-pod",
+               id: "master-pod",
                version: "v1beta1",
                containers: [{
                  name: "domain-controller",
