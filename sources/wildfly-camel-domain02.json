@@ -52,7 +52,7 @@ items: [
       kind: "ReplicationController",
       apiVersion: "v1beta1",
       desiredState: {
-        replicas: 3,
+        replicas: 1,
         replicaSelector: { name: rest-pod },
         podTemplate: {
           desiredState: {
@@ -61,10 +61,9 @@ items: [
                version: "v1beta1",
                containers: [{
                  name: "domain-slave",
-                 image: "wildflyext/wildfly-camel",
+                 image: "jboss/wildfly",
                  env: [{ name: "WILDFLY_MANAGEMENT_USER", value: "admin"}, { name: "WILDFLY_MANAGEMENT_PASSWORD", value: "admin"}],
-                 command: [ "--domain-config", "domain-camel.xml", "--host-config", "host-camel-slave.xml", "-b", "0.0.0.0", "-bmanagement", "0.0.0.0" ],
-                 ports: [{ name: "http", containerPort: 8080 }]
+                 command: [ "/bin/bash", "set" ]
                }]
              }
            },
