@@ -28,5 +28,6 @@
    * [AWS Elastic Bean Stalk](cloud/beanstalk.md)
    * [OpenShift](cloud/openshift.md)
        * Standalone Servers
+       * Domain Setup
 * [Developer Guide](developer/README.md)
 
