@@ -19,3 +19,9 @@ We may also want to create an alias to the Kubernetes client
 ```
 alias kube="docker run --rm --net=host openshift/origin kube"
 ```
+
+## Starting the Domain Controller
+
+```
+kube apply -c https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/2.1/sources/wildfly-camel-domain01.json
+```
