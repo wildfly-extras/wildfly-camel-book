@@ -6,12 +6,20 @@ name: "wildfly-camel-domain",
 description: "Creates a WildFly Camel domain",
 items: [
     {
-        id: "admin-service",
+        id: "public-management-service",
         kind: "Service",
         apiVersion: "v1beta1",
         containerPort: 9990,
         port: 9990,
         selector: { name: "ctrl-pod" }
+    },
+    {
+        id: "public-rest-service",
+        kind: "Service",
+        apiVersion: "v1beta1",
+        containerPort: 8080,
+        port: 8080,
+        selector: { name: "rest-pod" }
     },
     {
         id: "domain-controller",
@@ -22,15 +30,7 @@ items: [
         selector: { name: "ctrl-pod" }
     },
     {
-        id: "rest-service",
-        kind: "Service",
-        apiVersion: "v1beta1",
-        containerPort: 8080,
-        port: 8080,
-        selector: { name: "rest-pod" }
-    },
-    {
-      id: "admin-controller",
+      id: "master-replicator",
       kind: "ReplicationController",
       apiVersion: "v1beta1",
       desiredState: {
@@ -39,7 +39,7 @@ items: [
         podTemplate: {
           desiredState: {
              manifest: {
-               id: "rest-pod",
+               id: "ctrl-pod",
                version: "v1beta1",
                containers: [{
                  name: "domain-controller",
@@ -54,7 +54,7 @@ items: [
           }}
     },
     {
-      id: "host-controller",
+      id: "host-replicator",
       kind: "ReplicationController",
       apiVersion: "v1beta1",
       desiredState: {
@@ -68,7 +68,8 @@ items: [
                containers: [{
                  name: "domain-slave",
                  image: "wildflyext/wildfly-camel",
-                 env: [{ name: "WILDFLY_MANAGEMENT_USER", value: "admin"}, { name: "WILDFLY_MANAGEMENT_PASSWORD", value: "admin"}]
+                 env: [{ name: "WILDFLY_MANAGEMENT_USER", value: "admin"}, { name: "WILDFLY_MANAGEMENT_PASSWORD", value: "admin"}],
+                 command: [ "--domain-config", "domain-camel.xml", "--host-config", "host-camel-slave.xml", "-b", "0.0.0.0", "-bmanagement", "0.0.0.0" ]
                }]
              }
            },
