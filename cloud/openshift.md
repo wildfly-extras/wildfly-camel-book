@@ -1,6 +1,6 @@
 ## OpenShift Integration
 
-This chapter gets you started on WildFly-Camel in OpenShift  
+This chapter gets you started on WildFly-Camel in [OpenShift V3](https://github.com/openshift/origin)  
 
 ### Installing Docker
 
