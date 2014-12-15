@@ -6,7 +6,7 @@ name: "wildfly-camel-domain",
 description: "Creates a WildFly Camel domain",
 items: [
     {
-        id: "admin-service",
+        id: "master-service",
         kind: "Service",
         apiVersion: "v1beta1",
         containerPort: 9990,
