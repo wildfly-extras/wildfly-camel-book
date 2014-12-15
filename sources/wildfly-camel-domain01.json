@@ -1,0 +1,40 @@
+{
+id: "wildfly-camel-domain",
+kind: "Config",
+apiVersion: "v1beta1",
+name: "wildfly-camel-domain",
+description: "Creates a WildFly Camel domain",
+items: [
+    {
+        id: "admin-service",
+        kind: "Service",
+        apiVersion: "v1beta1",
+        containerPort: 9990,
+        port: 9990,
+        selector: { name: "ctrl-pod"},
+        labels: {"name": "ctrl-srv"}
+    },
+    {
+      id: "admin-controller",
+      kind: "ReplicationController",
+      apiVersion: "v1beta1",
+      desiredState: {
+        replicas: 1,
+        replicaSelector: {"name": "ctrl-pod"},
+        podTemplate: {
+          desiredState: {
+             manifest: {
+               id: "rest-pod",
+               version: "v1beta1",
+               containers: [{
+                 name: "domain-controller",
+                 image: "wildflyext/example-camel-rest",
+	             ports: [{ "name": "http", "containerPort": 8080 }]
+               }]
+             }
+           },
+           labels: {"name": "ctrl-pod"}
+          }},
+      labels: {"name": "admin-ctrl"}
+    }]
+}
