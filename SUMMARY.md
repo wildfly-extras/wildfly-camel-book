@@ -25,7 +25,7 @@
    * [camel-jmx](components/camel-jmx.md)
    * [camel-jpa](components/camel-jpa.md)
 * [Cloud](cloud/README.md)
-   * Docker
+   * [Docker](cloud/docker.md)
    * [OpenShift](cloud/openshift.md)
        * [Standalone Servers](cloud/openshift-standalone.md)
        * [Domain Setup](cloud/openshift-domain.md)
