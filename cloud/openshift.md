@@ -131,5 +131,13 @@ Running multiple server containers in a cloud environment is often only useful w
 ### Starting the Domain
 
 ```
-kube apply -c https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/2.1/sources/wildfly-camel-domain01.json
+kube apply -c https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/2.1/sources/wildfly-camel-domain.json
+I1216 10:47:51.071633       1 kubecfg.go:613] Creation succeeded for Service with name management-service
+I1216 10:47:51.071747       1 kubecfg.go:613] Creation succeeded for Service with name domain-controller
+I1216 10:47:51.071758       1 kubecfg.go:613] Creation succeeded for Service with name rest-service
+I1216 10:47:51.071761       1 kubecfg.go:613] Creation succeeded for ReplicationController with name master-replicator
+I1216 10:47:51.071764       1 kubecfg.go:613] Creation succeeded for ReplicationController with name host-replicator
+
 ```
+
+
