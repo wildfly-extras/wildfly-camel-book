@@ -26,9 +26,9 @@
    * [camel-jpa](components/camel-jpa.md)
 * [Cloud](cloud/README.md)
    * [AWS Elastic Bean Stalk](cloud/beanstalk.md)
+   * Docker
    * [OpenShift](cloud/openshift.md)
        * [Standalone Servers](cloud/openshift-standalone.md)
        * [Domain Setup](cloud/openshift-domain.md)
-   * Docker
 * [Developer Guide](developer/README.md)
 
