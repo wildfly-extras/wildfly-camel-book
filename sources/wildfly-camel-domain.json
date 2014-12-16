@@ -22,7 +22,7 @@ items: [
         selector: { name: "ctrl-pod" }
     },
     {
-        id: "rest-service",
+        id: "http-service",
         kind: "Service",
         apiVersion: "v1beta1",
         containerPort: 8080,
