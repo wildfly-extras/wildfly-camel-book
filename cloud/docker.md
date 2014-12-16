@@ -42,19 +42,17 @@ and make the docker daemon bind to a number of sockets
 OPTIONS="-H tcp://127.0.0.1:2375 -H unix:///var/run/docker.sock"
 ```
 
-### REST Endpoint Standalone
+### Standalone Server
 
-Part of the WildFly-Camel project is a [camel-rest](https://github.com/wildflyext/wildfly-camel/tree/master/examples/camel-rest) example that is also published as a [wildflyext/example-camel-rest](https://registry.hub.docker.com/u/wildflyext/example-camel-rest/) image.
+With every WildFly-Camel release we also publish the latest [wildflyext/wildfly-camel](https://registry.hub.docker.com/u/wildflyext/wildfly-camel/) image.
 
 You can run the standalone container like this
 
 ```
-docker run --rm -ti --name camel-rest -p 8080:8080 wildflyext/example-camel-rest
+docker run --rm -ti -e WILDFLY_MANAGEMENT_USER=admin -e WILDFLY_MANAGEMENT_PASSWORD=admin -p 8080:8080 -p 9990:9990 wildflyext/wildfly-camel
 ```
 
-and access the REST endpoint like this
+and access the admin console like this
 
 ```
-$ curl http://localhost:8080/example-camel-rest/rest/greet/hello/Kermit
-Hello Kermit
 ```
