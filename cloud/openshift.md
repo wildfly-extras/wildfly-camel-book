@@ -130,6 +130,7 @@ Running multiple server containers in a cloud environment is often only useful w
 
 ### Starting the Domain
 
+We can start the WildFly-CAmel domain like this
 ```
 kube apply -c https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/2.1/sources/wildfly-camel-domain.json
 I1216 10:47:51.071633       1 kubecfg.go:613] Creation succeeded for Service with name management-service
@@ -137,6 +138,36 @@ I1216 10:47:51.071747       1 kubecfg.go:613] Creation succeeded for Service wit
 I1216 10:47:51.071758       1 kubecfg.go:613] Creation succeeded for Service with name rest-service
 I1216 10:47:51.071761       1 kubecfg.go:613] Creation succeeded for ReplicationController with name master-replicator
 I1216 10:47:51.071764       1 kubecfg.go:613] Creation succeeded for ReplicationController with name host-replicator
+
+```
+
+and verify the resulting servies like that
+```
+$ kube list services
+Name                 Labels              Selector                                  IP                  Port
+----------           ----------          ----------                                ----------          ----------
+kubernetes                               component=apiserver,provider=kubernetes   172.121.17.75       443
+kubernetes-ro                            component=apiserver,provider=kubernetes   172.121.17.197      80
+management-service                       name=ctrl-pod                             172.121.17.130      9990
+domain-controller                        name=ctrl-pod                             172.121.17.81       9999
+rest-service                             name=rest-pod                             172.121.17.178      8080
+```
+
+[TODO] remove publicIP limitation
+
+> <small>Unfortunately, we can currently not use the public IP to access these services. I continue with private IPs</small>
+
+We can now connect the WildFly command line interface like this
+
+```
+$ bin/jboss-cli.sh -c --controller=172.121.17.130:9990 --user=admin --password=admin
+[domain@172.121.17.130:9990 /]
+```
+
+and deploy simple webapp for testing
+
+```
+[domain@172.121.17.130:9990 /] deploy --runtime-name=rest --all-server-groups ~/git/wildfly-camel/itests/docker/domain/target/wildfly-camel-itests-docker-domain-2.1.0-SNAPSHOT.war 
 
 ```
 
