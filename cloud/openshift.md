@@ -130,7 +130,8 @@ Running multiple server containers in a cloud environment is often only useful w
 
 ### Starting the Domain
 
-We can start the WildFly-CAmel domain like this
+The WildFly-Camel domain can be configured as in [wildfly-camel-domain.json](../sources/wildfly-camel-domain.json)
+
 ```
 kube apply -c https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/2.1/sources/wildfly-camel-domain.json
 I1216 10:47:51.071633       1 kubecfg.go:613] Creation succeeded for Service with name management-service
