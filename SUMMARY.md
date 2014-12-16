@@ -29,5 +29,6 @@
    * [OpenShift](cloud/openshift.md)
        * [Standalone Servers](cloud/openshift-standalone.md)
        * [Domain Setup](cloud/openshift-domain.md)
+   * Docker
 * [Developer Guide](developer/README.md)
 
