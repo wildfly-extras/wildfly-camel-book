@@ -11,7 +11,7 @@ items: [
         apiVersion: "v1beta1",
         containerPort: 9990,
         port: 19990,
-        publicIPs: [ "54.154.82.232" ],
+        createExternalLoadBalancer: true,
         selector: { name: "ctrl-pod" }
     },
     {
@@ -28,7 +28,7 @@ items: [
         apiVersion: "v1beta1",
         containerPort: 8080,
         port: 18080,
-        publicIPs: [ "54.154.82.232" ],
+        createExternalLoadBalancer: true,
         selector: { name: "rest-pod" }
     },
     {
