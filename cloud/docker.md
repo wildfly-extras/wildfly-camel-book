@@ -52,7 +52,6 @@ You can run the standalone container like this
 docker run --rm -ti -e WILDFLY_MANAGEMENT_USER=admin -e WILDFLY_MANAGEMENT_PASSWORD=admin -p 8080:8080 -p 9990:9990 wildflyext/wildfly-camel
 ```
 
-and access the admin console like this
+and access the admin console like this: http://54.154.82.232:9990/console
 
-```
-```
+![](../images/console-standalone.png)
