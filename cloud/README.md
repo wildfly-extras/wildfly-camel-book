@@ -2,6 +2,7 @@
 
 This chapter details information about cloud integration
 
+* [Docker](docker.md)
 * [AWS Elastic Beanstalk](beanstalk.md)
 * [OpenShift V3](openshift.md)
  * [Standalone Servers](openshift-standalone.md)
