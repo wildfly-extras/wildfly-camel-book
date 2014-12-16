@@ -167,7 +167,7 @@ $ bin/jboss-cli.sh -c --controller=172.121.17.49:9990 --user=admin --password=ad
 and deploy simple webapp for testing
 
 ```
-deploy --runtime-name=endpoint.war --all-server-groups ~/git/wildfly-camel/itests/docker/domain/target/wildfly-camel-itests-docker-domain-2.1.0-SNAPSHOT.war
+[domain@172.121.17.49:9990 /] deploy --runtime-name=endpoint.war --all-server-groups ~/git/wildfly-camel/itests/docker/domain/target/wildfly-camel-itests-docker-domain-2.1.0-SNAPSHOT.war
 ```
 
 The requests on the service are nicely load balanced with round robin
