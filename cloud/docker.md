@@ -60,4 +60,5 @@ The Hawt.io console is available at: http://54.154.82.232:8080/hawtio
 
 ![](../images/hawtio-camel-01.png)
 
+### Domain Setup
 
