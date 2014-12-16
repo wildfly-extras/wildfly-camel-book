@@ -117,6 +117,10 @@ $ curl http://172.121.17.3:8081/example-camel-rest/rest/greet/hello/Kermit
 Hello Kermit 
 ```
 
+[TODO] remove publicIP limitation
+
+> <small>We are waiting for publicIP support in Kubernetes to show up in OpenShift. Then we can access the REST endpoint and the admin console on a public IP</small>
+
 ## Domain Setup
 
 Running multiple servers in a cloud environment is all the more useful when these servers can also be managed. In the [previous example](openshift-standalone.md) we had three servers that each exposed an HTTP service reachable through a Kubernetes [Service](https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/services.md). The management interface of these servers were not exposed. It would be virtually impossible to adjust configurations for these individual servers or the whole set. As a minimum we would like to monitor the health state of these servers so that we can possibly replace containers if needed.
