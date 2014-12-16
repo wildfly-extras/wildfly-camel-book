@@ -34,6 +34,14 @@ In my case I also had to add a host mapping like this
 172.30.0.233	ip-172-30-0-233
 ```
 
+and make the docker daemon bind to a number of sockets
+
+```
+[ec2-user@ip-172-30-0-217 ~]$ cat /etc/sysconfig/docker
+# Additional startup options for the Docker daemon
+OPTIONS="-H tcp://127.0.0.1:2375 -H unix:///var/run/docker.sock"
+```
+
 ### REST Endpoint Standalone
 
 Part of the WildFly-Camel project is a [camel-rest](https://github.com/wildflyext/wildfly-camel/tree/master/examples/camel-rest) example that is also published as a [wildflyext/example-camel-rest](https://registry.hub.docker.com/u/wildflyext/example-camel-rest/) image.
