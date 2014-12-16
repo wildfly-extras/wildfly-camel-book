@@ -146,11 +146,11 @@ and verify the resulting servies like that
 $ kube list services
 Name                 Labels              Selector                                  IP                  Port
 ----------           ----------          ----------                                ----------          ----------
-kubernetes                               component=apiserver,provider=kubernetes   172.121.17.75       443
-kubernetes-ro                            component=apiserver,provider=kubernetes   172.121.17.197      80
-management-service                       name=ctrl-pod                             172.121.17.130      9990
-domain-controller                        name=ctrl-pod                             172.121.17.81       9999
-rest-service                             name=rest-pod                             172.121.17.178      8080
+kubernetes                               component=apiserver,provider=kubernetes   172.121.17.213      443
+kubernetes-ro                            component=apiserver,provider=kubernetes   172.121.17.239      80
+management-service                       name=ctrl-pod                             172.121.17.49       9990
+domain-controller                        name=ctrl-pod                             172.121.17.110      9999
+rest-service                             name=http-pod                             172.121.17.60       8080
 ```
 
 [TODO] remove publicIP limitation
@@ -160,15 +160,14 @@ rest-service                             name=rest-pod                          
 We can now connect the WildFly command line interface like this
 
 ```
-$ bin/jboss-cli.sh -c --controller=172.121.17.130:9990 --user=admin --password=admin
-[domain@172.121.17.130:9990 /]
+$ bin/jboss-cli.sh -c --controller=172.121.17.49:9990 --user=admin --password=admin
+[domain@172.121.17.49:9990 /]
 ```
 
 and deploy simple webapp for testing
 
 ```
-[domain@172.121.17.130:9990 /] deploy --runtime-name=rest --all-server-groups ~/git/wildfly-camel/itests/docker/domain/target/wildfly-camel-itests-docker-domain-2.1.0-SNAPSHOT.war 
-
+deploy --runtime-name=endpoint.war --all-server-groups ~/git/wildfly-camel/itests/docker/domain/target/wildfly-camel-itests-docker-domain-2.1.0-SNAPSHOT.war
 ```
 
 
