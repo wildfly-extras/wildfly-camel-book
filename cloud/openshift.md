@@ -27,7 +27,7 @@ alias kube="docker run --rm --net=host openshift/origin kube"
 
 ## Standalone Servers
 
-In this guide we show how to run a set of WildFly Camel servers on [OpenShift V3](https://github.com/openshift/origin). The target platform is Linux on an Amazon EC2 instance. When done, we have a set of portable [Docker](https://www.docker.io/) containers that can be deployed onto a production platform.
+Here we run a set of WildFly Camel servers on [OpenShift Origin](https://github.com/openshift/origin). The target platform is Linux on an Amazon EC2 instance. When done, we have a set of portable [Docker](https://www.docker.io/) containers that can be deployed onto a production platform.
 
 ![](../images/example-rest-design.png)
 
