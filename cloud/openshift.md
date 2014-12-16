@@ -170,4 +170,16 @@ and deploy simple webapp for testing
 deploy --runtime-name=endpoint.war --all-server-groups ~/git/wildfly-camel/itests/docker/domain/target/wildfly-camel-itests-docker-domain-2.1.0-SNAPSHOT.war
 ```
 
+The requests on the service are load balanced 
+
+```
+$ for i in {1..6}; do curl http://172.121.17.60:8080/endpoint; done
+Hello from 172.17.0.65
+Hello from 172.17.0.66
+Hello from 172.17.0.64
+Hello from 172.17.0.65
+Hello from 172.17.0.66
+Hello from 172.17.0.64
+```
+
 
