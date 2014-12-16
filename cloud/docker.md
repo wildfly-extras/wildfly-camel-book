@@ -76,6 +76,29 @@ and various hosts that connect to the domain controller as daemons like this
 $ docker run -d -e WILDFLY_MANAGEMENT_USER=admin -e WILDFLY_MANAGEMENT_PASSWORD=admin -p 8080 --link domain-master:domain-controller wildflyext/wildfly-camel --domain-config domain-camel.xml --host-config host-camel-slave.xml -b 0.0.0.0 -bmanagement 0.0.0.0
 ```
 
+As above, you can access the admin console like this: http://54.154.82.232:9990/console
+
+![](../images/console-domain.png)
+
+Now we have a domain controller running that is reachable on `9990` and three hosts that expose their respective `8080` port on various public network ports.
+
+```
+$ docker ps
+CONTAINER ID        IMAGE                             COMMAND                CREATED             STATUS              PORTS                                         NAMES
+eac043e97abc        wildflyext/wildfly-camel:latest   "/opt/jboss/wildfly/   4 seconds ago       Up 2 seconds        9990/tcp, 9999/tcp, 0.0.0.0:49158->8080/tcp   desperate_hawking    
+27a41d2b8a4e        wildflyext/wildfly-camel:latest   "/opt/jboss/wildfly/   5 seconds ago       Up 4 seconds        9999/tcp, 9990/tcp, 0.0.0.0:49157->8080/tcp   ecstatic_davinci     
+6d47cae3be7c        wildflyext/wildfly-camel:latest   "/opt/jboss/wildfly/   6 seconds ago       Up 5 seconds        9999/tcp, 9990/tcp, 0.0.0.0:49156->8080/tcp   determined_mestorf   
+6095cf80d3a8        wildflyext/wildfly-camel:latest   "/opt/jboss/wildfly/   15 seconds ago      Up 14 seconds       8080/tcp, 9999/tcp, 0.0.0.0:9990->9990/tcp    domain-master        
+```
+
+We retained WildFly manageability in a Docker environment.
+
+The next level up would be a cloud management layer like [Kubernetes](https://github.com/GoogleCloudPlatform/kubernetes/blob/master/README.md) or [OpenShift](https://www.openshift.com/products/origin). 
+
+The goal would be a setup that is highly available (HA) and scalable because containers that go bad can transparently replaced or new ones added. The public facing service should be reachable on a known address and request load should be balanced across the available hosts.  
+
+
+
 
 
 
