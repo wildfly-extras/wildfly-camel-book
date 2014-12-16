@@ -1,9 +1,9 @@
-## OpenShift Integration
+## OpenShift Origin
 
-This chapter gets you started on WildFly-Camel in [OpenShift V3](https://github.com/openshift/origin)  
+This chapter gets you started on WildFly-Camel in [OpenShift Origin](https://github.com/openshift/origin)  
 
 
-### Starting OpenShift Origin
+### Starting OpenShift 
 
 We can start OpenShift Origin like this
 
