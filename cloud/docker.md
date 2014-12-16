@@ -55,3 +55,9 @@ docker run --rm -ti -e WILDFLY_MANAGEMENT_USER=admin -e WILDFLY_MANAGEMENT_PASSW
 and access the admin console like this: http://54.154.82.232:9990/console
 
 ![](../images/console-standalone.png)
+
+The Hawt.io console is available at: http://54.154.82.232:8080/hawtio
+
+![](../images/hawtio-camel-01.png)
+
+
