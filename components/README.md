@@ -2,12 +2,17 @@
 
 This chapter details information about supported camel components
 
+* [camel-activemq](camel-activemq.md)
+* [camel-atom](camel-atom.md)
 * [camel-cdi](camel-cdi.md)
 * [camel-cxf](camel-cxf.md)
 * [camel-jaxb](camel-jaxb.md)
 * [camel-jms](camel-jms.md)
 * [camel-jmx](camel-jmx.md)
 * [camel-jpa](camel-jpa.md)
+* [camel-netty](camel-netty.md)
+* [camel-ognl](camel-ognl.md)
+* [camel-weather](camel-weather.md)
 
 ## Adding Components
 
