@@ -49,7 +49,7 @@ With every WildFly-Camel release we also publish the latest [wildflyext/wildfly-
 You can run the standalone container like this
 
 ```
-docker run --rm -ti -e WILDFLY_MANAGEMENT_USER=admin -e WILDFLY_MANAGEMENT_PASSWORD=admin -p 8080:8080 -p 9990:9990 wildflyext/wildfly-camel
+$ docker run --rm -ti -e WILDFLY_MANAGEMENT_USER=admin -e WILDFLY_MANAGEMENT_PASSWORD=admin -p 8080:8080 -p 9990:9990 wildflyext/wildfly-camel
 ```
 
 and access the admin console like this: http://54.154.82.232:9990/console
@@ -61,4 +61,21 @@ The Hawt.io console is available at: http://54.154.82.232:8080/hawtio
 ![](../images/hawtio-camel-01.png)
 
 ### Domain Setup
+
+Running multiple server containers in a cloud environment is often only useful when these containers can also be managed. Without the management interfaces exposed it would be virtually impossible to adjust configurations for these individual servers or the whole set. As a minimum we would like to monitor the health state of these servers so that we can possibly replace containers if needed.
+
+You can run the container that acts as a domain controller like this
+
+```
+$ docker run --rm -ti -e WILDFLY_MANAGEMENT_USER=admin -e WILDFLY_MANAGEMENT_PASSWORD=admin -p 9990:9990 --name=domain-master wildflyext/wildfly-camel --domain-config domain-camel.xml --host-config host-camel.xml -b 0.0.0.0 -bmanagement 0.0.0.0
+```
+
+and various hosts that connect to the domain controller as daemons like this
+
+```
+$ docker run -d -e WILDFLY_MANAGEMENT_USER=admin -e WILDFLY_MANAGEMENT_PASSWORD=admin -p 8080 --link domain-master:domain-controller wildflyext/wildfly-camel --domain-config domain-camel.xml --host-config host-camel-slave.xml -b 0.0.0.0 -bmanagement 0.0.0.0
+```
+
+
+
 
