@@ -24,6 +24,7 @@
    * [camel-jms](components/camel-jms.md)
    * [camel-jmx](components/camel-jmx.md)
    * [camel-jpa](components/camel-jpa.md)
+   * camel-weather
 * [Cloud](cloud/README.md)
    * [Docker](cloud/docker.md)
    * [OpenShift](cloud/openshift.md)
