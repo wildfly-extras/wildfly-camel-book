@@ -67,7 +67,7 @@ Running multiple server containers in a cloud environment is often only useful w
 You can run the container that acts as a domain controller like this
 
 ```
-$ docker run --rm -ti -e WILDFLY_MANAGEMENT_USER=admin -e WILDFLY_MANAGEMENT_PASSWORD=admin -p 9990:9990 --name=domain-master wildflyext/wildfly-camel --domain-config domain-camel.xml --host-config host-camel.xml -b 0.0.0.0 -bmanagement 0.0.0.0
+$ docker run --rm -ti -e WILDFLY_MANAGEMENT_USER=admin -e WILDFLY_MANAGEMENT_PASSWORD=admin -p 9990:9990 --name=domain-master wildflyext/wildfly-camel --domain-config domain-camel.xml --host-config host-master.xml -b 0.0.0.0 -bmanagement 0.0.0.0
 ```
 
 and various hosts that connect to the domain controller as daemons like this
