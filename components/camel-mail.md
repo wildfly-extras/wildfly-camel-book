@@ -10,7 +10,7 @@ CamelContext camelContext = new DefaultCamelContext();
 camelContext.addRoutes(new RouteBuilder() {
     @Override
     public void configure() throws Exception {
-        from("pop3://myuser@myhost?password=secretconsumer.delay=1000")
+        from("pop3://myuser@myhost?password=secret&consumer.delay=1000")
         .to("direct:email");
     }
 });
