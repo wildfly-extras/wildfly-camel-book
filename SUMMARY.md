@@ -30,8 +30,10 @@
    * [camel-netty](components/camel-netty.md)
    * [camel-ognl](components/camel-ognl.md)
    * [camel-weather](camel-weather.md)
+   * camel-bindy
 * [Cloud](cloud/README.md)
    * [Docker](cloud/docker.md)
    * [OpenShift](cloud/openshift.md)
    * [AWS Elastic Bean Stalk](cloud/beanstalk.md)
 * [Developer Guide](developer/README.md)
+
