@@ -32,6 +32,7 @@
    * [camel-netty](components/camel-netty.md)
    * [camel-ognl](components/camel-ognl.md)
    * [camel-weather](camel-weather.md)
+   * camel-hl7
 * [Cloud](cloud/README.md)
    * [Docker](cloud/docker.md)
    * [OpenShift](cloud/openshift.md)
