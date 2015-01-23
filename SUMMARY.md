@@ -33,10 +33,10 @@
    * [camel-mail](components/camel-mail.md)
    * [camel-mina2](components/camel-mina2.md)
    * camel-mqtt
+   * camel-mvel
    * [camel-netty4](components/camel-netty4.md)
    * [camel-ognl](components/camel-ognl.md)
    * [camel-weather](camel-weather.md)
-   * camel-mvel
 * [Cloud](cloud/README.md)
    * [Docker](cloud/docker.md)
    * [OpenShift](cloud/openshift.md)
