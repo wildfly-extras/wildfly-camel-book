@@ -1,6 +1,6 @@
 ## Camel Context Definitions
 
-Camel Contexts can be configured in standalone-camel.xml as part of the subsystem definition like this
+Camel Contexts can be configured in standalone-camel.xml and domain.xml as part of the subsystem definition like this
 
 ```xml
 <subsystem xmlns="urn:jboss:domain:camel:1.0">
