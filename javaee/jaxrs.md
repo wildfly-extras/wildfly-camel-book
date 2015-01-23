@@ -1,5 +1,5 @@
 ## Integration with JAX-RS
-JAXR-RS integration with the Camel subsystem leverages the WildFly resteasy module for publishing RESTful services. The [Camel Proxy](http://camel.apache.org/using-camelproxy.html) provides a means of integrating RESTful services into Camel routes.
+JAXR-RS integration with the Camel subsystem leverages the WildFly [RESTEasy](http://resteasy.jboss.org/) module for publishing RESTful services. The [Camel Proxy](http://camel.apache.org/using-camelproxy.html) provides a means of integrating RESTful services into Camel routes.
 
 ## JAX-RS service interface
 ```java
