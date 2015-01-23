@@ -2,6 +2,26 @@
 
 This chapter details information about supported camel components
 
+| [camel-activemq](camel-activemq.md) 
+| [camel-atom](camel-atom.md)
+| [camel-bindy](camel-bindy.md)
+| [camel-cdi](camel-cdi.md) 
+| [camel-cxf](camel-cxf.md)
+| [camel-ftp](camel-ftp.md)
+| [camel-hl7](camel-hl7.md)
+| [camel-jaxb](camel-jaxb.md)
+| [camel-jms](camel-jms.md)
+| [camel-jmx](camel-jmx.md)
+| [camel-jpa](camel-jpa.md)
+| [camel-lucene](camel-lucene.md)
+| [camel-mail](camel-mail.md)
+| [camel-mina2](camel-mina2.md)
+| [camel-mqtt](camel-mqtt.md)
+| [camel-mvel](camel-mvel.md)
+| [camel-netty4](camel-netty4.md)
+| [camel-ognl](camel-ognl.md)
+| [camel-weather](camel-weather.md)
+
 ## Adding Components
 
 Adding support for additional Camel Components is easy
