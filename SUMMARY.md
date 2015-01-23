@@ -18,12 +18,12 @@
    * [JNDI](javaee/jndi.md)
    * [JPA](javaee/jpa.md)
 * [Camel Components](components/README.md)
-   * camel-ftp
    * [camel-activemq](components/camel-activemq.md)
    * [camel-atom](components/camel-atom.md)
    * [camel-bindy](components/camel-bindy.md)
    * [camel-cdi](components/camel-cdi.md)
    * [camel-cxf](components/camel-cxf.md)
+   * camel-ftp
    * [camel-jaxb](components/camel-jaxb.md)
    * [camel-jms](components/camel-jms.md)
    * [camel-jmx](components/camel-jmx.md)
