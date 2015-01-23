@@ -33,7 +33,7 @@
    * [camel-mail](components/camel-mail.md)
    * [camel-mina2](components/camel-mina2.md)
    * [camel-mqtt](components/camel-mqtt.md)
-   * camel-mvel
+   * [camel-mvel](components/camel-mvel.md)
    * [camel-netty4](components/camel-netty4.md)
    * [camel-ognl](components/camel-ognl.md)
    * [camel-weather](camel-weather.md)
