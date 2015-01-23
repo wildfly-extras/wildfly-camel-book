@@ -24,7 +24,7 @@
    * [camel-cdi](components/camel-cdi.md)
    * [camel-cxf](components/camel-cxf.md)
    * [camel-ftp](components/camel-ftp.md)
-   * camel-hl7
+   * [camel-hl7](components/camel-hl7.md)
    * [camel-jaxb](components/camel-jaxb.md)
    * [camel-jms](components/camel-jms.md)
    * [camel-jmx](components/camel-jmx.md)
