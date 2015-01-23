@@ -41,5 +41,5 @@ $ bin/domain.sh -c domain-camel.xml
 The easiest and most portable way to run WildFly-Camel is to use the [wildflyext/wildfly-camel](https://registry.hub.docker.com/u/wildflyext/wildfly-camel/) distribution. 
 
 ```
-$ docker run -ti -p 8080:8080 wildflyext/wildfly-camel
+$ docker run --rm -ti -p 8080:8080 -p 9990:9990 -e WILDFLY_MANAGEMENT_USER=admin -e WILDFLY_MANAGEMENT_PASSWORD=admin wildflyext/wildfly-camel
 ```
