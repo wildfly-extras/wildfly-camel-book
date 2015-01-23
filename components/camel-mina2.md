@@ -1,0 +1,2 @@
+# camel-mina2
+
