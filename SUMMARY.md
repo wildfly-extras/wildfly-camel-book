@@ -24,6 +24,7 @@
    * [camel-cdi](components/camel-cdi.md)
    * [camel-cxf](components/camel-cxf.md)
    * [camel-ftp](components/camel-ftp.md)
+   * camel-hl7
    * [camel-jaxb](components/camel-jaxb.md)
    * [camel-jms](components/camel-jms.md)
    * [camel-jmx](components/camel-jmx.md)
@@ -32,7 +33,6 @@
    * [camel-netty](components/camel-netty.md)
    * [camel-ognl](components/camel-ognl.md)
    * [camel-weather](camel-weather.md)
-   * camel-hl7
 * [Cloud](cloud/README.md)
    * [Docker](cloud/docker.md)
    * [OpenShift](cloud/openshift.md)
