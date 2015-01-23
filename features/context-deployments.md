@@ -2,7 +2,7 @@
 
 There are two ways to deploy a Camel Context to WildFly
 
-1. As a single XMl file with a predefined **-camel-context.xml** file suffix
+1. As a single XML file with a predefined **-camel-context.xml** file suffix
 2. As part of another WildFly supported deployment as **META-INF/jboss-camel-context.xml** file
 
 When deployed as XML file, you should see
