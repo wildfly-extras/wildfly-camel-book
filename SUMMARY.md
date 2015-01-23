@@ -29,7 +29,7 @@
    * [camel-jms](components/camel-jms.md)
    * [camel-jmx](components/camel-jmx.md)
    * [camel-jpa](components/camel-jpa.md)
-   * camel-lucene
+   * [camel-lucene](components/camel-lucene.md)
    * [camel-mail](components/camel-mail.md)
    * [camel-netty](components/camel-netty.md)
    * [camel-ognl](components/camel-ognl.md)
