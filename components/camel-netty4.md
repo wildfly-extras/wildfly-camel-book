@@ -1,0 +1,41 @@
+# camel-netty4
+
+Netty client / server support in Camel is provided by the [camel-netty4 component](http://camel.apache.org/netty4.html).
+
+WildFly 8 and EAP 6.4 are bundled with module libraries supporting the [Netty](http://netty.io/) project version 4. Therefore, the standard [camel-netty component](http://camel.apache.org/netty.html) will not work since it is compatible with Netty version 3 only.
+
+## Simple Netty Client / Server Test
+```java
+CamelContext camelContext = new DefaultCamelContext();
+
+camelContext.addRoutes(new RouteBuilder() {
+    @Override
+    public void configure() throws Exception {
+        from("netty4:tcp://localhost:7666?textline=true")
+                .transform(simple("Hello ${body}"))
+                .to("direct:end");
+    }
+});
+
+camelContext.start();
+
+PollingConsumer pollingConsumer = camelContext.getEndpoint("direct:end").createPollingConsumer();
+pollingConsumer.start();
+
+Socket socket = new Socket("localhost", 7666);
+PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+
+try {
+    out.write("Kermit\n");
+} finally {
+    out.close();
+    socket.close();
+}
+
+String result = pollingConsumer.receive().getIn().getBody(String.class);
+
+Assert.assertEquals("Hello Kermit", result);
+
+camelContext.stop();
+```
+
