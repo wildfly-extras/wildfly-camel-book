@@ -31,7 +31,7 @@
    * [camel-jpa](components/camel-jpa.md)
    * [camel-lucene](components/camel-lucene.md)
    * [camel-mail](components/camel-mail.md)
-   * camel-mina2
+   * [camel-mina2](components/camel-mina2.md)
    * [camel-netty4](components/camel-netty4.md)
    * [camel-ognl](components/camel-ognl.md)
    * [camel-weather](camel-weather.md)
