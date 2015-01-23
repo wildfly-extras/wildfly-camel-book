@@ -15,7 +15,6 @@ public interface GreetingService {
 The Camel context is injected into the JAX-RS service where it is used to lookup an endpoint within a Camel route. The Camel proxy ProxyHelper class creates a proxy service object which is invoked whenever the REST service sayHello method is invoked.
 
 ```java  
-@Path("/greet")
 public class GreetingServiceImpl {
 
     @Inject
@@ -30,10 +29,7 @@ public class GreetingServiceImpl {
         greetingServiceProxy = ProxyHelper.createProxy(endpoint, GreetingService.class);
     }
 
-    @GET
-    @Path("/hello/{name}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response sayHello(@PathParam("name") String name) {
+    public Response sayHello(String name) {
         return greetingServiceProxy.sayHello(name);
     }
 }
