@@ -20,6 +20,7 @@
 * [Camel Components](components/README.md)
    * [camel-activemq](components/camel-activemq.md)
    * [camel-atom](components/camel-atom.md)
+   * camel-bindy
    * [camel-cdi](components/camel-cdi.md)
    * [camel-cxf](components/camel-cxf.md)
    * [camel-jaxb](components/camel-jaxb.md)
@@ -30,7 +31,6 @@
    * [camel-netty](components/camel-netty.md)
    * [camel-ognl](components/camel-ognl.md)
    * [camel-weather](camel-weather.md)
-   * camel-bindy
 * [Cloud](cloud/README.md)
    * [Docker](cloud/docker.md)
    * [OpenShift](cloud/openshift.md)
