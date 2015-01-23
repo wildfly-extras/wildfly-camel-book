@@ -8,7 +8,7 @@ Adding support for additional Camel Components is easy
 
 #### Add your modules.xml definition 
 
-A modules.xml descriptor defines the class loading behavior for your component. It should be placed together with the component's jar in `modules/org/apache/camel/component`. Module dependencies should be setup for direct compile time dependencies. 
+A modules.xml descriptor defines the class loading behavior for your component. It should be placed together with the component's jar in `modules/system/layers/fuse/org/apache/camel/component`. Module dependencies should be setup for direct compile time dependencies. 
 
 Here is an example for the camel-ftp component
 
@@ -30,7 +30,7 @@ Please make sure you don't duplicate modules that are already available in WildF
 
 #### Add a reference to the component 
 
-To make this module visible to arbitrary JavaEE deployments add a reference to `modules/org/apache/camel/component/main/module.xml` 
+To make this module visible to arbitrary JavaEE deployments add a reference to `modules/system/layers/fuse/org/apache/camel/component/main/module.xml` 
 
 ```xml
 <module xmlns="urn:jboss:module:1.3" name="org.apache.camel.component">
