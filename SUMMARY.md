@@ -31,10 +31,10 @@
    * [camel-jpa](components/camel-jpa.md)
    * [camel-lucene](components/camel-lucene.md)
    * [camel-mail](components/camel-mail.md)
+   * camel-mina2
    * [camel-netty4](components/camel-netty4.md)
    * [camel-ognl](components/camel-ognl.md)
    * [camel-weather](camel-weather.md)
-   * camel-mina2
 * [Cloud](cloud/README.md)
    * [Docker](cloud/docker.md)
    * [OpenShift](cloud/openshift.md)
