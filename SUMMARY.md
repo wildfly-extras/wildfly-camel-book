@@ -40,6 +40,5 @@
 * [Cloud](cloud/README.md)
    * [Docker](cloud/docker.md)
    * [OpenShift](cloud/openshift.md)
-   * [AWS Elastic Bean Stalk](cloud/beanstalk.md)
 * [Developer Guide](developer/README.md)
 
