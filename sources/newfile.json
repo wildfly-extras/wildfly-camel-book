@@ -8,7 +8,8 @@
             apiVersion: v1beta1
         },
         spec: {
-            containers: "standalone-pod"
+            containers: [
+            ]
         },
     }
     ]
