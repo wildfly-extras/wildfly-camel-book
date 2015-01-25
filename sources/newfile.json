@@ -8,6 +8,7 @@
             apiVersion: v1beta1
         },
         objectMeta: {
+            name: standalone-pod
         },
         spec: {
         },
