@@ -19,10 +19,10 @@ openshift version 0.1, build b8f4947
 kubernetes v0.8.0-dev
 ```
 
-We may also want to create an alias to the Kubernetes client
+We may also want to create an alias to Openshift
 
 ```
-alias kube="docker run --rm --net=host openshift/origin kube"
+alias openshift="docker run --rm --net=host openshift/origin"
 ```
 
 ## Standalone Servers
@@ -43,7 +43,7 @@ To create the Pod in OpenShift we do
 [TODO] use ref to master
 
 ```
-$ kube apply -c https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/2.1/sources/wildfly-camel-step01.json
+$ openshift cli apply -f https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/2.1/sources/wildfly-camel-step01.json
 I1203 11:58:28.876288 00001 kubecfg.go:613] Creation succeeded for Pod with name camel-pod
 ```
 
