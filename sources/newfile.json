@@ -9,6 +9,11 @@
         },
         spec: {
             containers: [
+            {
+	            name: camel-cnt,
+	            image: wildflyext/example-camel-rest,
+	            ports: [{ name: http, containerPort: 8080 }]
+	        }
             ]
         },
     }
