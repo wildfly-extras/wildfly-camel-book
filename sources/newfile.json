@@ -8,7 +8,7 @@
             apiVersion: v1beta1
         },
         objectMeta: {
-            name: standalone-pod
+            name: "standalone-pod"
         },
         spec: {
             restartPolicy: {
