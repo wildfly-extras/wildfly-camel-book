@@ -11,14 +11,14 @@ We can start OpenShift Origin like this
 $ docker run --rm --name openshift-origin --net=host --privileged -v /var/run/docker.sock:/var/run/docker.sock -v /tmp/openshift:/tmp/openshift openshift/origin start
 ```
 
-Once the container is started, you can jump into a console inside the container and run the CLI.
+Once the container is started, you can jump into a console inside the container and copy the certificates
 
 ```
 $ docker exec -it openshift-origin bash
-$ ln -s /var/lib/openshift/openshift.local.certificates/admin/.kubernetes_auth $HOME/.kubernetes_auth
+# cp -r /var/lib/openshift/openshift.local.certificates/admin /tmp/openshift/openshift.local.certificates.admin
 ```
 
-and verify the OpenShift version 
+Then verify the OpenShift version 
 
 ```
 $ docker run --rm openshift/origin version
@@ -26,10 +26,10 @@ openshift version 0.1, build b8f4947
 kubernetes v0.8.0-dev
 ```
 
-We may also want to create an alias to Openshift
+We may also want to create an alias to OpenShift
 
 ```
-alias openshift="docker run --rm --net=host openshift/origin"
+alias openshift-cli="docker run --rm --net=host openshift/origin cli --auth-path=/tmp/openshift/openshift.local.certificates.admin"
 ```
 
 ## Standalone Servers
@@ -50,7 +50,7 @@ To create the Pod in OpenShift we do
 [TODO] use ref to master
 
 ```
-$ openshift cli apply -f https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/2.1/sources/wildfly-camel-step01.json
+$ openshift-cli apply -f https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/2.1/sources/wildfly-camel-step01.json
 I1203 11:58:28.876288 00001 kubecfg.go:613] Creation succeeded for Pod with name camel-pod
 ```
 
