@@ -14,9 +14,8 @@ $ docker run --rm --name openshift-origin --net=host --privileged -v /var/run/do
 Once the container is started, you can jump into a console inside the container and run the CLI.
 
 ```
-$ docker exec --rm -it openshift-origin bash
+$ docker exec -it openshift-origin bash
 $ ln -s /var/lib/openshift/openshift.local.certificates/admin/.kubernetes_auth $HOME/.kubernetes_auth
-$ osc --help
 ```
 
 and verify the OpenShift version 
