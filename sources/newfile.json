@@ -3,10 +3,16 @@
     apiVersion: v1beta1,
     items: [
     {
-        kind: Pod,
-        apiVersion: v1beta1
-    },
-    {
+        typeMeta: {
+            kind: Pod,
+            apiVersion: v1beta1
+        },
+        objectMeta: {
+        },
+        spec: {
+        },
+        restartPolicy: {
+        }
     }
     ]
 }
