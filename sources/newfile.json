@@ -2,5 +2,11 @@
     kind: Config,
     apiVersion: v1beta1,
     items: [
+    {
+        kind: Pod,
+        apiVersion: v1beta1
+    },
+    {
+    }
     ]
 }
