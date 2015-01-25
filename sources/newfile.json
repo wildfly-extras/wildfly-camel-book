@@ -1,11 +1,4 @@
 {
-    metadata: {
-        name: standalone-pod
-    },
     kind: Config,
-    apiVersion: v1beta1,
-    items: [
-	{
-	}
-    ]
+    apiVersion: v1beta1
 }
