@@ -11,9 +11,9 @@
             name: standalone-pod
         },
         spec: {
+            restartPolicy: {
+            }
         },
-        restartPolicy: {
-        }
     }
     ]
 }
