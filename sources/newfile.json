@@ -4,7 +4,7 @@
     },
     kind: Config,
     apiVersion: v1beta1,
-items: [
+    items: [
 	{
 	  kind: Pod,
 	  desiredState: {
