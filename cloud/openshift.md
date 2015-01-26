@@ -3,22 +3,15 @@
 This chapter gets you started on WildFly-Camel in [OpenShift Origin](https://github.com/openshift/origin)  
 
 
-### Starting OpenShift 
+### Starting OpenShift
 
 We can start OpenShift Origin like this
 
 ```
-$ docker run --rm --name openshift-origin --net=host --privileged -v /var/run/docker.sock:/var/run/docker.sock -v /tmp/openshift:/tmp/openshift openshift/origin start
+$ docker run --rm --name openshift-origin --net=host --privileged -v /var/run/docker.sock:/var/run/docker.sock -v /tmp/openshift:/tmp/openshift openshift/origin start --cert-dir=/tmp/openshift
 ```
 
-Once the container is started, you can jump into a console inside the container and copy the certificates
-
-```
-$ docker exec -it openshift-origin bash
-# cp -r /var/lib/openshift/openshift.local.certificates/admin /tmp/openshift/openshift.local.certificates.admin
-```
-
-Then verify the OpenShift version 
+Then verify the OpenShift version
 
 ```
 $ docker run --rm openshift/origin version
@@ -29,7 +22,7 @@ kubernetes v0.8.0-dev
 We may also want to create an alias to OpenShift
 
 ```
-alias openshift-cli="docker run --rm --net=host openshift/origin cli --auth-path=/tmp/openshift/openshift.local.certificates.admin"
+alias openshift-cli="docker run --rm --net=host -v /tmp/openshift:/tmp/openshift openshift/origin cli --kubeconfig=/tmp/openshift/admin/.kubeconfig"
 ```
 
 ## Standalone Servers
@@ -57,16 +50,16 @@ I1203 11:58:28.876288 00001 kubecfg.go:613] Creation succeeded for Pod with name
 You can see the running Pod like this
 
 ```
-$ kube get pods/camel-pod
+$ openshift-cli get pods -l name=camel
 Name                Image(s)                        Host                Labels                Status
 ----------          ----------                      ----------          ----------            ----------
 camel-pod           wildflyext/example-camel-rest   ip-172-30-0-233/    name=camel,role=pod   Running
 ```
 
-and delete it again with 
+and delete it again with
 
 ```
-$ kube delete pods/camel-pod
+$ openshift-cli delete pod -l name=camel
 ```
 
 ### Adding a ReplicationController
@@ -78,14 +71,14 @@ To create the replicated Pod in OpenShift we do
 [TODO] use ref to master
 
 ```
-$ kube apply -c https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/2.1/sources/wildfly-camel-step02.json
+$ openshift-cli apply -c https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/2.1/sources/wildfly-camel-step02.json
 I1203 13:19:56.780955 00001 kubecfg.go:613] Creation succeeded for ReplicationController with name restSlaveController
 ```
 
 We now have three Pods each running an instance of our container
 
 ```
-$ kube list pods
+$ openshift-cli get pods
 Name                                   Image(s)                        Host                Labels              Status
 ----------                             ----------                      ----------          ----------          ----------
 13520066-7aef-11e4-9ea2-0624f808fac8   wildflyext/example-camel-rest   ip-172-30-0-233/    name=camel          Running
@@ -103,7 +96,7 @@ To create a Service that accesses replicated Pods do
 [TODO] use ref to master
 
 ```
-$ kube apply -c https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/2.1/sources/wildfly-camel-step03.json
+$ openshift-cli apply -c https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/2.1/sources/wildfly-camel-step03.json
 I1203 14:28:44.860519 00001 kubecfg.go:613] Creation succeeded for Service with name rest-service
 I1203 14:28:44.860770 00001 kubecfg.go:613] Creation succeeded for ReplicationController with name rest-controller
 ```
@@ -111,7 +104,7 @@ I1203 14:28:44.860770 00001 kubecfg.go:613] Creation succeeded for ReplicationCo
 We now have a service
 
 ```
-$ kube -l name=camel-srv list services
+$ openshift-cli get services -l name=camel-srv
 Name                Labels              Selector            IP                  Port
 ----------          ----------          ----------          ----------          ----------
 rest-service        name=camel-srv      name=camel-pod      172.121.17.3        8081
@@ -121,7 +114,7 @@ that we can access like this
 
 ```
 $ curl http://172.121.17.3:8081/example-camel-rest/rest/greet/hello/Kermit
-Hello Kermit 
+Hello Kermit
 ```
 
 [TODO] remove publicIP limitation
@@ -140,7 +133,7 @@ Running multiple server containers in a cloud environment is often only useful w
 The WildFly-Camel domain can be configured as in [wildfly-camel-domain.json](../sources/wildfly-camel-domain.json)
 
 ```
-kube apply -c https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/2.1/sources/wildfly-camel-domain.json
+openshift-cli apply -c https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/2.1/sources/wildfly-camel-domain.json
 I1216 10:47:51.071633       1 kubecfg.go:613] Creation succeeded for Service with name management-service
 I1216 10:47:51.071747       1 kubecfg.go:613] Creation succeeded for Service with name domain-controller
 I1216 10:47:51.071758       1 kubecfg.go:613] Creation succeeded for Service with name rest-service
@@ -151,7 +144,7 @@ I1216 10:47:51.071764       1 kubecfg.go:613] Creation succeeded for Replication
 
 and verify the resulting servies like that
 ```
-$ kube list services
+$ openshift-cli get services
 Name                 Labels              Selector                                  IP                  Port
 ----------           ----------          ----------                                ----------          ----------
 kubernetes                               component=apiserver,provider=kubernetes   172.121.17.213      443
@@ -189,5 +182,3 @@ Hello from 172.17.0.65
 Hello from 172.17.0.66
 Hello from 172.17.0.64
 ```
-
-
