@@ -10,7 +10,7 @@ https://github.com/wildflyext/wildfly-camel/issues
 
 ## Jenkins
 
-http://174.129.32.31:8080/job/wildfly-camel
+https://fabric8-ci.fusesource.com/job/wildfly-camel/
 
 ## Downloads
 
