@@ -153,11 +153,6 @@ management-service                       name=ctrl-pod                          
 domain-controller                        name=ctrl-pod                             172.121.17.110      9999
 rest-service                             name=http-pod                             172.121.17.60       8080
 ```
-
-[TODO] remove publicIP limitation
-
-> <small>Unfortunately, we can currently not use the public IP to access these services. I continue with private IPs</small>
-
 We can now connect the WildFly command line interface like this
 
 ```
