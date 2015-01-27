@@ -1,6 +1,6 @@
 # camel-weather
 
-Integration with the [Open Weather Map API](http://openweathermap.org/api) is provided by the [camel-weather component](http://camel.apache.org/weather.html).
+Integration with the [Open Weather Map API](http://openweathermap.org/api) is provided by the [camel-weather](http://camel.apache.org/weather.html) component.
 
 As an example, we can consume the current weather for Madrid in Spain and make some decisions based upon the humidity percentage:
 
