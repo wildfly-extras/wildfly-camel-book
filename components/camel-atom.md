@@ -1,6 +1,6 @@
 # camel-atom
 
-Atom feed consumption in Camel is provided by the [camel-atom component](http://camel.apache.org/atom.html).
+Atom feed consumption in Camel is provided by the [camel-atom](http://camel.apache.org/atom.html) component.
 
 ## Example Atom feed consumer Camel route
 
