@@ -1,6 +1,6 @@
 # camel-netty4
 
-Netty client / server support in Camel is provided by the [camel-netty4 component](http://camel.apache.org/netty4.html).
+Netty client / server support in Camel is provided by the [camel-netty4](http://camel.apache.org/netty4.html) component.
 
 WildFly 8 and EAP 6.4 are bundled with module libraries supporting the [Netty](http://netty.io/) project version 4. Therefore, the standard [camel-netty component](http://camel.apache.org/netty.html) will not work since it is compatible with Netty version 3 only.
 
