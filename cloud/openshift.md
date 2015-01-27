@@ -8,7 +8,7 @@ This chapter gets you started on WildFly-Camel in [OpenShift Origin](https://git
 We can start OpenShift Origin like this
 
 ```
-$ docker run --rm --name openshift-origin --net=host --privileged -v /var/run/docker.sock:/var/run/docker.sock -v /tmp/openshift:/tmp/openshift openshift/origin start --cert-dir=/tmp/openshift
+$ docker run --rm --name openshift-origin --net=host --privileged -v /var/run/docker.sock:/var/run/docker.sock -v /tmp/openshift:/tmp/openshift wildflyext/openshift:0.1-preview start --cert-dir=/tmp/openshift
 ```
 
 Then verify the OpenShift version
@@ -22,7 +22,7 @@ kubernetes v0.8.0-dev
 We may also want to create an alias to OpenShift
 
 ```
-alias openshift-cli="docker run --rm --net=host -v /tmp/openshift:/tmp/openshift openshift/origin cli --kubeconfig=/tmp/openshift/admin/.kubeconfig"
+alias openshift-cli="docker run --rm --net=host -v /tmp/openshift:/tmp/openshift wildflyext/openshift:0.1-preview cli --kubeconfig=/tmp/openshift/admin/.kubeconfig"
 ```
 
 ## Standalone Servers
