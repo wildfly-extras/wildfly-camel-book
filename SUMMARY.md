@@ -40,6 +40,6 @@
 * [Cloud](cloud/README.md)
    * [Docker](cloud/docker.md)
    * [OpenShift](cloud/openshift.md)
-   * Beanstalk
+   * [Beanstalk](cloud/beanstalk.md)
 * [Developer Guide](developer/README.md)
 
