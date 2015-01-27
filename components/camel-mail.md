@@ -1,6 +1,6 @@
 # camel-mail
 
-Interaction with email is provided by the [camel-email component](http://camel.apache.org/mail.html).
+Interaction with email is provided by the [camel-email](http://camel.apache.org/mail.html) component.
 
 To poll a mailbox for messages using POP3 you could do something like:
 
