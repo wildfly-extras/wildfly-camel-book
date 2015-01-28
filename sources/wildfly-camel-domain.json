@@ -12,6 +12,7 @@
       "apiVersion": "v1beta1",
       "containerPort": 9990,
       "port": 9990,
+      "publicIPs": [ "172.30.0.21" ],
       "selector": {"name": "ctrl-pod"}
     },
     {
@@ -20,6 +21,7 @@
       "apiVersion": "v1beta1",
       "containerPort": 9999,
       "port": 9999,
+      "publicIPs": [ "172.30.0.21" ],
       "selector": {"name": "ctrl-pod"}
     },
     {
@@ -28,6 +30,7 @@
       "apiVersion": "v1beta1",
       "containerPort": 8080,
       "port": 8080,
+      "publicIPs": [ "172.30.0.21" ],
       "selector": {"name": "http-pod"}
     },
     {
