@@ -107,10 +107,14 @@ We now have a service
 $ openshift-cli get services -l name=camel-srv
 Name                Labels              Selector            IP                  Port
 ----------          ----------          ----------          ----------          ----------
-rest-service        name=camel-srv      name=camel-pod      172.121.17.3        8081
+rest-service        name=camel-srv      name=camel-pod      172.121.17.3        8080
 ```
 
-that we can access like this
+This uses a hard coded mapping in [wildfly-camel-step03.json](../sources/wildfly-camel-step03.json) for the public IP
+
+```
+```
+
 
 ```
 $ curl http://172.121.17.3:8081/example-camel-rest/rest/greet/hello/Kermit
