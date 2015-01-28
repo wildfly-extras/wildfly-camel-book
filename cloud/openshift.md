@@ -155,7 +155,7 @@ Now, you should be able to access the admin console like this: http://54.154.82.
 
 ![](../images/console-domain.png)
 
-We believe that managing deployments through the WildFly admin interface does not make much sense. Instead, deployments should already be backed into the containers that you spin up in the various Pods. 
+We believe that managing deployments through the WildFly admin interface does not make much sense. Instead, deployments should already be backed into containers that you spin up in the various Pods. 
 
 There is a wide spectrum of opinion on whether this also applies to configuration. Here we retain the WildFly domain configurability (i.e. mutable containers for configuration). 
 
