@@ -131,7 +131,7 @@ Running multiple server containers in a cloud environment is often only useful w
 The WildFly-Camel domain can be configured as in [wildfly-camel-domain.json](../sources/wildfly-camel-domain.json)
 
 ```
-openshift-cli apply -f https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/2.1/sources/wildfly-camel-domain.json
+$ openshift-cli apply -f https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/2.1/sources/wildfly-camel-domain.json
 I1216 10:47:51.071633       1 kubecfg.go:613] Creation succeeded for Service with name management-service
 I1216 10:47:51.071747       1 kubecfg.go:613] Creation succeeded for Service with name domain-controller
 I1216 10:47:51.071758       1 kubecfg.go:613] Creation succeeded for Service with name rest-service
