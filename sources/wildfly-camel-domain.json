@@ -1,11 +1,10 @@
 {
+  "kind": "Config",
+  "apiVersion": "v1beta1",
   "metadata": {
     "name": "wildfly-camel-domain",
     "description": "Creates a WildFly Camel domain"
   },
-  "kind": "Config",
-  "apiVersion": "v1beta1",
-  "creationTimestamp": null,
   "items": [
     {
       "id": "management-service",
