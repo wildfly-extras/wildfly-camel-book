@@ -15,7 +15,7 @@ Then verify the OpenShift version
 
 ```
 $ docker run --rm wildflyext/openshift version
-openshift version 0.1, build b8f4947
+openshift version 0.1, build c322309
 kubernetes v0.8.0-dev
 ```
 
