@@ -110,23 +110,14 @@ Name                Labels              Selector            IP                  
 rest-service        name=camel-srv      name=camel-pod      172.121.17.3        8080
 ```
 
-This uses a hard coded mapping in [wildfly-camel-step03.json](../sources/wildfly-camel-step03.json) for the public IP
+> <small>Note, this uses a hard coded mapping in [wildfly-camel-step03.json](../sources/wildfly-camel-step03.json) for publicIPs, which would have to be replaced according to your EC2 setup.</small>
+
+From a remote client, you should now be able to access the service like this
 
 ```
-...
-   publicIPs: [ 172.30.0.21 ],
-...
+$ curl http://54.154.239.169:8080/example-camel-rest/rest/greet/hello/Kermit
+Hello Kermit from 172.17.0.51
 ```
-which would have to be replaced according to your EC2 setup.
-
-```
-$ curl http://172.121.17.3:8081/example-camel-rest/rest/greet/hello/Kermit
-Hello Kermit
-```
-
-[TODO] remove publicIP limitation
-
-> <small>We are waiting for publicIP support in Kubernetes to show up in OpenShift. Then we can access the REST endpoint and the admin console on a public IP</small>
 
 ## Domain Setup
 
