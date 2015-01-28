@@ -11,7 +11,7 @@
       "kind": "Service",
       "apiVersion": "v1beta1",
       "containerPort": 8080,
-      "port": 8080,
+      "port": 8081,
       "publicIPs": [ "172.30.0.21" ],
       "selector": {"name": "camel-pod"},
       "labels": {"name": "camel-srv"}
