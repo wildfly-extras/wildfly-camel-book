@@ -8,7 +8,6 @@
   "items": [
     {
       "apiVersion": "v1beta2",
-      "creationTimestamp": null,
       "id": "rest-controller",
       "kind": "ReplicationController",
       "apiVersion": "v1beta2",
