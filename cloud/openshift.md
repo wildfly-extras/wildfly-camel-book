@@ -113,8 +113,11 @@ rest-service        name=camel-srv      name=camel-pod      172.121.17.3        
 This uses a hard coded mapping in [wildfly-camel-step03.json](../sources/wildfly-camel-step03.json) for the public IP
 
 ```
+...
+   publicIPs: [ 172.30.0.21 ],
+...
 ```
-
+which would have to be replaced according to your EC2 setup.
 
 ```
 $ curl http://172.121.17.3:8081/example-camel-rest/rest/greet/hello/Kermit
