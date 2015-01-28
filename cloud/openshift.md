@@ -151,27 +151,10 @@ management-service                       name=ctrl-pod                          
 domain-controller                        name=ctrl-pod                             172.121.17.110      9999
 rest-service                             name=http-pod                             172.121.17.60       8080
 ```
-We can now connect the WildFly command line interface like this
+Now, you should be able to access the admin console like this: http://54.154.82.232:9990/console
 
-```
-$ bin/jboss-cli.sh -c --controller=172.121.17.49:9990 --user=admin --password=admin
-[domain@172.121.17.49:9990 /]
-```
+![](../images/console-domain.png)
 
-and deploy simple webapp for testing
+We believe that managing deployments through the WildFly admin interface does not make much sense. Instead, deployments should already be backed into the containers that you spin up in the various Pods. There is a wide spectrum of opinion on whether this also applies to configuration. Here we retain the WildFly domain configurability (i.e. mutable containers for configuration). 
 
-```
-[domain@172.121.17.49:9990 /] deploy --runtime-name=endpoint.war --all-server-groups ~/git/wildfly-camel/itests/docker/domain/target/wildfly-camel-itests-docker-domain-2.1.0-SNAPSHOT.war
-```
-
-The requests on the service are nicely load balanced with round robin
-
-```
-$ for i in {1..6}; do curl http://172.121.17.60:8080/endpoint; done
-Hello from 172.17.0.65
-Hello from 172.17.0.66
-Hello from 172.17.0.64
-Hello from 172.17.0.65
-Hello from 172.17.0.66
-Hello from 172.17.0.64
-```
+Feedback is welcome.
