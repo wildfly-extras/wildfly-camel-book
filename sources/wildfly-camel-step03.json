@@ -1,11 +1,10 @@
 {
+  "kind": "Config",
+  "apiVersion": "v1beta1",
   "metadata": {
     "name": "wildfly-camel-rest",
     "description": "Creates a WildFly Camel cluster running the REST example",
   },
-  "kind": "Config",
-  "apiVersion": "v1beta1",
-  "creationTimestamp": null,
   "items": [
     {
       "id": "rest-service",
