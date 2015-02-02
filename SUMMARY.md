@@ -42,5 +42,6 @@
    * [OpenShift](cloud/openshift.md)
    * [Beanstalk](cloud/beanstalk.md)
 * [Security](security/README.md)
+   * JAX-RS
 * [Developer Guide](developer/README.md)
 
