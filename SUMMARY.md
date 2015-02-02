@@ -44,6 +44,6 @@
 * [Security](security/README.md)
    * [JAX-RS](security/jaxrs.md)
    * [JAX-WS](security/jaxws.md)
-   * JMS
+   * [JMS](security/jms.md)
 * [Developer Guide](developer/README.md)
 
