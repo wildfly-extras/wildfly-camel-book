@@ -41,7 +41,7 @@
    * [Docker](cloud/docker.md)
    * [OpenShift](cloud/openshift.md)
    * [Beanstalk](cloud/beanstalk.md)
-   * Atomic
+   * [Atomic](cloud/atomic.md)
 * [Security](security/README.md)
    * [JAX-RS](security/jaxrs.md)
    * [JAX-WS](security/jaxws.md)
