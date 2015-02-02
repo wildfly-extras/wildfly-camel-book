@@ -43,6 +43,6 @@
    * [Beanstalk](cloud/beanstalk.md)
 * [Security](security/README.md)
    * [JAX-RS](security/jaxrs.md)
-   * JAX-WS
+   * [JAX-WS](security/jaxws.md)
 * [Developer Guide](developer/README.md)
 
