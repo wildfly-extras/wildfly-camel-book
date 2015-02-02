@@ -41,5 +41,7 @@
    * [Docker](cloud/docker.md)
    * [OpenShift](cloud/openshift.md)
    * [Beanstalk](cloud/beanstalk.md)
-* [Security](security/README.md)   
+* [Security](security/README.md)
 * [Developer Guide](developer/README.md)
+* JAX-RS
+
