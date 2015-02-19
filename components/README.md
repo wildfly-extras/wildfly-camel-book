@@ -47,7 +47,7 @@ Please make sure you don't duplicate modules that are already available in WildF
 
 #### Add a reference to the component 
 
-To make this module visible to arbitrary JavaEE deployments add a reference to `modules/system/layers/fuse/org/apache/camel/component/main/module.xml` 
+To make this module visible by default to arbitrary JavaEE deployments add a reference to `modules/system/layers/fuse/org/apache/camel/component/main/module.xml` 
 
 ```xml
 <module xmlns="urn:jboss:module:1.3" name="org.apache.camel.component">
