@@ -4,7 +4,27 @@ This chapter details information about supported camel components
 
 ## Aavailable Components 
 
-All the supported Camel components will be available to user deployments for use.  The list of the default components made available to your deployments can found in the `modules/system/layers/fuse/org/apache/camel/component/main/module.xml` file.  
+The following list of supported Camel components will be available to arbitrary JavaEE deployments:
+
+* [camel-activemq](camel-activemq.md)
+* [camel-atom](camel-atom.md)
+* [camel-bindy](camel-bindy.md)
+* [camel-cdi](camel-cdi.md)
+* [camel-cxf](camel-cxf.md)
+* [camel-ftp](camel-ftp.md)
+* [camel-hl7](camel-hl7.md)
+* [camel-jaxb](camel-jaxb.md)
+* [camel-jms](camel-jms.md)
+* [camel-jmx](camel-jmx.md)
+* [camel-jpa](camel-jpa.md)
+* [camel-lucene](camel-lucene.md)
+* [camel-mail](camel-mail.md)
+* [camel-mina2](camel-mina2.md)
+* [camel-mqtt](camel-mqtt.md)
+* [camel-mvel](camel-mvel.md)
+* [camel-netty4](camel-netty4.md)
+* [camel-ognl](camel-ognl.md)
+* [camel-weather](camel-weather.md)
 
 ### The jboss-camel-components.properties file
 
