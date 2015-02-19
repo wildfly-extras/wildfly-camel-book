@@ -2,6 +2,23 @@
 
 This chapter details information about supported camel components
 
+## Aavailable Components 
+
+All the supported Camel components will be available to user deployments for use.  The list of the default components made available to your deployments can found in the `modules/system/layers/fuse/org/apache/camel/component/main/module.xml` file.  
+
+### The jboss-camel-components.properties file
+
+If you need more or fewer components made available to specifc applicaiton deployments, you can add a `META-INF/jboss-camel-components.properties` file your application.  This file should list all the camel components you want to make available to your applicaiton.
+Each component should be listed on a new line.  You can identify components by:
+ 
+ * the short camel component names like `camel-jms` 
+ * the full module name of the component by prefixing the module name with `module\:`
+
+Example `META-INF/jboss-camel-components.properties` file:
+
+    camel-rss
+    module\:org.apache.camel.component.ftp
+
 ## Adding Components
 
 Adding support for additional Camel Components is easy
@@ -42,6 +59,7 @@ To make this module visible to arbitrary JavaEE deployments add a reference to `
 
 </module>
 ```
+
 
 
 
