@@ -26,19 +26,23 @@ The following list of supported Camel components will be available to arbitrary 
 * [camel-ognl](camel-ognl.md)
 * [camel-weather](camel-weather.md)
 
-### The jboss-camel-components.properties file
+### Camel Deployment Configuration
 
-If you need more or fewer components made available to specifc applicaiton deployments, you can add a `META-INF/jboss-camel-components.properties` file your application.  This file should list all the camel components you want to make available to your applicaiton.
-Each component should be listed on a new line.  You can identify components by:
- 
- * the short camel component names like `camel-jms` 
- * the full module name of the component by prefixing the module name with `module\:`
+If you want to fine tune the default configuration of your camel deployment, you can edit either the `WEB-INF/jboss-all.xml` or `META-INF/jboss-all.xml` configuration file in your deployment.
 
-Example `META-INF/jboss-camel-components.properties` file:
+You can add a `camel-integration xmlns="http://www.jboss.com/xml/ns/camel-integration">`
 
-    camel-rss
-    module\:org.apache.camel.component.ftp
+Example `WEB-INF/jboss-all.xml` file:
 
+    <?xml version="1.0" encoding="UTF-8"?>
+    <jboss umlns="urn:jboss:1.0">
+      <camel-integration xmlns="http://www.jboss.com/xml/ns/camel-integration">
+
+        <component name="camel-ftp"/>
+        <component-module name="org.apache.camel.component.rss"/>
+
+      </camel-integration>
+    </jboss>
 ## Adding Components
 
 Adding support for additional Camel Components is easy
