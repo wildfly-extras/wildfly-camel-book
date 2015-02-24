@@ -1,34 +1,153 @@
 # camel-mail
 
-Interaction with email is provided by the [camel-email](http://camel.apache.org/mail.html) component.
+Interaction with email is provided by the [camel-mail](http://camel.apache.org/mail.html) component.
 
-To poll a mailbox for messages using POP3 you could do something like:
+By default, Camel will create its own mail session and use this to interact with your mail server. Since WildFly already provides a mail subsystem with all of the relevant support for secure connections, username / password encryption etc, it is recommended to configure your mail sessions within the WildFly configuration and use JNDI to wire them into your Camel endpoints.
 
-```java
-CamelContext camelContext = new DefaultCamelContext();
+## Camel mail with WildFly
 
-camelContext.addRoutes(new RouteBuilder() {
-    @Override
-    public void configure() throws Exception {
-        from("pop3://myuser@myhost?password=secret&consumer.delay=1000")
-        .to("direct:email");
-    }
-});
+### WildFly configuration
+First we configure the WildFly mail subsystem for our Mail server. This example adds configuration for Google Mail IMAP and SMTP .
+
+An additional mail-session is configured after the 'default' session.
+```xml
+<subsystem xmlns="urn:jboss:domain:mail:2.0">
+    <mail-session name="default" jndi-name="java:jboss/mail/Default">
+      <smtp-server outbound-socket-binding-ref="mail-smtp"/>
+    </mail-session>
+
+    <mail-session debug="true" name="gmail" jndi-name="java:jboss/mail/gmail">
+      <smtp-server outbound-socket-binding-ref="mail-gmail-smtp" ssl="true" username="your-username-here" password="your-password-here"/>
+      <imap-server outbound-socket-binding-ref="mail-gmail-imap" ssl="true" username="your-username-here" password="your-password-here"/>
+    </mail-session>
+</subsystem>
+```
+Note that we configured `outbound-socket-binding-ref` values of 'mail-gmail-smtp' and 'mail-gmail-imap'. The next step is to configure these socket bindings. Add aditional bindings to the `socket-binding-group` configuration like the following.
+```xml
+<outbound-socket-binding name="mail-gmail-smtp">
+  <remote-destination host="smtp.gmail.com" port="465"/>
+</outbound-socket-binding>
+
+<outbound-socket-binding name="mail-gmail-imap">
+  <remote-destination host="imap.gmail.com" port="993"/>
+</outbound-socket-binding>
+```
+This configures our mail session to connect to host smtp.gmail.com on port 465 and imap.gmail.com on port 993. If you're using a different mail host, then this detail will be different.
+
+###### POP3 Configuration
+
+If you need to configure POP3 sessions, the principals are the same as defined in the examples above.
+```xml
+<!-- Server configuration -->
+<pop3-server outbound-socket-binding-ref="mail-pop3" ssl="true" username="your-username-here" password="your-password-here"/>
+
+<!-- Socket binding configuration -->
+<outbound-socket-binding name="mail-gmail-imap">
+  <remote-destination host="pop3.gmail.com" port="993"/>
+</outbound-socket-binding>
 ```
 
-To send an email using SMTP:
+### Camel route configuration
+
+#### Mail producer
+This example uses the SMTPS protocol, together with CDI in conjunction with the camel-cdi component. The Java mail session that we configured within the WildFly configuration is injected into a Camel RouteBuilder through JNDI.
+
+##### Route builder SMTPS example
+The GMail mail session is injected into our RouteBuilder class using the `@Resource` annotation with a reference to the `jndi-name` attribute that we  previously configured.
+
+The `configureMailEndpoint` method takes care of some required configuration for the SMTP `MailEndpoint`. This is done so as not to duplicate the username & password details that we already defined within the WildFly configuration.
 
 ```java
-CamelContext camelContext = new DefaultCamelContext();
+@Startup
+@ApplicationScoped
+@ContextName("mail-camel-context")
+public class MailRouteBuilder extends RouteBuilder {
 
-camelContext.addRoutes(new RouteBuilder() {
+  @Resource(mappedName = "java:jboss/mail/gmail")
+  private Session mailSession;
+
   @Override
   public void configure() throws Exception {
-      from("direct:start")
-      .to("smtp://myuser@myhost?password=secretfrom=bob@myhost&to=kermit@myhost&subject=Greetings");
-  }
-});
+    MailEndpoint mailEndpoint = (MailEndpoint) getContext().getEndpoint("smtps://smtp.gmail.com");
+    configureMailEndpoint(mailEndpoint);
 
-ProducerTemplate producer = camelContext.createProducerTemplate();
-producer.sendBody("direct:start", "Hello Kermit");
+    from("direct:start")
+      .to(mailEndpoint);
+  }
+
+  private void configureMailEndpoint(MailEndpoint endpoint) throws UnknownHostException {
+    MailConfiguration configuration = endpoint.getConfiguration();
+
+    // Wildfly seems to configure things under the SMTP / IMAP and not SMTPS / IMAPS
+    String protocol = configuration.getProtocol();
+    if(protocol.equals("smtps")) {
+      protocol = "smtp";
+    } else if(protocol.equals("imaps")) {
+      protocol = "imap";
+    }
+
+    // Fetch mail session credentials from the session
+    String host = mailSession.getProperty("mail." + protocol + ".host");
+    String user = mailSession.getProperty("mail." + protocol + ".user");
+
+    int port = Integer.parseInt(mailSession.getProperty("mail." + protocol + ".port"));
+    InetAddress address = InetAddress.getByName(host);
+
+    PasswordAuthentication auth = mailSession.requestPasswordAuthentication(address, port, protocol, null, user);
+    configuration.setPort(port);
+    configuration.setUsername(auth.getUserName());
+    configuration.setPassword(auth.getPassword());
+  }
+}
 ```
+To send an email we can create a ProducerTemplate and send an appropriate body together with the necessary email headers.
+
+```java
+Map<String, Object> headers = new HashMap<String, Object>();
+headers.put("To", "destination@test.com");
+headers.put("From", "sender@example.com");
+headers.put("Subject", "Camel on Wildfly rocks");
+
+String body = "Hi,\n\nCamel on Wildfly rocks!.";
+
+ProducerTemplate template = camelContext.createProducerTemplate();
+template.sendBodyAndHeaders("direct:start", body, headers);
+```
+
+#### Mail consumer
+To receive email we use an IMAP MailEndpoint. The Camel route configuration looks like the following.
+```java
+public void configure() throws Exception {
+   MailEndpoint mailEndpoint = (MailEndpoint) getContext().getEndpoint("imaps://imap.gmail.com");
+   configureMailEndpoint(mailEndpoint);
+
+   from(mailEndpoint)
+    .to("log:email");
+}
+```
+
+### Security
+
+#### SSL configuration
+WildFly can be configured to manage Java mail sessions and their associated transports using SSL / TLS. When configuring mail sessions you can configure SSL or TLS on server types:
+
+* smtp-server
+* imap-server
+* pop-server
+
+By setting attributes `ssl="true"` or `tls="true"`.
+
+#### Securing passwords
+
+Writing passwords in clear text within configuration files is never a good idea for obvious reasons. The [WildFly Vault](https://developer.jboss.org/wiki/JBossAS7SecuringPasswords) provides tooling to mask sensitive data.
+
+#### Camel security
+
+Camel endpoint security documentation can be found on the [camel-mail](http://camel.apache.org/mail.html) component guide. Camel also has a [security summary](http://camel.apache.org/security.html) page.
+
+
+## Code examples on GitHub
+
+An example camel-mail application is available on GitHub for you to try out sending / receiving email.
+
+https://github.com/wildfly-extras/wildfly-camel/tree/master/examples/camel-mail
