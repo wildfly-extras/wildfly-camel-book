@@ -30,7 +30,4 @@ Example `jboss-all.xml` file:
         <component-module name="org.apache.camel.component.rss"/>
 
       </camel-integration>
-    </jboss>
-
-
     </jboss
