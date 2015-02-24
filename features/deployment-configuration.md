@@ -6,7 +6,7 @@ Use a `<camel-integration>` XML element within the `jboss-all.xml` file to contr
 
 ### Disabling the Camel Subsystem
 
-If you don't want the camel subsystem to be imported into
+If you don't want the camel subsystem to be add into
 your deployment, add the `enabled="false"` attribute to the `camel-integration` XML element.
 
 Example `jboss-all.xml` file:
