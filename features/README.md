@@ -6,3 +6,4 @@ This chapter provides more detailed information about WildFly-Camel features.
 * [Camel Context Deployments](context-deployments.md)
 * [Management Console](hawtio.md)
 * [Arquillian Support](arquillian.md)
+* [WildFly-Camel Deployment Configuration](deployment-configuration.md)
