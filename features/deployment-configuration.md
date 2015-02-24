@@ -16,9 +16,9 @@ Example `jboss-all.xml` file:
       <camel-integration enabled="false" xmlns="http://www.jboss.com/xml/ns/camel-integration"/>
     </jboss>
     
-### Changing the Camel Components added to the Deployment
+### Selecting Components
 
-If you add nested `<component>` or `<component-module>` XML elements, then instead of adding the default list of Camel components to your deployment, only the specified components will be added to your deployment.
+If you add nested `<component>` or `<component-module>` XML elements, then instead of adding the [default list of Camel components](../components/README.md) to your deployment, only the specified components will be added to your deployment.
 
 Example `jboss-all.xml` file:
 
