@@ -1,4 +1,4 @@
-### Camel Deployment Configuration
+## Camel Deployment Configuration
 
 If you want to fine tune the default configuration of your Camel deployment, you can edit either the `WEB-INF/jboss-all.xml` or `META-INF/jboss-all.xml` configuration file in your deployment.
 
