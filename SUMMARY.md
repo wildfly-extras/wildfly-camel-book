@@ -8,7 +8,7 @@
    * [Camel Context Deployments](features/context-deployments.md)
    * [Management Console](features/hawtio.md)
    * [Arquillian Test Support](features/arquillian.md)
-* [Configuration](configuration.md)
+* [Configuration](config/README.md)
    * [Subsystem](config/subsystem-config.md)
    * [Deployment](config/deployment-config.md)
 * [JavaEE Integration](javaee/README.md)
