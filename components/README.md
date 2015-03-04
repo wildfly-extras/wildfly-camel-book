@@ -28,6 +28,7 @@ The following list of supported Camel components will be available to arbitrary 
 * [camel-mvel](camel-mvel.md)
 * [camel-netty4](camel-netty4.md)
 * [camel-ognl](camel-ognl.md)
+* [camel-quartz2](camel-quartz2.md)
 * [camel-rest](camel-rest.md)
 * [camel-rss](camel-rss.md)
 * [camel-saxon](camel-saxon.md)
