@@ -27,7 +27,7 @@
    * [camel-cdi](components/camel-cdi.md)
    * [camel-cxf](components/camel-cxf.md)
    * [camel-dozer](components/camel-dozer.md)
-   * camel-ejb
+   * [camel-ejb](components/camel-ejb.md)
    * [camel-file](components/camel-file.md)
    * [camel-ftp](components/camel-ftp.md)
    * [camel-hl7](components/camel-hl7.md)
