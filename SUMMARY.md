@@ -44,8 +44,8 @@
    * [camel-netty4](components/camel-netty4.md)
    * [camel-ognl](components/camel-ognl.md)
    * [camel-rest](components/camel-rest.md)
-   * camel-sql
    * [camel-servlet](components/camel-servlet.md)
+   * camel-sql
    * [camel-weather](components/camel-weather.md)
 * [Cloud](cloud/README.md)
    * [Docker](cloud/docker.md)
