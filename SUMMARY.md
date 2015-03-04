@@ -30,6 +30,7 @@
    * [camel-ejb](components/camel-ejb.md)
    * [camel-file2](components/camel-file2.md)
    * [camel-ftp](components/camel-ftp.md)
+   * camel-http4
    * [camel-hl7](components/camel-hl7.md)
    * [camel-jaxb](components/camel-jaxb.md)
    * [camel-jms](components/camel-jms.md)
@@ -44,7 +45,6 @@
    * [camel-ognl](components/camel-ognl.md)
    * [camel-rest](components/camel-rest.md)
    * [camel-weather](components/camel-weather.md)
-   * camel-http4
 * [Cloud](cloud/README.md)
    * [Docker](cloud/docker.md)
    * [OpenShift](cloud/openshift.md)
