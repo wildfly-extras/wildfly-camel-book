@@ -1,6 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
+   * Configuration
 * [Getting Started](start/README.md)
    * [Compatibility](start/compatibility.md)
 * [Features](features/README.md)
