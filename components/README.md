@@ -30,6 +30,7 @@ The following list of supported Camel components will be available to arbitrary 
 * [camel-ognl](camel-ognl.md)
 * [camel-rest](camel-rest.md)
 * [camel-servlet](camel-servlet.md)
+* [camel-sql](camel-sql.md)
 * [camel-weather](camel-weather.md)
 
 ## Adding Components
