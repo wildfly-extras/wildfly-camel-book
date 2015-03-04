@@ -4,7 +4,8 @@ Camel ActiveMQ integration is provided by the [camel-activemq](http://camel.apac
 
 The component can be configured to work with an embedded or external broker. For Wildfly / EAP container managed connection pools and XA-Transaction support, the [ActiveMQ Resource Adapter](http://activemq.apache.org/resource-adapter.html) can be configured into the container configuration file.
 
-## Simple Camel CDI Activemq RouteBuilder
+Here is a simple Camel CDI Activemq RouteBuilder
+
 ```java
 @Startup
 @ApplicationScoped
