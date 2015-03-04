@@ -1,4 +1,4 @@
-# camel-bindy
+## camel-bindy
 
 The goal of [camel-bindy](http://camel.apache.org/bindy.html) is to allow the parsing/binding of non-structured data to/from Java Beans that have binding mappings defined with annotations.
 
