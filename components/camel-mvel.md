@@ -1,4 +1,4 @@
-# camel-mvel
+## camel-mvel
 
 The [camel-mvel](http://camel.apache.org/mvel-component.html) component allows you to process a message using an [MVEL](http://mvel.codehaus.org/) template.
 
