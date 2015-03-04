@@ -1,4 +1,4 @@
-# camel-atom
+## camel-atom
 
 Atom feed consumption in Camel is provided by the [camel-atom](http://camel.apache.org/atom.html) component.
 
