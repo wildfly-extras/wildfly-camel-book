@@ -1,10 +1,8 @@
-# camel-mail
+## camel-mail
 
 Interaction with email is provided by the [camel-mail](http://camel.apache.org/mail.html) component.
 
 By default, Camel will create its own mail session and use this to interact with your mail server. Since WildFly already provides a mail subsystem with all of the relevant support for secure connections, username / password encryption etc, it is recommended to configure your mail sessions within the WildFly configuration and use JNDI to wire them into your Camel endpoints.
-
-## Camel mail with WildFly
 
 ### WildFly configuration
 First we configure the WildFly mail subsystem for our Mail server. This example adds configuration for Google Mail IMAP and SMTP .
@@ -148,6 +146,6 @@ Camel endpoint security documentation can be found on the [camel-mail](http://ca
 
 ## Code examples on GitHub
 
-An example camel-mail application is available on GitHub for you to try out sending / receiving email.
+An example [camel-mail application](https://github.com/wildfly-extras/wildfly-camel/tree/master/examples/camel-mail) is available on GitHub for you to try out sending / receiving email.
 
-https://github.com/wildfly-extras/wildfly-camel/tree/master/examples/camel-mail
+
