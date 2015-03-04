@@ -43,7 +43,7 @@
    * [camel-mvel](components/camel-mvel.md)
    * [camel-netty4](components/camel-netty4.md)
    * [camel-ognl](components/camel-ognl.md)
-   * camel-quartz2
+   * [camel-quartz2](components/camel-quartz2.md)
    * [camel-rest](components/camel-rest.md)
    * [camel-rss](components/camel-rss.md)
    * [camel-saxon](components/camel-saxon.md)
