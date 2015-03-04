@@ -2,18 +2,18 @@
 
 If you want to fine tune the default configuration of your Camel deployment, you can edit either the `WEB-INF/jboss-all.xml` or `META-INF/jboss-all.xml` configuration file in your deployment.
 
-Use a `<camel-integration>` XML element within the `jboss-all.xml` file to control the camel configuration.
+Use a `<jboss-camel>` XML element within the `jboss-all.xml` file to control the camel configuration.
 
 ### Disabling the Camel Subsystem
 
-If you don't want the camel subsystem to be add into
-your deployment, add the `enabled="false"` attribute to the `camel-integration` XML element.
+If you don't want the camel subsystem to be added into
+your deployment, set the `enabled="false"` attribute on the `jboss-camel` XML element.
 
 Example `jboss-all.xml` file:
 
     <?xml version="1.0" encoding="UTF-8"?>
     <jboss umlns="urn:jboss:1.0">
-      <camel-integration enabled="false" xmlns="http://www.jboss.com/xml/ns/camel-integration"/>
+      <jboss-camel xmlns="urn:jboss:jboss-camel:1.0" enabled="false"/>
     </jboss>
     
 ### Selecting Components
