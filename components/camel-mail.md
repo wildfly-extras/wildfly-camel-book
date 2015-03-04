@@ -144,7 +144,7 @@ Writing passwords in clear text within configuration files is never a good idea 
 Camel endpoint security documentation can be found on the [camel-mail](http://camel.apache.org/mail.html) component guide. Camel also has a [security summary](http://camel.apache.org/security.html) page.
 
 
-## Code examples on GitHub
+### Code examples on GitHub
 
 An example [camel-mail application](https://github.com/wildfly-extras/wildfly-camel/tree/master/examples/camel-mail) is available on GitHub for you to try out sending / receiving email.
 
