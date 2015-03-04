@@ -5,7 +5,6 @@ The [camel-rss](http://camel.apache.org/rss.html) component is used for polling 
 ```java
     CamelContext camelctx = new DefaultCamelContext();
     camelctx.addRoutes(new RouteBuilder() {
-        @Override
         public void configure() throws Exception {
             from("rss://https://developer.jboss.org/blogs/feeds/posts?splitEntries=true&consumer.initialDelay=200&consumer.delay=1000")
             .process(new Processor() {
