@@ -1,4 +1,4 @@
-# camel-weather
+## camel-weather
 
 The [camel-weather](http://camel.apache.org/weather.html) component provides integration with the [Open Weather Map API](http://openweathermap.org/api).
 
