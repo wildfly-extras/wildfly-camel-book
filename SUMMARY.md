@@ -10,7 +10,7 @@
    * [Arquillian Test Support](features/arquillian.md)
 * [Configuration](configuration.md)
    * [Subsystem](config/subsystem-config.md)
-   * Deployment
+   * [Deployment](config/deployment-config.md)
 * [JavaEE Integration](javaee/README.md)
    * [CDI](javaee/cdi.md)
    * [JAXB](javaee/jaxb.md)
