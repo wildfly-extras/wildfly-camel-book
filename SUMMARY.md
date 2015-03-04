@@ -9,6 +9,7 @@
    * [Management Console](features/hawtio.md)
    * [Arquillian Test Support](features/arquillian.md)
 * [Configuration](configuration.md)
+   * Subsystem Configuration
 * [JavaEE Integration](javaee/README.md)
    * [CDI](javaee/cdi.md)
    * [JAXB](javaee/jaxb.md)
