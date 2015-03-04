@@ -11,23 +11,24 @@ your deployment, set the `enabled="false"` attribute on the `jboss-camel` XML el
 
 Example `jboss-all.xml` file:
 
-    <?xml version="1.0" encoding="UTF-8"?>
-    <jboss umlns="urn:jboss:1.0">
-      <jboss-camel xmlns="urn:jboss:jboss-camel:1.0" enabled="false"/>
-    </jboss>
-    
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss umlns="urn:jboss:1.0">
+  <jboss-camel xmlns="urn:jboss:jboss-camel:1.0" enabled="false"/>
+</jboss>
+```    
 ### Selecting Components
 
-If you add nested `<component>` or `<component-module>` XML elements, then instead of adding the [default list of Camel components](../components/README.md) to your deployment, only the specified components will be added to your deployment.
+If you add nested `<component>` or `<component-module>` XML elements, then instead of adding the [default list](../components/README.md) of Camel components to your deployment, only the specified components will be added to your deployment.
 
 Example `jboss-all.xml` file:
 
     <?xml version="1.0" encoding="UTF-8"?>
     <jboss umlns="urn:jboss:1.0">
-      <camel-integration xmlns="http://www.jboss.com/xml/ns/camel-integration">
+      <jboss-camel xmlns="urn:jboss:jboss-camel:1.0">
 
         <component name="camel-ftp"/>
         <component-module name="org.apache.camel.component.rss"/>
 
-      </camel-integration>
+      </jboss-camel>
     </jboss
