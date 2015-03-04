@@ -11,6 +11,9 @@ The following list of supported Camel components will be available to arbitrary 
 * [camel-bindy](camel-bindy.md)
 * [camel-cdi](camel-cdi.md)
 * [camel-cxf](camel-cxf.md)
+* [camel-dozer](camel-dozer.md)
+* [camel-ejb](camel-ejb.md)
+* [camel-file](camel-file.md)
 * [camel-ftp](camel-ftp.md)
 * [camel-hl7](camel-hl7.md)
 * [camel-jaxb](camel-jaxb.md)
@@ -24,6 +27,7 @@ The following list of supported Camel components will be available to arbitrary 
 * [camel-mvel](camel-mvel.md)
 * [camel-netty4](camel-netty4.md)
 * [camel-ognl](camel-ognl.md)
+* [camel-rest](camel-rest.md)
 * [camel-weather](camel-weather.md)
 
 ## Adding Components
