@@ -1,4 +1,4 @@
-# camel-hl7
+## camel-hl7
 
 The [camel-hl7](http://camel.apache.org/hl7.html) component is used for working with the HL7 MLLP protocol and [HL7 v2](http://www.hl7.org/implement/standards/product_brief.cfm?product_id=185) messages using the [HAPI](http://hl7api.sourceforge.net/) library.
 
