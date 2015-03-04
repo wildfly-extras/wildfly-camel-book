@@ -44,6 +44,7 @@
    * [camel-ognl](components/camel-ognl.md)
    * [camel-rest](components/camel-rest.md)
    * [camel-weather](components/camel-weather.md)
+   * camel-http4
 * [Cloud](cloud/README.md)
    * [Docker](cloud/docker.md)
    * [OpenShift](cloud/openshift.md)
