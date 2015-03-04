@@ -29,6 +29,7 @@ The following list of supported Camel components will be available to arbitrary 
 * [camel-netty4](camel-netty4.md)
 * [camel-ognl](camel-ognl.md)
 * [camel-rest](camel-rest.md)
+* [camel-servlet](camel-servlet.md)
 * [camel-weather](camel-weather.md)
 
 ## Adding Components
