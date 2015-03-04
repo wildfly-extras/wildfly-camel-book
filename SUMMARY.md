@@ -40,7 +40,7 @@
    * [camel-mvel](components/camel-mvel.md)
    * [camel-netty4](components/camel-netty4.md)
    * [camel-ognl](components/camel-ognl.md)
-   * camel-rest
+   * [camel-rest](components/camel-rest.md)
    * [camel-weather](components/camel-weather.md)
 * [Cloud](cloud/README.md)
    * [Docker](cloud/docker.md)
