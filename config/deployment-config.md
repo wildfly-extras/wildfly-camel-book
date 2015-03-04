@@ -12,10 +12,9 @@ your deployment, set the `enabled="false"` attribute on the `jboss-camel` XML el
 Example `jboss-all.xml` file:
 
 ```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<jboss umlns="urn:jboss:1.0">
-  <jboss-camel xmlns="urn:jboss:jboss-camel:1.0" enabled="false"/>
-</jboss>
+    <jboss umlns="urn:jboss:1.0">
+      <jboss-camel xmlns="urn:jboss:jboss-camel:1.0" enabled="false"/>
+    </jboss>
 ```    
 ### Selecting Components
 
@@ -23,12 +22,11 @@ If you add nested `<component>` or `<component-module>` XML elements, then inste
 
 Example `jboss-all.xml` file:
 
-    <?xml version="1.0" encoding="UTF-8"?>
+```xml
     <jboss umlns="urn:jboss:1.0">
       <jboss-camel xmlns="urn:jboss:jboss-camel:1.0">
-
         <component name="camel-ftp"/>
         <component-module name="org.apache.camel.component.rss"/>
-
       </jboss-camel>
-    </jboss
+    </jboss>
+```
