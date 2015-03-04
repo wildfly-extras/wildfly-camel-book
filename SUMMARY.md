@@ -44,7 +44,7 @@
    * [camel-netty4](components/camel-netty4.md)
    * [camel-ognl](components/camel-ognl.md)
    * [camel-rest](components/camel-rest.md)
-   * camel-saxon
+   * [camel-saxon](components/camel-saxon.md)
    * [camel-script](components/camel-script.md)
    * [camel-servlet](components/camel-servlet.md)
    * [camel-sql](components/camel-sql.md)
