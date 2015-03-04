@@ -1,4 +1,4 @@
-# camel-netty4
+## camel-netty4
 
 Netty client / server support in Camel is provided by the [camel-netty4](http://camel.apache.org/netty4.html) component.
 
