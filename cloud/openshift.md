@@ -40,8 +40,6 @@ A simple Pod configuration for a WildFly Camel container might be defined as in 
 
 To create the Pod in OpenShift we do
 
-[TODO] use ref to master
-
 ```
 $ openshift-cli apply -f https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/2.2/sources/wildfly-camel-step01.json
 I1203 11:58:28.876288 00001 kubecfg.go:613] Creation succeeded for Pod with name camel-pod
@@ -68,8 +66,6 @@ To achieve high availability (HA), lets replicate this Pod using a ReplicationCo
 
 To create the replicated Pod in OpenShift we do
 
-[TODO] use ref to master
-
 ```
 $ openshift-cli apply -f https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/2.2/sources/wildfly-camel-step02.json
 I1203 13:19:56.780955 00001 kubecfg.go:613] Creation succeeded for ReplicationController with name restSlaveController
@@ -92,8 +88,6 @@ Name                                   Image(s)                        Host     
 The entry point into the system is a Kubernetes Service as in [wildfly-camel-step03.json](../sources/wildfly-camel-step03.json)
 
 To create a Service that accesses replicated Pods do
-
-[TODO] use ref to master
 
 ```
 $ openshift-cli apply -f https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/2.2/sources/wildfly-camel-step03.json
