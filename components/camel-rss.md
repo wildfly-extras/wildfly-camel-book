@@ -1,2 +1,20 @@
-# camel-rss
+## camel-rss
+
+The [camel-rss](http://camel.apache.org/rss.html) component is used for polling RSS feeds.
+
+```java
+    CamelContext camelctx = new DefaultCamelContext();
+    camelctx.addRoutes(new RouteBuilder() {
+        @Override
+        public void configure() throws Exception {
+            from("rss://https://developer.jboss.org/blogs/feeds/posts?splitEntries=true&consumer.initialDelay=200&consumer.delay=1000")
+            .process(new Processor() {
+				@Override
+				public void process(Exchange exchange) throws Exception {
+					latch.countDown();
+				}})
+            .to("mock:result");
+        }
+    });
+```
 
