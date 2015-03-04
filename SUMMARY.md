@@ -48,6 +48,7 @@
    * [camel-script](components/camel-script.md)
    * [camel-sql](components/camel-sql.md)
    * [camel-weather](components/camel-weather.md)
+   * camel-saxon
 * [Cloud](cloud/README.md)
    * [Docker](cloud/docker.md)
    * [OpenShift](cloud/openshift.md)
