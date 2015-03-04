@@ -1,4 +1,4 @@
-# camel-activemq
+## camel-activemq
 
 Camel ActiveMQ integration is provided by the [camel-activemq](http://camel.apache.org/activemq.html) component.
 
