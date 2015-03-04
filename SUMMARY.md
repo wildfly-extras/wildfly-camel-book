@@ -26,6 +26,7 @@
    * [camel-bindy](components/camel-bindy.md)
    * [camel-cdi](components/camel-cdi.md)
    * [camel-cxf](components/camel-cxf.md)
+   * camel-dozer
    * [camel-file](components/camel-file.md)
    * [camel-ftp](components/camel-ftp.md)
    * [camel-hl7](components/camel-hl7.md)
@@ -42,7 +43,6 @@
    * [camel-ognl](components/camel-ognl.md)
    * [camel-rest](components/camel-rest.md)
    * [camel-weather](components/camel-weather.md)
-   * camel-dozer
 * [Cloud](cloud/README.md)
    * [Docker](cloud/docker.md)
    * [OpenShift](cloud/openshift.md)
