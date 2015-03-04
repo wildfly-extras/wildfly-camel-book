@@ -26,7 +26,7 @@
    * [camel-bindy](components/camel-bindy.md)
    * [camel-cdi](components/camel-cdi.md)
    * [camel-cxf](components/camel-cxf.md)
-   * camel-dozer
+   * [camel-dozer](components/camel-dozer.md)
    * [camel-file](components/camel-file.md)
    * [camel-ftp](components/camel-ftp.md)
    * [camel-hl7](components/camel-hl7.md)
