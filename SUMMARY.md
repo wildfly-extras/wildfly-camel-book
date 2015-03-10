@@ -1,9 +1,9 @@
 # Summary
 
 * [Introduction](README.md)
-   * Data Formats
 * [Getting Started](start/README.md)
    * [Compatibility](start/compatibility.md)
+* Data Formats
 * [Features](features/README.md)
    * [Camel Context Definitions](features/context-definitions.md)
    * [Camel Context Deployments](features/context-deployments.md)
