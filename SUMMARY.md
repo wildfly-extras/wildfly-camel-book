@@ -3,7 +3,6 @@
 * [Introduction](README.md)
 * [Getting Started](start/README.md)
    * [Compatibility](start/compatibility.md)
-* Data Formats
 * [Features](features/README.md)
    * [Camel Context Definitions](features/context-definitions.md)
    * [Camel Context Deployments](features/context-deployments.md)
@@ -53,6 +52,7 @@
    * [camel-sql](components/camel-sql.md)
    * [camel-weather](components/camel-weather.md)
    * [camel-xstream](components/camel-xstream.md)
+* Data Formats
 * [Cloud](cloud/README.md)
    * [Docker](cloud/docker.md)
    * [OpenShift](cloud/openshift.md)
