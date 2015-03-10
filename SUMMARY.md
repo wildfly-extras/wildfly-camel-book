@@ -51,7 +51,7 @@
    * [camel-servlet](components/camel-servlet.md)
    * [camel-sql](components/camel-sql.md)
    * [camel-weather](components/camel-weather.md)
-   * camel-xstream
+   * [camel-xstream](components/camel-xstream.md)
 * [Cloud](cloud/README.md)
    * [Docker](cloud/docker.md)
    * [OpenShift](cloud/openshift.md)
