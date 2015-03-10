@@ -4,7 +4,7 @@ This chapter details information about supported camel components
 
 ## Supported Components 
 
-The following list of supported Camel components will be available to arbitrary JavaEE deployments:
+The following lists the set of supported Camel components that are available to JavaEE deployments:
 
 * [camel-activemq](camel-activemq.md)
 * [camel-atom](camel-atom.md)
@@ -36,6 +36,7 @@ The following list of supported Camel components will be available to arbitrary 
 * [camel-servlet](camel-servlet.md)
 * [camel-sql](camel-sql.md)
 * [camel-weather](camel-weather.md)
+* [camel-xstream](camel-xstream.md)
 
 ## Adding Components
 
