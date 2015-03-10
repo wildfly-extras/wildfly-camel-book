@@ -2,7 +2,7 @@
 
 This chapter details information about supported camel components
 
-## Aavailable Components 
+## Available Components 
 
 The following list of supported Camel components will be available to arbitrary JavaEE deployments:
 
