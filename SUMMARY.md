@@ -52,7 +52,7 @@
    * [camel-sql](components/camel-sql.md)
    * [camel-weather](components/camel-weather.md)
    * [camel-xstream](components/camel-xstream.md)
-* Data Formats
+* [Data Formats](dataformats/README.md)
 * [Cloud](cloud/README.md)
    * [Docker](cloud/docker.md)
    * [OpenShift](cloud/openshift.md)
