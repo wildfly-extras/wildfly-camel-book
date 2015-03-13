@@ -206,3 +206,5 @@ Refer to the [JMS security section](../security/jms.md).
 
 
 ### Code examples on GitHub
+
+An example [camel-jms application](https://github.com/wildfly-extras/wildfly-camel/tree/master/examples/camel-jms) is available on GitHub.
