@@ -24,7 +24,7 @@ Or, you could create a `messaging-deployment` configuration within a custom jms.
 ### Camel route configuration
 The following JMS producer and consumer examples make use of WildFly's embedded HornetQ sever to publish and consume messages to and from destinations.
 
-The examples also use CDI in conjunction with the camel-cdi component. JMS ConnectionFactory istances are injected into the Camel RouteBuilder through JNDI lookups.
+The examples also use CDI in conjunction with the camel-cdi component. JMS ConnectionFactory instances are injected into the Camel RouteBuilder through JNDI lookups.
 
 #### JMS Producer
 
@@ -119,7 +119,7 @@ public class CdiRequiredPolicy extends SpringTransactionPolicy {
 
 Now we can configure our Camel RouteBuilder class and inject the dependencies needed for the Camel JMS component. The WildFly XA connection factory is injected together with the transaction manager we configured earlier.
 
-In this example RouteBuilder, whenever any messages are consumed from queue1, they are routed to another JMS queue named queue2. Messages consumed from queue2 result in an exception being thrown from the camel route. This rolls back the JMS transaction and ultimately results in the original message being placed onto the dead letter queue or DLQ.
+In this example RouteBuilder, whenever any messages are consumed from queue1, they are routed to another JMS queue named queue2. Messages consumed from queue2 result in JMS transaction being rolled back using the rollback() DSL method. This results in the original message being placed onto the dead letter queue(DLQ).
 
 ```java
 @Startup
@@ -143,10 +143,10 @@ public class JMSRouteBuilder extends RouteBuilder {
       .transacted("PROPAGATION_REQUIRED")
       .to("jms:queue:queue2");
 
-    // Throw an exception to roll back the transaction. The message will end up on the WildFly 'DLQ' message queue
+    // Force the transaction to roll back. The message will end up on the WildFly 'DLQ' message queue
     from("jms:queue:queue2")
       .to("log:end")
-      .throwException(new Exception("Something went wrong"));
+      .rollback();
   }
 ```
 
