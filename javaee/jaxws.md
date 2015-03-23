@@ -80,17 +80,8 @@ public interface GreetingService {
 // Service implementation
 @WebService(serviceName="greeting", endpointInterface = "org.wildfly.camel.examples.jaxws.GreetingService")
 public class GreetingServiceImpl {
-    @Inject
-    @ContextName("jaxrs-camel-context")
-    private CamelContext context;
-
-    private GreetingService greetingService;
-
-    @PostConstruct
-    public void initServiceProxy() throws Exception {
-        Endpoint endpoint = context.getEndpoint("direct:start");
-        greetingService = ProxyHelper.createProxy(endpoint, GreetingService.class);
-    }
+    @Produce(uri="direct:start")
+    GreetingService greetingService;
 
     @WebMethod(operationName = "greet")
     public String greet(@WebParam(name = "name") String name) {
@@ -103,7 +94,8 @@ public class GreetingServiceImpl {
     }
 }
 ```
-Notice in the above code example that `GreetingServiceImpl` delegates all method calls to a greetingService object. This object is configured as a proxy by using the Camel `ProxyHelper` against the `GreetingService` interface. Whenever any of the web service methods are invoked by clients, the `direct:start` camel route is triggered.
+Notice in the above code example that `GreetingServiceImpl` delegates all method calls to a greetingService object which has been annotated
+with `@Produce`. This annotation is important as it configures a proxy for the `direct:start` endpoint against the `GreetingService` interface. Whenever any of the web service methods are invoked by clients, the `direct:start` camel route is triggered.
 
 The RouteBuilder class implements logic for each web service method invocation.
 
