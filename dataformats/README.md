@@ -3,6 +3,7 @@
 The following lists the set of supported Data Formats
 
 * [Bindy](http://camel.apache.org/bindy.html)
+* [Castor](http://camel.apache.org/castor.html)
 * [Crypto](http://camel.apache.org/crypto.html)
 * [CSV](http://camel.apache.org/csv.html)
 * [Flatpack](http://camel.apache.org/flatpack.html)
