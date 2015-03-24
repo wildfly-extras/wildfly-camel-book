@@ -2,7 +2,7 @@
 
 This chapter details information about supported camel components
 
-## Supported Components 
+## Supported Components
 
 The following lists the set of supported Camel components that are available to JavaEE deployments:
 
@@ -30,6 +30,7 @@ The following lists the set of supported Camel components that are available to 
 * [camel-ognl](camel-ognl.md)
 * [camel-quartz2](camel-quartz2.md)
 * [camel-rest](camel-rest.md)
+* [camel-restlet](camel-restlet.md)
 * [camel-rss](camel-rss.md)
 * [camel-saxon](camel-saxon.md)
 * [camel-script](camel-script.md)
@@ -42,9 +43,9 @@ The following lists the set of supported Camel components that are available to 
 
 Adding support for additional Camel Components is easy
 
-#### Add your modules.xml definition 
+#### Add your modules.xml definition
 
-A modules.xml descriptor defines the class loading behavior for your component. It should be placed together with the component's jar in `modules/system/layers/fuse/org/apache/camel/component`. Module dependencies should be setup for direct compile time dependencies. 
+A modules.xml descriptor defines the class loading behavior for your component. It should be placed together with the component's jar in `modules/system/layers/fuse/org/apache/camel/component`. Module dependencies should be setup for direct compile time dependencies.
 
 Here is an example for the camel-ftp component
 
@@ -64,9 +65,9 @@ Here is an example for the camel-ftp component
 
 Please make sure you don't duplicate modules that are already available in WildFly and can be reused.
 
-#### Add a reference to the component 
+#### Add a reference to the component
 
-To make this module visible by default to arbitrary JavaEE deployments add a reference to `modules/system/layers/fuse/org/apache/camel/component/main/module.xml` 
+To make this module visible by default to arbitrary JavaEE deployments add a reference to `modules/system/layers/fuse/org/apache/camel/component/main/module.xml`
 
 ```xml
 <module xmlns="urn:jboss:module:1.3" name="org.apache.camel.component">
@@ -78,8 +79,3 @@ To make this module visible by default to arbitrary JavaEE deployments add a ref
 
 </module>
 ```
-
-
-
-
-
