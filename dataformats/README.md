@@ -12,6 +12,7 @@ The following lists the set of supported Data Formats
 * [JSON](http://camel.apache.org/json.html)
 * [JAXB](http://camel.apache.org/jaxb.html)
 * [Protobuf](http://camel.apache.org/protobuf.html)
-* [XML Security](http://camel.apache.org/xml-security-component.html)
+* [SOAP](http://camel.apache.org/soap.html)
+* [XMLSecurity](http://camel.apache.org/xml-security-component.html)
 * [XStream](http://camel.apache.org/xstream.html)
 * [Zip](http://camel.apache.org/zip-file-dataformat.html)
