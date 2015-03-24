@@ -11,4 +11,5 @@ The following lists the set of supported Data Formats
 * [HL7](http://camel.apache.org/hl7.html)
 * [JSON](http://camel.apache.org/json.html)
 * [JAXB](http://camel.apache.org/jaxb.html)
+* [Protobuf](http://camel.apache.org/protobuf.html)
 * [XStream](http://camel.apache.org/xstream.html)
