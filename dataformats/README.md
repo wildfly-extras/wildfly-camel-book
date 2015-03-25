@@ -1,6 +1,6 @@
 # Data Formats
 
-The following lists the set of supported Data Formats
+The following lists supported Data Formats
 
 * [Bindy](http://camel.apache.org/bindy.html)
 * [Castor](http://camel.apache.org/castor.html)
