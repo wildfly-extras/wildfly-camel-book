@@ -15,6 +15,7 @@ The following lists supported Data Formats
 * [SOAP](http://camel.apache.org/soap.html)
 * [Serialization](http://camel.apache.org/serialization.html)
 * [TidyMarkup](http://camel.apache.org/tidymarkup.html)
+* [XmlBeans](http://camel.apache.org/xmlbeans.html)
 * [XMLSecurity](http://camel.apache.org/xml-security-component.html)
 * [XStream](http://camel.apache.org/xstream.html)
 * [Zip](http://camel.apache.org/zip-file-dataformat.html)
