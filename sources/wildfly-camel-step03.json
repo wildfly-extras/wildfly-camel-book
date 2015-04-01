@@ -3,7 +3,7 @@
   "apiVersion": "v1beta1",
   "metadata": {
     "name": "wildfly-camel-rest",
-    "description": "Creates a WildFly Camel cluster running the REST example",
+    "description": "Creates a WildFly Camel cluster running the REST example"
   },
   "items": [
     {
