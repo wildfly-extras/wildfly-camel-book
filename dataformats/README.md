@@ -1,4 +1,4 @@
-## Data Formats
+# Data Formats
 
 The following lists supported Data Formats
 
