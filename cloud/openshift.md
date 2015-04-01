@@ -36,7 +36,7 @@ The example architecture consists of a set of three high available (HA) servers 
 
 ### Running a single Pod
 
-A simple Pod configuration for a WildFly Camel container might be defined as in [wildfly-camel-step01.json](../sources/wildfly-camel-step01.json)
+A simple Pod configuration for a WildFly Camel container might be defined as in [wildfly-camel-step01.json](https://github.com/wildfly-extras/wildfly-camel-book/tree/2.2.0/sources/wildfly-camel-step01.json)
 
 To create the Pod in OpenShift we do
 
@@ -62,7 +62,7 @@ $ openshift-cli delete pod -l name=camel
 
 ### Adding a ReplicationController
 
-To achieve high availability (HA), lets replicate this Pod using a ReplicationController as in [wildfly-camel-step02.json](../sources/wildfly-camel-step02.json)
+To achieve high availability (HA), lets replicate this Pod using a ReplicationController as in [wildfly-camel-step02.json](https://github.com/wildfly-extras/wildfly-camel-book/tree/2.2.0/sources/wildfly-camel-step02.json)
 
 To create the replicated Pod in OpenShift we do
 
@@ -85,7 +85,7 @@ Name                                   Image(s)                        Host     
 
 ### Adding a Service
 
-The entry point into the system is a Kubernetes Service as in [wildfly-camel-step03.json](../sources/wildfly-camel-step03.json)
+The entry point into the system is a Kubernetes Service as in [wildfly-camel-step03.json](https://github.com/wildfly-extras/wildfly-camel-book/tree/2.2.0/sources/wildfly-camel-step03.json)
 
 To create a Service that accesses replicated Pods do
 
@@ -104,7 +104,7 @@ Name                Labels              Selector            IP                  
 rest-service        name=camel-srv      name=camel-pod      172.121.17.3        8080
 ```
 
-> <small>Note, this uses a hard coded mapping in [wildfly-camel-step03.json](../sources/wildfly-camel-step03.json) for publicIPs, which would have to be replaced according to your EC2 setup.</small>
+> <small>Note, this uses a hard coded mapping in [wildfly-camel-step03.json](https://github.com/wildfly-extras/wildfly-camel-book/tree/2.2.0/sources/wildfly-camel-step03.json) for publicIPs, which would have to be replaced according to your EC2 setup.</small>
 
 From a remote client, you should now be able to access the service like this
 
@@ -122,7 +122,7 @@ Running multiple server containers in a cloud environment is often only useful w
 
 ### Starting the Domain
 
-The WildFly-Camel domain can be configured as in [wildfly-camel-domain.json](../sources/wildfly-camel-domain.json)
+The WildFly-Camel domain can be configured as in [wildfly-camel-domain.json](https://github.com/wildfly-extras/wildfly-camel-book/tree/2.2.0/sources/wildfly-camel-domain.json)
 
 ```
 $ openshift-cli apply -f https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/tree/2.2.0/sources/wildfly-camel-domain.json
