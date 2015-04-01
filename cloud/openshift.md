@@ -41,7 +41,7 @@ A simple Pod configuration for a WildFly Camel container might be defined as in 
 To create the Pod in OpenShift we do
 
 ```
-$ openshift-cli apply -f https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/2.2/sources/wildfly-camel-step01.json
+$ openshift-cli apply -f https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/tree/2.2.0/sources/wildfly-camel-step01.json
 I1203 11:58:28.876288 00001 kubecfg.go:613] Creation succeeded for Pod with name camel-pod
 ```
 
@@ -67,7 +67,7 @@ To achieve high availability (HA), lets replicate this Pod using a ReplicationCo
 To create the replicated Pod in OpenShift we do
 
 ```
-$ openshift-cli apply -f https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/2.2/sources/wildfly-camel-step02.json
+$ openshift-cli apply -f https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/tree/2.2.0/sources/wildfly-camel-step02.json
 I1203 13:19:56.780955 00001 kubecfg.go:613] Creation succeeded for ReplicationController with name restSlaveController
 ```
 
@@ -90,7 +90,7 @@ The entry point into the system is a Kubernetes Service as in [wildfly-camel-ste
 To create a Service that accesses replicated Pods do
 
 ```
-$ openshift-cli apply -f https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/2.2/sources/wildfly-camel-step03.json
+$ openshift-cli apply -f https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/tree/2.2.0/sources/wildfly-camel-step03.json
 I1203 14:28:44.860519 00001 kubecfg.go:613] Creation succeeded for Service with name rest-service
 I1203 14:28:44.860770 00001 kubecfg.go:613] Creation succeeded for ReplicationController with name rest-controller
 ```
@@ -125,7 +125,7 @@ Running multiple server containers in a cloud environment is often only useful w
 The WildFly-Camel domain can be configured as in [wildfly-camel-domain.json](../sources/wildfly-camel-domain.json)
 
 ```
-$ openshift-cli apply -f https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/2.2/sources/wildfly-camel-domain.json
+$ openshift-cli apply -f https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/tree/2.2.0/sources/wildfly-camel-domain.json
 I1216 10:47:51.071633       1 kubecfg.go:613] Creation succeeded for Service with name management-service
 I1216 10:47:51.071747       1 kubecfg.go:613] Creation succeeded for Service with name domain-controller
 I1216 10:47:51.071758       1 kubecfg.go:613] Creation succeeded for Service with name rest-service
