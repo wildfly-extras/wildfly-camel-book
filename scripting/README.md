@@ -1,4 +1,4 @@
-# Script Languages
+# Languages
 
 The following lists supported scripting languages
 
