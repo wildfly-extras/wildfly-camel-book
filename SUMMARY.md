@@ -53,7 +53,7 @@
    * [camel-weather](components/camel-weather.md)
    * [camel-xstream](components/camel-xstream.md)
 * [Data Formats](dataformats/README.md)
-* Scripting Languages
+* [Scripting Languages](scripting/README.md)
 * [Cloud](cloud/README.md)
    * [Docker](cloud/docker.md)
    * [OpenShift](cloud/openshift.md)
