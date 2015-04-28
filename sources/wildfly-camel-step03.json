@@ -15,39 +15,6 @@
       "publicIPs": [ "172.30.0.21" ],
       "selector": {"name": "camel-pod"},
       "labels": {"name": "camel-srv"}
-    },
-    {
-      "apiVersion": "v1beta2",
-      "creationTimestamp": null,
-      "id": "rest-controller",
-      "kind": "ReplicationController",
-      "apiVersion": "v1beta2",
-      "desiredState": {
-        "replicas": 3,
-        "replicaSelector": {
-          "name": "camel-pod"
-        },
-        "podTemplate": {
-          "desiredState": {
-            "manifest": {
-              "containers": [
-                {
-                  "name": "rest-cnt",
-                  "image": "wildflyext/example-camel-rest",
-                  "ports": [
-                    {
-                      "protocol": "TCP",
-                      "containerPort": 8080
-                    }
-                  ]
-                }
-              ]
-            }
-          },
-          "labels": {"name": "camel-pod"}
-        }
-      },
-      "labels": {"name": "camel-ctrl"}
     }
   ]
 }

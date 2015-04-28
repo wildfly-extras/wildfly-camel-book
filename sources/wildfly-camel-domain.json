@@ -103,7 +103,7 @@
             "manifest": {
               "containers": [
                 {
-                  "name": "domain-controller",
+                  "name": "domain-slave",
                   "image": "wildflyext/wildfly-camel",
                   "env": [
                     {
