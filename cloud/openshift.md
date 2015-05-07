@@ -9,14 +9,14 @@ We can start OpenShift Origin like this
 
 ```
 $ mkdir /tmp/openshift
-$ docker run --rm --name openshift-origin --net=host --privileged -v /var/run/docker.sock:/var/run/docker.sock -v /tmp/openshift:/tmp/openshift openshift/origin:v0.4.4 start
+$ docker run --rm --name openshift-origin --net=host --privileged -v /var/run/docker.sock:/var/run/docker.sock -v /tmp/openshift:/tmp/openshift openshift/origin:v0.5 start
 ```
 
 Then verify the OpenShift version
 
 ```
 $ docker exec openshift-origin openshift version
-openshift v0.4.4-9-g09f87e4
+openshift v0.5-22-g2b309a0
 kubernetes v0.14.1-582-gb12d75d
 ```
 
@@ -48,7 +48,6 @@ This allows us to create pods, services and replication controllers under our ow
 
 ```
 $ openshift-cli new-project wildfly-camel
-$ openshift-cli project wildfly-camel
 ```
 
 ### Running a single Pod
