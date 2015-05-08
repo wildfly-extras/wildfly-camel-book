@@ -141,5 +141,5 @@ Refer to the [JAX-WS security section](../security/jaxws.md).
 
 Example JAX-WS applications are available on GitHub.
 
-* [camel-cxf application](https://github.com/wildfly-extras/wildfly-camel/tree/master/examples/camel-cxf)
-* [camel-jaxws application](https://github.com/wildfly-extras/wildfly-camel/tree/master/examples/camel-jaxws)
+* [camel-cxf application](https://github.com/wildfly-extras/wildfly-camel/tree/2.3.0/examples/projects/camel-cxf)
+* [camel-jaxws application](https://github.com/wildfly-extras/wildfly-camel/tree/2.3.0/examples/projects/camel-jaxws)
