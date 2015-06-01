@@ -62,6 +62,6 @@
    * [JAX-RS](security/jaxrs.md)
    * [JAX-WS](security/jaxws.md)
    * [JMS](security/jms.md)
-   * Policy
+   * [Policy](policy.md)
 * [Developer Guide](developer/README.md)
 
