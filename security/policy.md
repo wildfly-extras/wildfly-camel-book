@@ -1,4 +1,4 @@
-
+Camel supports the notion of Camel Context associated [RoutePolicies](http://camel.apache.org/routepolicy.html), which can be used to integrate with the WildFly security system.
 ```java
 CamelContext camelctx = new DefaultCamelContext();
 camelctx.addRoutes(new RouteBuilder() {
