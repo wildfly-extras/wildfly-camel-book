@@ -36,6 +36,7 @@ The following lists the set of supported Camel components that are available to 
 * [camel-script](camel-script.md)
 * [camel-servlet](camel-servlet.md)
 * [camel-sql](camel-sql.md)
+* [camel-swager](camel-swager.md)
 * [camel-velocity](camel-velocity.md)
 * [camel-weather](camel-weather.md)
 * [camel-xstream](camel-xstream.md)
