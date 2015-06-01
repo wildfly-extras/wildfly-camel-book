@@ -1,6 +1,6 @@
 # Security
 
-Security in WildFly is a broad topic. Both WildFly and camel have well documented, stadardised methods of securing configuration, endpoints and payloads. Camel supports the notion of Camel Context associated [Policies](policy.md), which can be used to integrate with the WildFly security system.
+Security in WildFly is a broad topic. Both WildFly and camel have well documented, stadardised methods of securing configuration, endpoints and payloads. Camel supports the notion of [RoutePolicies](http://camel.apache.org/routepolicy.html), which can be used to integrate with the WildFly security system.
 
 Please also see the security related documentation for these endpoints:
 
