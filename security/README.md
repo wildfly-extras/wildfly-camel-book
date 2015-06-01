@@ -8,6 +8,6 @@ For details please see the security related documentation for:
 * [JAX-WS Security](jaxws.md)
 * [JMS Security](jms.md)
 
-In addition to that, we use Camel's notion of [RoutePolicies](http://camel.apache.org/routepolicy.html) to integrate with the WildFly security system.
+In addition to that, we use Camel's notion of Route Policies to integrate with the WildFly security system.
 
 * [RoutePolicy](policy.md)
