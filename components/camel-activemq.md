@@ -216,4 +216,4 @@ Refer to the [JMS security section](../security/jms.md).
 
 ### Code examples on GitHub
 
-An example [camel-activemq application](https://github.com/wildfly-extras/wildfly-camel/tree/2.3.0/examples/projects/camel-activemq) is available on GitHub.
+An example [camel-activemq application](https://github.com/wildfly-extras/wildfly-camel/tree/3.0.0/examples/camel-activemq) is available on GitHub.
