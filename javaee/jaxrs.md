@@ -7,7 +7,7 @@ JAX-RS producer endpoint support is provided by the [camel-restlet](http://camel
 
 ### JAX-RS Restlet Producer
 
-The following code example uses the camel-restlet component to consume a JAX-RS service which has been deployed by the [WildFly JAX-RS subsystem](https://docs.jboss.org/author/display/WFLY8/Java+API+for+RESTful+Web+Services+(JAX-RS).
+The following code example uses the camel-restlet component to consume a JAX-RS service which has been deployed by the [WildFly JAX-RS subsystem](https://docs.jboss.org/author/display/WFLY8/Java+API+for+RESTful+Web+Services+&#40;JAX-RS&#41;).
 
 #### JAX-RS service
 This RESTful service desribes a simple interface which will return a list of Customer POJOs as a JSON string. The service will be published to the path `GET /rest/customer`.
