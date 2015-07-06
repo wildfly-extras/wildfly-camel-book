@@ -12,7 +12,7 @@ WildFly Camel is distributed as
 
 ## Installing the Camel Subsystem
 
-Simply apply the patch to the respective wildfly version. For possible WildFly target versions, see the [compatibility page](compatibility.md)
+Simply unpack the provided patch into the a supported WildFly installation. For possible WildFly target versions, see the [compatibility page](compatibility.md)
 
 ## Standalone Server
 
@@ -35,6 +35,17 @@ Similarly, for the WildFly Domain Mode run ...
 ```
 $ bin/domain.sh -c domain-camel.xml
 ```
+
+## Enable Camel Subsystem
+
+The patch does not modify existing configuration files. Instead it comes with a number of additional configurations files that end in `-camel.xml`.
+
+If you should want to add the Camel subsystem to existing configurations you can run the following command
+
+```
+
+```
+
 
 ## Docker Image
 
