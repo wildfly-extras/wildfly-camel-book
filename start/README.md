@@ -42,11 +42,16 @@ The patch does not modify existing configuration files. Instead it comes with a 
 
 If you should want to add the Camel subsystem to existing configurations you can run the following command.
 
-
 ```
-
+$ bin/fuseconfig.sh --configs camel --enable
+Processing config for: camel
+    Writing 'layers=fuse' to: .../wildfly-9.0.0.CR1/modules/layers.conf
+    Enable camel configuration in: .../wildfly-9.0.0.CR1/standalone/configuration/standalone.xml
+    Enable camel configuration in: .../wildfly-9.0.0.CR1/standalone/configuration/standalone-full.xml
+    Enable camel configuration in: .../wildfly-9.0.0.CR1/standalone/configuration/standalone-full-ha.xml
+    Enable camel configuration in: .../wildfly-9.0.0.CR1/standalone/configuration/standalone-ha.xml
+    Enable camel configuration in: .../wildfly-9.0.0.CR1/domain/configuration/domain.xml
 ```
-
 
 ## Docker Image
 
