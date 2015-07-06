@@ -40,7 +40,8 @@ $ bin/domain.sh -c domain-camel.xml
 
 The patch does not modify existing configuration files. Instead it comes with a number of additional configurations files that end in `-camel.xml`.
 
-If you should want to add the Camel subsystem to existing configurations you can run the following command
+If you should want to add the Camel subsystem to existing configurations you can run the following command.
+
 
 ```
 
