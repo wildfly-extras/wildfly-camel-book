@@ -184,4 +184,4 @@ Refer to the [JAX-RS security section](../security/jaxrs.md).
 
 ### Code examples on GitHub
 
-An example [camel-rest application](https://github.com/wildfly-extras/wildfly-camel/tree/3.0.0/examples/camel-rest) is available on GitHub.
+An example [camel-rest application](https://github.com/wildfly-extras/wildfly-camel/tree/master/examples/camel-rest) is available on GitHub.

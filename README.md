@@ -1,7 +1,7 @@
 # WildFly Camel
 
 <small>
-Version: 3.0.0-SNAPSHOT
+Version: {{ book.version }}-SNAPSHOT
 </small>
 
 Provides [Apache Camel](http://camel.apache.org/) integration with the [WildFly Application Server](http://wildfly.org/).
