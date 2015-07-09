@@ -46,6 +46,7 @@
    * [camel-quartz2](components/camel-quartz2.md)
    * [camel-rest](components/camel-rest.md)
    * [camel-rss](components/camel-rss.md)
+   * [camel-sap](components/camel-sap.md)
    * [camel-saxon](components/camel-saxon.md)
    * [camel-script](components/camel-script.md)
    * [camel-servlet](components/camel-servlet.md)
@@ -64,4 +65,3 @@
    * [JMS](security/jms.md)
    * [Policy](policy.md)
 * [Developer Guide](developer/README.md)
-

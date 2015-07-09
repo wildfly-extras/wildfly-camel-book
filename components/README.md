@@ -33,6 +33,7 @@ The following lists the set of supported Camel components that are available to 
 * [camel-restlet](camel-restlet.md)
 * [camel-rss](camel-rss.md)
 * [camel-salesforce](camel-salesforce.md)
+* [camel-sap](camel-sap.md)
 * [camel-saxon](camel-saxon.md)
 * [camel-script](camel-script.md)
 * [camel-servlet](camel-servlet.md)
