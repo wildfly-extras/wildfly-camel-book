@@ -73,7 +73,9 @@ Start your application server and camel-sap will be available for use.
 
 ### Example SAP Camel Route
 
-This example uses XML files containing serialized SAP requests to query Customer records in the Flight Data Application within SAP. These files are consumed by Camel and their contents are then converted to string message bodies. These messages are then routed to an `sap-srfc-destination` endpoint which converts and sends them to SAP as `BAPI_FLCUST_GETLIST` requests to query Customer records.
+This example uses XML files containing serialized SAP requests to query Customer records in the Flight Data Application within SAP. 
+
+These files are consumed by Camel and their contents are then converted to string message bodies. These messages are then routed to an `sap-srfc-destination` endpoint which converts and sends them to SAP as `BAPI_FLCUST_GETLIST` requests to query Customer records.
 
 First we configure a destination data store.
 ```java
@@ -120,7 +122,7 @@ The XML request looks like the following and is consumed from a file within src/
 <BAPI_FLCUST_GETLIST:Request xmlns:BAPI_FLCUST_GETLIST="http://sap.fusesource.org/rfc/XXX/BAPI_FLCUST_GETLIST" CUSTOMER_NAME="*" MAX_ROWS="10" WEB_USER="*"/>
 ```
 
-When the Camel route runs, the requst XML data is consumed from src/data and sent to SAP as a `BAPI_FLCUST_GETLIST` request.  The results of the SAP request are output to the console.
+When the Camel route runs, the request XML data is consumed from src/data and sent to SAP as a `BAPI_FLCUST_GETLIST` request.  The results of the SAP request are output to the console.
 You should see an XML structure like the following containing customer records.
 
 ```xml
