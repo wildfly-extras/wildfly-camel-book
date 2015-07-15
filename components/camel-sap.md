@@ -8,33 +8,22 @@ There are remote function call (RFC) components that support the sRFC, tRFC, and
 
 ### Configuring the camel-sap module
 
-Before using camel-sap, two WildFly / EAP modules need to be configured so that the subsystem can discover the new functionality.
+Before using camel-sap, an additional WildFly / EAP modules needs to be configured so that the subsystem can discover the new functionality.
 
 Your application server should be stopped before making the following changes.
 
-#### Create module com.sap.conn.jco
+#### Modify module com.sap.conn.jco
 
 Download the SAP JCo libraries and the SAP IDoc library from the [SAP Service Marketplace](http://service.sap.com/connectors)), making sure to choose the appropriate library versions for your operating system.
 
 1. From a terminal session, change into the application server installation root directory
 2. Change into directory `modules/system/layers/fuse`
-3. Create directory `com/sap/conn/jco/main`
-4. Copy `sapjco3.jar` and `sapidoc3.jar` into `com/sap/conn/jco/main`
-5. Create an appropriate native library directory within `com/sap/conn/jco/main`. For example, if your target platform is Linux x86_64 you would create `com/sap/conn/jco/main/lib/linux-x86_64`. For information relating to other operating systems and architectures see the [WildFly Native Libraries documentation](https://docs.jboss.org/author/display/MODULES/Native+Libraries)
-6. Copy the JCO native library (i.e the `.so`, `.dll` or `.jnilib file`) into the native library directory you created in the previous step
-7. Create a module.xml file in `com/sap/conn/jco/main` with the following content:
+3. Copy `sapjco3.jar` and `sapidoc3.jar` into `com/sap/conn/jco/main`
+4. Create an appropriate native library directory within `com/sap/conn/jco/main`. For example, if your target platform is Linux x86_64 you would create `lib/linux-x86_64`. For information relating to other operating systems and architectures see the [WildFly Native Libraries documentation](https://docs.jboss.org/author/display/MODULES/Native+Libraries)
+5. Copy the JCO native library (i.e the `.so`, `.dll` or `.jnilib file`) into the native library directory you created in the previous step
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<module xmlns="urn:jboss:module:1.1" name="com.sap.conn.jco">
-  <resources>
-    <resource-root path="sapjco3.jar" />
-    <resource-root path="sapidoc3.jar" />
-  </resources>
-</module>
-```
+The file and directory structure for module `com.sap.conn.jco` should now look something like this:
 
-You should now have a file and directory structure that looks something like this:
 ```
 com/sap/conn/jco
 com/sap/conn/jco/main
@@ -73,7 +62,7 @@ Start your application server and camel-sap will be available for use.
 
 ### Example SAP Camel Route
 
-This example uses XML files containing serialized SAP requests to query Customer records in the Flight Data Application within SAP. 
+This example uses XML files containing serialized SAP requests to query Customer records in the Flight Data Application within SAP.
 
 These files are consumed by Camel and their contents are then converted to string message bodies. These messages are then routed to an `sap-srfc-destination` endpoint which converts and sends them to SAP as `BAPI_FLCUST_GETLIST` requests to query Customer records.
 
