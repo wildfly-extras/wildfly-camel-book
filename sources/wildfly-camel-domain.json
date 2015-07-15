@@ -1,141 +1,154 @@
 {
-  "kind": "Config",
-  "apiVersion": "v1beta1",
+  "kind": "List",
+  "apiVersion": "v1beta3",
   "metadata": {
     "name": "wildfly-camel-domain",
     "description": "Creates a WildFly Camel domain"
   },
   "items": [
     {
-      "id": "management-service",
       "kind": "Service",
-      "apiVersion": "v1beta1",
-      "containerPort": 9990,
-      "port": 9990,
-      "publicIPs": [ "172.30.0.21" ],
-      "selector": {"name": "ctrl-pod"}
+      "apiVersion": "v1beta3",
+      "metadata": {
+        "name": "management-service"
+      },
+      "spec": {
+        "ports": [
+          {
+            "port": 9990
+          }
+        ],
+        "selector": {"name": "ctrl-pod"}
+      }
     },
     {
-      "id": "domain-controller",
       "kind": "Service",
-      "apiVersion": "v1beta1",
-      "containerPort": 9999,
-      "port": 9999,
-      "publicIPs": [ "172.30.0.21" ],
-      "selector": {"name": "ctrl-pod"}
+      "apiVersion": "v1beta3",
+      "metadata": {
+        "name": "domain-controller"
+      },
+      "spec": {
+        "ports": [
+          {
+            "port": 9999
+          }
+        ],
+        "selector": {"name": "ctrl-pod"}
+      }
     },
     {
-      "id": "http-service",
       "kind": "Service",
-      "apiVersion": "v1beta1",
-      "containerPort": 8080,
-      "port": 8080,
-      "publicIPs": [ "172.30.0.21" ],
-      "selector": {"name": "http-pod"}
+      "apiVersion": "v1beta3",
+      "metadata": {
+        "name": "http-service"
+      },
+      "spec": {
+        "ports": [
+          {
+            "port": 8080
+          }
+        ],
+        "selector": {"name": "http-pod"}
+      }
     },
     {
-      "apiVersion": "v1beta2",
-      "id": "master-controller",
       "kind": "ReplicationController",
-      "apiVersion": "v1beta2",
-      "desiredState": {
+      "apiVersion": "v1beta3",
+      "metadata": {
+        "name": "master-controller"
+      },
+      "spec": {
         "replicas": 1,
-        "replicaSelector": {
-          "name": "ctrl-pod"
-        },
-        "podTemplate": {
-          "desiredState": {
-            "manifest": {
-              "containers": [
-                {
-                  "name": "domain-controller",
-                  "image": "wildflyext/wildfly-camel",
-                  "env": [
-                    {
-                      "name": "WILDFLY_MANAGEMENT_USER",
-                      "value": "admin"
-                    },
-                    {
-                      "name": "WILDFLY_MANAGEMENT_PASSWORD",
-                      "value": "admin"
-                    }
-                  ],
-                  "command": [
-                    "--domain-config",
-                    "domain-camel.xml",
-                    "--host-config",
-                    "host-master.xml",
-                    "-b",
-                    "0.0.0.0",
-                    "-bmanagement",
-                    "0.0.0.0"
-                  ],
-                  "ports": [
-                    {
-                      "protocol": "TCP",
-                      "containerPort": 9990
-                    },
-                    {
-                      "protocol": "TCP",
-                      "containerPort": 9999
-                    }
-                  ]
-                }
-              ]
-            }
-          },
-          "labels": {"name": "ctrl-pod"}
+        "selector": {"name": "ctrl-pod"},
+        "template": {
+           "metadata": {
+              "labels": {"name": "ctrl-pod"}
+           },
+           "spec": {
+               "containers": [{
+                 "name": "domain-controller",
+                 "image": "wildflyext/wildfly-camel",
+                 "imagePullPolicy": "IfNotPresent",
+                 "env": [
+                   {
+                     "name": "WILDFLY_MANAGEMENT_USER",
+                     "value": "admin"
+                   },
+                   {
+                     "name": "WILDFLY_MANAGEMENT_PASSWORD",
+                     "value": "admin"
+                   }
+                 ],
+                 "args": [
+                   "--domain-config",
+                   "domain-camel.xml",
+                   "--host-config",
+                   "host-master.xml",
+                   "-b",
+                   "0.0.0.0",
+                   "-bmanagement",
+                   "0.0.0.0"
+                 ],
+                 "ports": [
+                   {
+                     "protocol": "TCP",
+                     "containerPort": 9990
+                   },
+                   {
+                     "protocol": "TCP",
+                     "containerPort": 9999
+                   }
+                 ]
+              }]
+           }
         }
       }
     },
     {
-      "apiVersion": "v1beta2",
-      "id": "host-controller",
       "kind": "ReplicationController",
-      "apiVersion": "v1beta2",
-      "desiredState": {
+      "apiVersion": "v1beta3",
+      "metadata": {
+        "name": "host-controller"
+      },
+      "spec": {
         "replicas": 3,
-        "replicaSelector": {
-          "name": "http-pod"
-        },
-        "podTemplate": {
-          "desiredState": {
-            "manifest": {
-              "containers": [
-                {
-                  "name": "domain-slave",
-                  "image": "wildflyext/wildfly-camel",
-                  "env": [
-                    {
-                      "name": "WILDFLY_MANAGEMENT_USER",
-                      "value": "admin"
-                    },
-                    {
-                      "name": "WILDFLY_MANAGEMENT_PASSWORD",
-                      "value": "admin"
-                    }
-                  ],
-                  "command": [
-                    "--domain-config",
-                    "domain-camel.xml",
-                    "--host-config",
-                    "host-camel-slave.xml",
-                    "-b",
-                    "0.0.0.0",
-                    "-bmanagement",
-                    "0.0.0.0"
-                  ],
-                  "ports": [
-                    {
-                      "protocol": "TCP",
-                      "containerPort": 8080
-                    }
-                  ]
-                }
-              ]
-            }
-          },
-          "labels": {"name": "http-pod"}
+        "selector": {"name": "http-pod"},
+        "template": {
+           "metadata": {
+              "labels": {"name": "http-pod"}
+           },
+           "spec": {
+               "containers": [{
+                 "name": "domain-slave",
+                 "image": "wildflyext/wildfly-camel",
+                 "env": [
+                   {
+                     "name": "WILDFLY_MANAGEMENT_USER",
+                     "value": "admin"
+                   },
+                   {
+                     "name": "WILDFLY_MANAGEMENT_PASSWORD",
+                     "value": "admin"
+                   }
+                 ],
+                 "args": [
+                   "--domain-config",
+                   "domain-camel.xml",
+                   "--host-config",
+                   "host-camel-slave.xml",
+                   "-b",
+                   "0.0.0.0",
+                   "-bmanagement",
+                   "0.0.0.0"
+                 ],
+                 "ports": [
+                   {
+                     "protocol": "TCP",
+                     "containerPort": 8080
+                   }
+                 ]
+              }]
+           }
         }
       }
     }

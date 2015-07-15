@@ -1,37 +1,27 @@
 {
-  "kind": "Config",
-  "apiVersion": "v1beta1",
+  "kind": "Pod",
+  "apiVersion": "v1beta3",
   "metadata": {
     "name": "wildfly-camel-rest",
-    "description": "Creates a WildFly Camel cluster running the REST example"
-  },
-  "items": [
-    {
-      "apiVersion": "v1beta2",
-      "creationTimestamp": null,
-      "id": "camel-pod",
-      "kind": "Pod",
-      "desiredState": {
-        "manifest": {
-          "id": "camel-pod",
-          "containers": [
-            {
-              "name": "camel-cnt",
-              "image": "wildflyext/example-camel-rest",
-              "ports": [
-                {
-                  "protocol": "TCP",
-                  "containerPort": 8080
-                }
-              ]
-            }
-          ]
-        }
-      },
-      "labels": {
-        "name": "camel",
-        "role": "pod"
-      }
+    "description": "Creates a WildFly Camel cluster running the REST example",
+    "labels": {
+      "name": "camel"
     }
-  ]
+  },
+  "spec": {
+    "containers": [
+      {
+        "id": "camel-pod",
+        "name": "camel-cnt",
+        "image": "wildflyext/example-camel-rest",
+        "imagePullPolicy": "IfNotPresent",
+        "ports": [
+          {
+            "protocol": "TCP",
+            "containerPort": 8080
+          }
+        ]
+      }
+    ]
+  }
 }

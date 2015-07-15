@@ -1,20 +1,20 @@
 {
-  "kind": "Config",
-  "apiVersion": "v1beta1",
+  "kind": "Service",
+  "apiVersion": "v1beta3",
   "metadata": {
-    "name": "wildfly-camel-rest",
-    "description": "Creates a WildFly Camel cluster running the REST example"
+    "name": "rest-service",
+    "description": "Creates a WildFly Camel cluster running the REST example",
+    "labels": {"name": "camel-srv"}
   },
-  "items": [
-    {
-      "id": "rest-service",
-      "kind": "Service",
-      "apiVersion": "v1beta1",
-      "containerPort": 8080,
-      "port": 8080,
-      "publicIPs": [ "172.30.0.21" ],
-      "selector": {"name": "camel-pod"},
-      "labels": {"name": "camel-srv"}
+  "spec": {
+    "id": "rest-service",
+    "ports": [
+      {
+        "port": 8080
+      }
+    ],
+    "selector": {
+      "name": "camel-pod"
     }
-  ]
+  }
 }
