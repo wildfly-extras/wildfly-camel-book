@@ -6,9 +6,7 @@ The component can be configured to work with an embedded or external broker. For
 
 ### WildFly ActiveMQ resource adapter configuration
 
-An ActiveMQ WildFly module and the ActiveMQ resource adapter rar file is provided as part of the WildFly Camel subsystem distribution. Therefore there is no need to download and manually configure all of these components yourself.
-
-The following steps outline how to configure the ActiveMQ resource adapter.
+Dowonload the [ActiveMQ resource adapter rar file](https://repository.apache.org/content/repositories/releases/org/apache/activemq/activemq-rar/5.11.1/activemq-rar-5.11.1.rar). The following steps outline how to configure the ActiveMQ resource adapter.
 
 1) Make sure your running WildFly instance is stopped. Open a terminal session and change into the WildFly installation root directory
 
@@ -16,7 +14,7 @@ The following steps outline how to configure the ActiveMQ resource adapter.
 
 `cd modules/system/layers/fuse/org/apache/activemq/main`
 
-3) Extract broker-config and ra.xml files from the resource adapter.
+3) Copy the resource adapter .rar file into the current directory and extract `broker-config.xml` and `META-INF/ra.xml` files from the resource adapter.
 
 ```
 unzip activemq-rar-5.11.1.rar broker-config.xml
@@ -33,12 +31,8 @@ After making the modification, the `<resources>` section should look like this:
   <resource-root path="activemq-broker-5.11.1.jar" />
   <resource-root path="activemq-client-5.11.1.jar" />
   <resource-root path="activemq-jms-pool-5.11.1.jar" />
-  <resource-root path="activemq-kahadb-store-5.11.1.jar" />
   <resource-root path="activemq-openwire-legacy-5.11.1.jar" />
   <resource-root path="activemq-pool-5.11.1.jar" />
-  <resource-root path="activemq-protobuf-1.1.jar" />
-  <resource-root path="activemq-ra-5.11.1.jar" />
-  <resource-root path="activemq-rar-5.11.1.rar" />
   <resource-root path="activemq-spring-5.11.1.jar" />
 </resources>
 ```
@@ -134,7 +128,7 @@ Finally, two queues are configured named 'queue1' and 'queue2'.
 ```
 
 #### Transaction Manager
-The camel-active component requires a transaction manager of type `org.springframework.transaction.PlatformTransactionManager`. Therefore, we begin by creating a bean extending `JtaTransactionManager`. Note that the bean is annotated with `@Named` to allow the bean to be registered within the Camel bean registry. Also note that the WildFly transaction manager and user transaction instances are injected using CDI.
+The camel-activemq component requires a transaction manager of type `org.springframework.transaction.PlatformTransactionManager`. Therefore, we begin by creating a bean extending `JtaTransactionManager`. Note that the bean is annotated with `@Named` to allow the bean to be registered within the Camel bean registry. Also note that the WildFly transaction manager and user transaction instances are injected using CDI.
 
 ```java
 @Named("transactionManager")
