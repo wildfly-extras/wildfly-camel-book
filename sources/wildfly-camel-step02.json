@@ -1,6 +1,6 @@
 {
   "kind": "ReplicationController",
-  "apiVersion": "v1beta3",
+  "apiVersion": "v1",
   "metadata": {
     "name": "rest-replication-controller",
     "description": "Creates a WildFly Camel cluster running the REST example",

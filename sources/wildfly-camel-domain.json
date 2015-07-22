@@ -1,6 +1,6 @@
 {
   "kind": "List",
-  "apiVersion": "v1beta3",
+  "apiVersion": "v1",
   "metadata": {
     "name": "wildfly-camel-domain",
     "description": "Creates a WildFly Camel domain"
@@ -8,7 +8,7 @@
   "items": [
     {
       "kind": "Service",
-      "apiVersion": "v1beta3",
+      "apiVersion": "v1",
       "metadata": {
         "name": "management-service"
       },
@@ -23,7 +23,7 @@
     },
     {
       "kind": "Service",
-      "apiVersion": "v1beta3",
+      "apiVersion": "v1",
       "metadata": {
         "name": "domain-controller"
       },
@@ -38,7 +38,7 @@
     },
     {
       "kind": "Service",
-      "apiVersion": "v1beta3",
+      "apiVersion": "v1",
       "metadata": {
         "name": "http-service"
       },
@@ -53,7 +53,7 @@
     },
     {
       "kind": "ReplicationController",
-      "apiVersion": "v1beta3",
+      "apiVersion": "v1",
       "metadata": {
         "name": "master-controller"
       },
@@ -106,7 +106,7 @@
     },
     {
       "kind": "ReplicationController",
-      "apiVersion": "v1beta3",
+      "apiVersion": "v1",
       "metadata": {
         "name": "host-controller"
       },

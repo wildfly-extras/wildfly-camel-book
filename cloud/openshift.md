@@ -14,15 +14,15 @@ $ docker run --rm --name openshift-origin --privileged --net=host \
   -v /sys:/sys:ro \
   -v /var/lib/docker:/var/lib/docker:rw \
   -v /var/lib/openshift/openshift.local.volumes:/var/lib/openshift/openshift.local.volumes \
-  openshift/origin:v1.0.2 start
+  openshift/origin:v1.0.3 start
 ```
 
 Then verify the OpenShift version
 
 ```
 $ docker exec openshift-origin openshift version
-openshift v1.0.2
-kubernetes v0.20.0-157-g96828f2
+openshift v1.0.3
+kubernetes v1.0.0
 ```
 
 You may want to create an alias to the OpenShift CLI
