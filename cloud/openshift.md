@@ -67,6 +67,9 @@ NAME         PRIV      CAPS      HOSTDIR   SELINUX     RUNASUSER
 restricted   false     []        false     MustRunAs   RunAsAny
 ```
 
+Alternatively, if you don't want to do this, you'll have to create your own WildFly image which sets any files or directories written to by WildFly as world-writable.
+See section **Support arbitrary user ids** in the [OpenShift image guidelines documentation](https://docs.openshift.org/latest/creating_images/guidelines.html). 
+
 
 ### Create an OpenShift project
 
