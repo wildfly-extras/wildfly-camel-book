@@ -33,7 +33,7 @@
    * [camel-http4](components/camel-http4.md)
    * [camel-hl7](components/camel-hl7.md)
    * [camel-jaxb](components/camel-jaxb.md)
-   * [camel-jgroups](camel-jgroups.md)
+   * [camel-jgroups](components/camel-jgroups.md)
    * [camel-jms](components/camel-jms.md)
    * [camel-jmx](components/camel-jmx.md)
    * [camel-jpa](components/camel-jpa.md)
