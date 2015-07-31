@@ -37,7 +37,7 @@
    * [camel-jms](components/camel-jms.md)
    * [camel-jmx](components/camel-jmx.md)
    * [camel-jpa](components/camel-jpa.md)
-   * [camel-kafka](camel-kafka.md)
+   * [camel-kafka](components/camel-kafka.md)
    * [camel-lucene](components/camel-lucene.md)
    * [camel-mail](components/camel-mail.md)
    * [camel-mina2](components/camel-mina2.md)
