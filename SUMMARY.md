@@ -54,7 +54,7 @@
    * [camel-sql](components/camel-sql.md)
    * [camel-weather](components/camel-weather.md)
    * [camel-xstream](components/camel-xstream.md)
-   * camel-kafka
+   * [camel-kafka](camel-kafka.md)
 * [Data Formats](dataformats/README.md)
 * [Languages](scripting/README.md)
 * [Cloud](cloud/README.md)
