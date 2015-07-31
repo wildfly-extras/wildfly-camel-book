@@ -18,9 +18,11 @@ The following lists the set of supported Camel components that are available to 
 * [camel-hl7](camel-hl7.md)
 * [camel-http4](camel-http4.md)
 * [camel-jaxb](camel-jaxb.md)
+* [camel-jgroups](camel-jgroups.md)
 * [camel-jms](camel-jms.md)
 * [camel-jmx](camel-jmx.md)
 * [camel-jpa](camel-jpa.md)
+* [camel-kafka](camel-kafka.md)
 * [camel-lucene](camel-lucene.md)
 * [camel-mail](camel-mail.md)
 * [camel-mina2](camel-mina2.md)
@@ -42,6 +44,7 @@ The following lists the set of supported Camel components that are available to 
 * [camel-velocity](camel-velocity.md)
 * [camel-weather](camel-weather.md)
 * [camel-xstream](camel-xstream.md)
+* [camel-zookeeper](camel-zookeeper.md)
 
 ## Adding Components
 
