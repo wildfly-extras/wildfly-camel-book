@@ -1,6 +1,6 @@
 ## camel-xstream
 
-The [camel-xstream](http://camel.apache.org/xstream.html) component provides the XStream [Data Format](http://camel.apache.org/data-format.html) which uses the [XStream library](http://xstream.codehaus.org/) to marshal and unmarshal Java objects to and from XML.
+The [camel-xstream](http://camel.apache.org/xstream.html) component provides the XStream [Data Format](http://camel.apache.org/data-format.html) which uses the [XStream library](http://x-stream.github.io/) to marshal and unmarshal Java objects to and from XML.
 
 ```java
 CamelContext camelctx = new DefaultCamelContext();

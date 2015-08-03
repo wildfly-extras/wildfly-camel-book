@@ -133,12 +133,12 @@ wildfly-camel-rest-ntjqz   1/1       Running   0          35s
 
 ### Adding a Service
 
-The entry point into the system is a Kubernetes Service as in [wildfly-camel-step03.json](https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/2.3/sources/wildfly-camel-step03.json)
+The entry point into the system is a Kubernetes Service as in [wildfly-camel-step03.json](https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/{{ book.version }}/sources/wildfly-camel-step03.json)
 
 To create a Service that accesses replicated Pods do
 
 ```
-$ oc create -f https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/2.3/sources/wildfly-camel-step03.json
+$ oc create -f https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/{{ book.version }}/sources/wildfly-camel-step03.json
 ```
 
 We now have a service
@@ -166,14 +166,14 @@ the wildfly-camel project and you should see a diagram like this.
 
 ## Domain Setup
 
-Running multiple server containers in a cloud environment is often only useful when these containers can also be managed. In the previous example we had three servers that each exposed an HTTP service reachable through a Kubernetes [Service](https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/services.md). The management interface of these servers were not exposed. It would be virtually impossible to adjust configurations for these individual servers or the whole set. As a minimum we would like to monitor the health state of these servers so that we can possibly replace containers if needed.
+Running multiple server containers in a cloud environment is often only useful when these containers can also be managed. In the previous example we had three servers that each exposed an HTTP service reachable through a Kubernetes [Service](https://github.com/GoogleCloudPlatform/kubernetes/blob/v1.0.0/docs/services.md). The management interface of these servers were not exposed. It would be virtually impossible to adjust configurations for these individual servers or the whole set. As a minimum we would like to monitor the health state of these servers so that we can possibly replace containers if needed.
 
 ![](../images/example-domain-design.png)
 
 
 ### Starting the Domain
 
-The WildFly-Camel domain can be configured as in [wildfly-camel-domain.json](https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/2.3/sources/wildfly-camel-domain.json)
+The WildFly-Camel domain can be configured as in [wildfly-camel-domain.json](https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/{{ book.version }}/sources/wildfly-camel-domain.json)
 
 ```
 $ oc create -f https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/{{ book.version }}/sources/wildfly-camel-domain.json

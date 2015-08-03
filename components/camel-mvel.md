@@ -1,8 +1,8 @@
 ## camel-mvel
 
-The [camel-mvel](http://camel.apache.org/mvel-component.html) component allows you to process a message using an [MVEL](http://mvel.codehaus.org/) template.
+The [camel-mvel](http://camel.apache.org/mvel-component.html) component allows you to process a message using an [MVEL](https://github.com/mvel/mvel) template.
 
-A simple template 
+A simple template
 
 ```
 Hello @{request.body}
