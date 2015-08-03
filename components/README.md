@@ -54,7 +54,7 @@ Adding support for additional Camel Components is easy
 
 A modules.xml descriptor defines the class loading behavior for your component. It should be placed together with the component's jar in `modules/system/layers/fuse/org/apache/camel/component`. Module dependencies should be setup for direct compile time dependencies.
 
-Here is an example for the camel-ftp component
+Herre is an example for the camel-ftp component
 
 ```xml
 <module xmlns="urn:jboss:module:1.1" name="org.apache.camel.component.ftp">
