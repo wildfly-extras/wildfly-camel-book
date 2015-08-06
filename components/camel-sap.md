@@ -35,12 +35,13 @@ com/sap/conn/jco/main/lib/linux-x86_64
 com/sap/conn/jco/main/lib/linux-x86_64/libsapjco3.so
 ```
 
-#### Create module org.wildfly.camel.extras.main
+#### Activate camel-sap component module
 
 1. From a terminal session change into the application server installation root directory
-2. Change into directory `modules/system/layers/fuse`
-3. Create directory `org/wildfly/camel/extras/main`
-4. Create a module.xml file in `org/wildfly/camel/extras/main` with the following content:
+2. Change into directory `modules/system/layers/fuse/org/wildfly/camel/extras/main`
+3. Edit `module.xml` and uncomment the `org.fusesource.camel.component.sap` module dependency. Save the modifed file when finished
+
+The module definition should look like this:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -49,13 +50,6 @@ com/sap/conn/jco/main/lib/linux-x86_64/libsapjco3.so
         <module name="org.fusesource.camel.component.sap" export="true" services="export" />
     </dependencies>
 </module>
-```
-
-You should now have a file and directory structure that looks something like this:
-```
-org/wildfly/camel/extras
-org/wildfly/camel/extras/main
-org/wildfly/camel/extras/main/module.xml
 ```
 
 Start your application server and camel-sap will be available for use.
