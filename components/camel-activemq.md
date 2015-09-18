@@ -8,40 +8,70 @@ The component can be configured to work with an embedded or external broker. For
 
 Dowonload the [ActiveMQ resource adapter rar file](https://repository.apache.org/content/repositories/releases/org/apache/activemq/activemq-rar/5.11.1/activemq-rar-5.11.1.rar). The following steps outline how to configure the ActiveMQ resource adapter.
 
-1) Make sure your running WildFly instance is stopped. Open a terminal session and change into the WildFly installation root directory
+__1)__ Make sure your WildFly instance is stopped.
 
-2) Change into the ActiveMQ module directory
-
-`cd modules/system/layers/fuse/org/apache/activemq/main`
-
-3) Copy the resource adapter .rar file into the current directory and extract `broker-config.xml` and `META-INF/ra.xml` files from the resource adapter.
+__2)__ Copy the downloaded resource adapter to the relevant WildFly deployment directory. For standalone mode:
 
 ```
-unzip activemq-rar-5.11.1.rar broker-config.xml
-unzip activemq-rar-5.11.1.rar META-INF/ra.xml
+cp activemq-rar-5.11.1.rar ${JBOSS_HOME}/standalone/deployments/activemq-rar.rar
 ```
-
-4) Modify module.xml and add an additional `<resource-root>` value to the top of the `<resources>` section for `<resource-root path="." />`.
-
-After making the modification, the `<resources>` section should look like this:
+__3)__ Configure the WildFly resource adapters subsystem for the ActiveMQ adapter.
 
 ```xml
-<resources>
-  <resource-root path="." />
-  <resource-root path="activemq-broker-5.11.1.jar" />
-  <resource-root path="activemq-client-5.11.1.jar" />
-  <resource-root path="activemq-jms-pool-5.11.1.jar" />
-  <resource-root path="activemq-openwire-legacy-5.11.1.jar" />
-  <resource-root path="activemq-pool-5.11.1.jar" />
-  <resource-root path="activemq-spring-5.11.1.jar" />
-</resources>
+<subsystem xmlns="urn:jboss:domain:resource-adapters:2.0">  
+     <resource-adapters>  
+         <resource-adapter id="activemq-rar.rar">  
+             <archive>
+                 activemq-rar.rar
+             </archive>
+             <transaction-support>XATransaction</transaction-support>  
+             <config-property name="UseInboundSession">  
+                 false  
+             </config-property>  
+             <config-property name="Password">  
+                 defaultPassword  
+             </config-property>  
+             <config-property name="UserName">  
+                 defaultUser  
+             </config-property>  
+             <config-property name="ServerUrl">  
+                 tcp://localhost:61616?jms.rmIdFromConnectionId=true  
+             </config-property>  
+             <connection-definitions>  
+                 <connection-definition class-name="org.apache.activemq.ra.ActiveMQManagedConnectionFactory" jndi-name="java:/ConnectionFactory" enabled="true" pool-name="ConnectionFactory">  
+                     <xa-pool>  
+                         <min-pool-size>1</min-pool-size>  
+                         <max-pool-size>20</max-pool-size>  
+                         <prefill>false</prefill>  
+                         <is-same-rm-override>false</is-same-rm-override>  
+                     </xa-pool>  
+                 </connection-definition>  
+             </connection-definitions>  
+             <admin-objects>  
+                 <admin-object class-name="org.apache.activemq.command.ActiveMQQueue" jndi-name="java:/queue/HELLOWORLDMDBQueue" use-java-context="true" pool-name="HELLOWORLDMDBQueue">  
+                     <config-property name="PhysicalName">  
+                         HELLOWORLDMDBQueue  
+                     </config-property>  
+                 </admin-object>  
+                 <admin-object class-name="org.apache.activemq.command.ActiveMQTopic" jndi-name="java:/topic/HELLOWORLDMDBTopic" use-java-context="true" pool-name="HELLOWORLDMDBTopic">  
+                     <config-property name="PhysicalName">  
+                         HELLOWORLDMDBTopic  
+                     </config-property>  
+                 </admin-object>  
+             </admin-objects>  
+         </resource-adapter>  
+     </resource-adapters>  
+ </subsystem>  
 ```
 
-5) Modify broker-config and META-INF/ra.xml as per your requirements
+If your resource adapter archive filename differs from activemq-rar.rar, you must change the content of the archive element in the preceding configuration to match the name of your archive file.
 
-6) Configure the WildFly resource adapters subsystem for the ActiveMQ adapter. Instructions for doing this can be found in section 'Setup WildFly standalone configuration' in the guide - [How to Use Out of Process ActiveMQ with WildFly](https://developer.jboss.org/wiki/HowToUseOutOfProcessActiveMQWithWildFly)  
+The values of the UserName and Password configuration properties must be chosen to match the credentials of a valid user in the external broker.
 
-7) Start WildFly. If everything is configured correctly, you should see a message within the WildFly server.log like.
+You might need to change the value of the ServerUrl configuration property to match the actual hostname and port exposed by the external broker.
+
+
+__4)__ Start WildFly. If everything is configured correctly, you should see a message within the WildFly server.log like.
 
 `13:16:08,412 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-5) JBAS010406: Registered connection factory java:/AMQConnectionFactory`
 
@@ -92,28 +122,14 @@ public void configure() throws Exception {
 
 The ActiveMQ resource adapter is required as we will want to leverage XA transaction support, connection pooling etc.
 
-The XML snippet below shows how the resource adapter is configured within the WildFly server XML configuration. Notice that the `ServerURL` is set to use an embedded broker. The connection factory is bound to the JNDI name 'java:/ActiveMQConnectionFactory'. This will be looked up in the RouteBuilder example that follows.
+The XML snippet below shows how the resource adapter is configured within the WildFly server XML configuration. Notice that the `ServerURL` is set to use an embedded broker. The connection factory is bound to the JNDI name `java:/ActiveMQConnectionFactory`. This will be looked up in the RouteBuilder example that follows.
 
 Finally, two queues are configured named 'queue1' and 'queue2'.
 ```xml
 <subsystem xmlns="urn:jboss:domain:resource-adapters:2.0">  
   <resource-adapters>  
     <resource-adapter id="activemq-rar.rar">  
-      <module slot="main" id="org.apache.activemq" />  
-      <transaction-support>XATransaction</transaction-support>
-      <config-property name="ServerUrl">  
-          vm://localhost?jms.rmIdFromConnectionId=true
-      </config-property>  
-      <connection-definitions>  
-        <connection-definition class-name="org.apache.activemq.ra.ActiveMQManagedConnectionFactory" jndi-name="java:/ActiveMQConnectionFactory" enabled="true" pool-name="ActiveMQConnectionFactoryPool">  
-          <xa-pool>  
-            <min-pool-size>1</min-pool-size>  
-            <max-pool-size>20</max-pool-size>  
-            <prefill>false</prefill>  
-            <is-same-rm-override>false</is-same-rm-override>  
-            </xa-pool>  
-          </connection-definition>  
-      </connection-definitions>  
+      ...  
       <admin-objects>  
         <admin-object class-name="org.apache.activemq.command.ActiveMQQueue" jndi-name="java:/queue/queue1" use-java-context="true" pool-name="queue1pool">  
           <config-property name="PhysicalName">queue1</config-property>  
@@ -128,7 +144,7 @@ Finally, two queues are configured named 'queue1' and 'queue2'.
 ```
 
 #### Transaction Manager
-The camel-activemq component requires a transaction manager of type `org.springframework.transaction.PlatformTransactionManager`. Therefore, we begin by creating a bean extending `JtaTransactionManager`. Note that the bean is annotated with `@Named` to allow the bean to be registered within the Camel bean registry. Also note that the WildFly transaction manager and user transaction instances are injected using CDI.
+The camel-activemq component requires a transaction manager of type `org.springframework.transaction.PlatformTransactionManager`. Therefore, we begin by creating a bean extending `JtaTransactionManager` which fulfills this requirement. Note that the bean is annotated with `@Named` to allow the bean to be registered within the Camel bean registry. Also note that the WildFly transaction manager and user transaction instances are injected using CDI.
 
 ```java
 @Named("transactionManager")
@@ -149,7 +165,7 @@ public class CdiTransactionManager extends JtaTransactionManager {
 ```
 
 #### Transaction Policy
-Next we need to declare the transaction policy that we want to use. Again we use the `@Named` annotation to make the bean available to Camel. The transaction manager is also injected so that a TransactionTemplate can be created with the desired transaction policy. PROPAGATION_REQUIRED in this instance.
+Next we need to declare the transaction policy that we want to use. Again we use the `@Named` annotation to make the bean available to Camel. The transaction manager is also injected so that a `TransactionTemplate` can be created with the desired transaction policy. `PROPAGATION_REQUIRED` in this instance.
 
 ```java
 @Named("PROPAGATION_REQUIRED")
@@ -193,7 +209,7 @@ public class ActiveMQRouteBuilder extends RouteBuilder {
       .maximumRedeliveries(0)
       .redeliveryDelay(1000));
 
-    from("activemq:queue:queue1")
+    from("activemq:queue:queue1F
       .transacted("PROPAGATION_REQUIRED")
       .to("activemq:queue:queue2");
 
