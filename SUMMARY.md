@@ -25,6 +25,7 @@
    * [camel-atom](components/camel-atom.md)
    * [camel-bindy](components/camel-bindy.md)
    * [camel-cdi](components/camel-cdi.md)
+   * [camel-crypto](components/camel-crypto.md)
    * [camel-cxf](components/camel-cxf.md)
    * [camel-dozer](components/camel-dozer.md)
    * [camel-ejb](components/camel-ejb.md)
@@ -69,4 +70,3 @@
    * [JMS](security/jms.md)
    * [Policy](security/policy.md)
 * [Developer Guide](developer/README.md)
-

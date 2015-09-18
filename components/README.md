@@ -10,6 +10,7 @@ The following lists the set of supported Camel components that are available to 
 * [camel-atom](camel-atom.md)
 * [camel-bindy](camel-bindy.md)
 * [camel-cdi](camel-cdi.md)
+* [camel-crypto](camel-crypto.md)
 * [camel-cxf](camel-cxf.md)
 * [camel-dozer](camel-dozer.md)
 * [camel-ejb](camel-ejb.md)
