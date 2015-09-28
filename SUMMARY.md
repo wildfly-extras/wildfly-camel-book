@@ -33,7 +33,7 @@
    * [camel-ftp](components/camel-ftp.md)
    * [camel-http4](components/camel-http4.md)
    * [camel-hl7](components/camel-hl7.md)
-   * [camel-jasypt](camel-jasypt.md)
+   * [camel-jasypt](components/camel-jasypt.md)
    * [camel-jaxb](components/camel-jaxb.md)
    * [camel-jgroups](components/camel-jgroups.md)
    * [camel-jms](components/camel-jms.md)
