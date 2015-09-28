@@ -53,6 +53,12 @@ Processing config for: camel
     Enable camel configuration in: .../wildfly-9.0.0.CR1/domain/configuration/domain.xml
 ```
 
+There are currently three triggers that can be used to enable Camel for a deployment
+
+1. a deployment that contains a *-camel-context.xml descriptor
+2. a deployment that contains a type annotated with @CamelAware
+3. a deployment that contains a type annotated with @ContextName
+
 ## Docker Image
 
 The easiest and most portable way to run WildFly-Camel is to use the [wildflyext/wildfly-camel](https://registry.hub.docker.com/u/wildflyext/wildfly-camel/) distribution. 
