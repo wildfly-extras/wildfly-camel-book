@@ -23,6 +23,7 @@ The following lists the set of supported Camel components that are available to 
 * [camel-jms](camel-jms.md)
 * [camel-jmx](camel-jmx.md)
 * [camel-jpa](camel-jpa.md)
+* [camel-jsypt](camel-jasypt.md)
 * [camel-kafka](camel-kafka.md)
 * [camel-lucene](camel-lucene.md)
 * [camel-mail](camel-mail.md)
