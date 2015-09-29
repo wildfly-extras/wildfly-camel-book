@@ -61,8 +61,34 @@ There are currently three triggers that can be used to enable Camel for a deploy
 
 ## Docker Image
 
-The easiest and most portable way to run WildFly-Camel is to use the [wildflyext/wildfly-camel](https://registry.hub.docker.com/u/wildflyext/wildfly-camel/) distribution. 
+The easiest and most portable way to run WildFly-Camel is to use the [wildflyext/wildfly-camel](https://registry.hub.docker.com/u/wildflyext/wildfly-camel/) distribution.
 
 ```
 $ docker run --rm -ti -p 8080:8080 -p 9990:9990 -e WILDFLY_MANAGEMENT_USER=admin -e WILDFLY_MANAGEMENT_PASSWORD=admin wildflyext/wildfly-camel
 ```
+
+## Maven Archetypes
+
+To get started with writing Camel JEE applications, there are two Maven archetypes that can generate either a Camel Spring XML or Camel CDI application.
+
+To generate a Camel CDI application, run the following from the command line.
+
+```
+mvn archetype:generate -DarchetypeGroupId=org.wildfly.camel.archetypes \
+                       -DarchetypeArtifactId=wildfly-camel-archetype-cdi \
+                       -DarchetypeVersion={{ book.version }} \
+                       -DgroupId=com.mycompany \
+                       -DartifactId=my-camel-cdi-application
+```
+
+To generate a Camel Spring XML application, run the following from the command line.
+
+```
+mvn archetype:generate -DarchetypeGroupId=org.wildfly.camel.archetypes \
+                       -DarchetypeArtifactId=wildfly-camel-archetype-spring \
+                       -DarchetypeVersion={{ book.version }} \
+                       -DgroupId=com.mycompany \
+                       -DartifactId=my-camel-spring-application
+```
+
+Instructions on how to build, test and run the project can be found within the generated README files. 
