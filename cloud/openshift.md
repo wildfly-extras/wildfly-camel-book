@@ -54,9 +54,7 @@ $ oc delete scc restricted
 
 Now recreate it
 
-```
-$ oc create -f https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/{{ book.version }}/sources/security-context-constriants.json
-```
+<pre><code>$ oc create -f https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/{{ book.version }}/sources/security-context-constriants.json</code></pre>
 
 The `RunAsUser` strategy should now be `RunAsAny`
 
@@ -91,9 +89,7 @@ A simple Pod configuration for a WildFly Camel container might be defined as in 
 
 To create the Pod in OpenShift we do
 
-```
-$ oc create -f https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/{{ book.version }}/sources/wildfly-camel-step01.json
-```
+<pre><code>$ oc create -f https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/{{ book.version }}/sources/wildfly-camel-step01.json</pre></code>
 
 You can see the running Pod like this
 
@@ -116,9 +112,7 @@ To achieve high availability (HA), lets replicate this Pod using a ReplicationCo
 
 To create the replicated Pod in OpenShift we do
 
-```
-$ oc create -f https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/{{ book.version }}/sources/wildfly-camel-step02.json
-```
+<pre><code>$ oc create -f https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/{{ book.version }}/sources/wildfly-camel-step02.json</pre></code>
 
 We now have three Pods each running an instance of our container
 
@@ -137,9 +131,7 @@ The entry point into the system is a Kubernetes Service as in [wildfly-camel-ste
 
 To create a Service that accesses replicated Pods do
 
-```
-$ oc create -f https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/{{ book.version }}/sources/wildfly-camel-step03.json
-```
+<pre><code>$ oc create -f https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/{{ book.version }}/sources/wildfly-camel-step03.json</pre></code>
 
 We now have a service
 
@@ -175,9 +167,7 @@ Running multiple server containers in a cloud environment is often only useful w
 
 The WildFly-Camel domain can be configured as in [wildfly-camel-domain.json](https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/{{ book.version }}/sources/wildfly-camel-domain.json)
 
-```
-$ oc create -f https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/{{ book.version }}/sources/wildfly-camel-domain.json
-```
+<pre><code>$ oc create -f https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/{{ book.version }}/sources/wildfly-camel-domain.json</pre></code>
 
 and verify the resulting servies like this
 ```
