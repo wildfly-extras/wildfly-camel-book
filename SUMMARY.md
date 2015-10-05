@@ -29,6 +29,7 @@
    * [camel-cxf](components/camel-cxf.md)
    * [camel-dozer](components/camel-dozer.md)
    * [camel-ejb](components/camel-ejb.md)
+   * [camel-elasticsearch](components/camel-elasticsearch.md)
    * [camel-file2](components/camel-file2.md)
    * [camel-ftp](components/camel-ftp.md)
    * [camel-http4](components/camel-http4.md)
@@ -72,4 +73,3 @@
    * [JMS](security/jms.md)
    * [Policy](security/policy.md)
 * [Developer Guide](developer/README.md)
-

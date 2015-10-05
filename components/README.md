@@ -14,6 +14,7 @@ The following lists the set of supported Camel components that are available to 
 * [camel-cxf](camel-cxf.md)
 * [camel-dozer](camel-dozer.md)
 * [camel-ejb](camel-ejb.md)
+* [camel-elasticsearch](camel-elasticsearch.md)
 * [camel-file2](camel-file2.md)
 * [camel-ftp](camel-ftp.md)
 * [camel-hl7](camel-hl7.md)
