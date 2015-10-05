@@ -1,6 +1,6 @@
 ## camel-swagger
 
-The  [camel-swagger](http://camel.apache.org/swagger) module is used for exposing the REST services and their APIs using [Swagger](http://swagger.wordnik.com/).
+The [camel-swagger](http://camel.apache.org/swagger-java.html) module is used for exposing the REST services and their APIs using [Swagger](http://swagger.io/).
 
 ```java
 CamelContext camelctx = new DefaultCamelContext();
