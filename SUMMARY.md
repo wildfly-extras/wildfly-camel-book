@@ -58,7 +58,7 @@
    * [camel-servlet](components/camel-servlet.md)
    * [camel-sql](components/camel-sql.md)
    * [camel-stream](components/camel-stream.md)
-   * camel-undertow
+   * [camel-undertow](components/camel-undertow.md)
    * [camel-weather](components/camel-weather.md)
    * [camel-xstream](components/camel-xstream.md)
    * [camel-zookeeper](components/camel-zookeeper.md)
