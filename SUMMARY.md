@@ -61,6 +61,7 @@
    * [camel-weather](components/camel-weather.md)
    * [camel-xstream](components/camel-xstream.md)
    * [camel-zookeeper](components/camel-zookeeper.md)
+   * camel-undertow
 * [Data Formats](dataformats/README.md)
 * [Languages](scripting/README.md)
 * [Cloud](cloud/README.md)
@@ -73,3 +74,4 @@
    * [JMS](security/jms.md)
    * [Policy](security/policy.md)
 * [Developer Guide](developer/README.md)
+
