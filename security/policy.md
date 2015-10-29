@@ -1,4 +1,4 @@
-# Route Policies 
+# Route Policy
 
 Camel supports the notion of [RoutePolicies](http://camel.apache.org/routepolicy.html), which can be used to integrate with the WildFly security system.
 
