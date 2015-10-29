@@ -19,6 +19,17 @@ camelctx.addRoutes(new RouteBuilder() {
     }
 });
 ```
+This does actually no do any authentication/authorization as part of the Camel message processing. Instead it associates the credentials that come with the Camel Exchange with the call into the EJB3 layer.
+
+The client that calls the message consumer must provide that appropriate credentials in the AUTHENTICATION header like this:
+
+```
+ProducerTemplate producer = camelctx.createProducerTemplate();
+Subject subject = new Subject();
+subject.getPrincipals().add(new DomainPrincipal(domain));
+subject.getPrincipals().add(new EncodedUsernamePasswordPrincipal(username, password));
+producer.requestBodyAndHeader("direct:start", "Kermit", Exchange.AUTHENTICATION, subject, String.class);
+```
 
 
 ## JavaEE calls into Camel
