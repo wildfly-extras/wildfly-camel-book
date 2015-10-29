@@ -8,7 +8,7 @@ When a camel route calls into a secured JavaEE component, it acts as a client an
 
 The route can be decorated with a `ClientAuthorizationPolicy`
 
-```
+```java
 CamelContext camelctx = new DefaultCamelContext();
 camelctx.addRoutes(new RouteBuilder() {
     @Override
@@ -23,18 +23,19 @@ This does actually no do any authentication/authorization as part of the Camel m
 
 The client that calls the message consumer must provide that appropriate credentials in the AUTHENTICATION header like this:
 
-```
+```java
 ProducerTemplate producer = camelctx.createProducerTemplate();
 Subject subject = new Subject();
 subject.getPrincipals().add(new DomainPrincipal(domain));
 subject.getPrincipals().add(new EncodedUsernamePasswordPrincipal(username, password));
 producer.requestBodyAndHeader("direct:start", "Kermit", Exchange.AUTHENTICATION, subject, String.class);
 ```
+Authentication and authorization will happen in the JavaEE layer.
 
+## Securing a Camel Route
 
-## JavaEE calls into Camel
+In order to secure a Camel Route, we can associate a `DomainAuthorizationPolicy` with the route. 
 
-In the example below we associate a simple AuthorizationPolicy for username/password authentication with the Route to secure access to an EJB3 endpoint.
 
 ```java
 CamelContext camelctx = new DefaultCamelContext();
@@ -42,8 +43,8 @@ camelctx.addRoutes(new RouteBuilder() {
     @Override
     public void configure() throws Exception {
         from("direct:start")
-        .policy(new AuthorizationPolicy(EJBSecurityTestCase.USERNAME, EJBSecurityTestCase.PASSWORD))
-        .to("ejb:java:module/AnnotatedSLSB?method=doSelected");
+        .policy(new DomainAuthorizationPolicy().roles("Role2"))
+        .transform(body().prepend("Hello "));
     }
 });
 camelctx.start();
