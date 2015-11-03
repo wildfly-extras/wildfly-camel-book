@@ -42,3 +42,26 @@ public class CdiRouteBuilder extends RouteBuilder {
     }
 }
 ```
+
+### Spring JDBC XML namespace support
+
+Support for the following Spring JDBC XML configurations is supported
+
+__jdbc:embedded-database__
+
+> NOTE: Only H2 databases are supported by default as WildFly has native support for this. If you want to use other embedded database providers, you will need
+to install the appropriate database driver.
+
+```xml
+<jdbc:embedded-database id="datasource" type="H2">
+  <jdbc:script location="db-schema.sql"/>
+</jdbc:embedded-database>
+```
+
+__jdbc:initialize-database__
+
+```xml
+<jdbc:initialize-database data-source="datasource">
+  <jdbc:script location="classpath:db-init.sql"/>
+</jdbc:initialize-database>
+```
