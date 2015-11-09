@@ -29,6 +29,7 @@ The following lists the set of supported Camel components that are available to 
 * [camel-kafka](camel-kafka.md)
 * [camel-lucene](camel-lucene.md)
 * [camel-mail](camel-mail.md)
+* [camel-metrics](camel-metrics.md)
 * [camel-mina2](camel-mina2.md)
 * [camel-mqtt](camel-mqtt.md)
 * [camel-mvel](camel-mvel.md)

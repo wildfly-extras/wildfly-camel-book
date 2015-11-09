@@ -44,6 +44,7 @@
    * [camel-kafka](components/camel-kafka.md)
    * [camel-lucene](components/camel-lucene.md)
    * [camel-mail](components/camel-mail.md)
+   * [camel-metrics](components/camel-metrics.md)
    * [camel-mina2](components/camel-mina2.md)
    * [camel-mqtt](components/camel-mqtt.md)
    * [camel-mvel](components/camel-mvel.md)
