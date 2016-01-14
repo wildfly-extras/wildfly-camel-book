@@ -38,7 +38,7 @@ __3)__ Configure the WildFly resource adapters subsystem for the ActiveMQ adapte
                  tcp://localhost:61616?jms.rmIdFromConnectionId=true  
              </config-property>  
              <connection-definitions>  
-                 <connection-definition class-name="org.apache.activemq.ra.ActiveMQManagedConnectionFactory" jndi-name="java:/ConnectionFactory" enabled="true" pool-name="ConnectionFactory">  
+                 <connection-definition class-name="org.apache.activemq.ra.ActiveMQManagedConnectionFactory" jndi-name="java:/ActiveMQConnectionFactory" enabled="true" pool-name="ConnectionFactory">  
                      <xa-pool>  
                          <min-pool-size>1</min-pool-size>  
                          <max-pool-size>20</max-pool-size>  
