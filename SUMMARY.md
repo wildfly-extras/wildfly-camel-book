@@ -20,7 +20,7 @@
    * [JMX](javaee/jmx.md)
    * [JNDI](javaee/jndi.md)
    * [JPA](javaee/jpa.md)
-   * EJB
+   * [EJB](javaee/ejb.md)
 * [Camel Components](components/README.md)
    * [camel-activemq](components/camel-activemq.md)
    * [camel-atom](components/camel-atom.md)
