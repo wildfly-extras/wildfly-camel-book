@@ -1,6 +1,6 @@
 ## Integration with JMS
 
-Messaging support is provided through the [camel-jms](http://camel.apache.org/jms.html) component which integrates with the WildFly Messaging ([HornetQ](http://www.jboss.org/hornetq)) subsystem.
+Messaging support is provided through the [camel-jms](http://camel.apache.org/jms.html) component which integrates with the WildFly Messaging ([ActiveMQ Artemis](https://activemq.apache.org/artemis/)) subsystem.
 
 Integration with other JMS implementations is possible through configuration of vendor specific resource adapters, or if not available, by using the JBoss Generic JMS resource adapter.
 
@@ -9,7 +9,7 @@ Integration with other JMS implementations is possible through configuration of 
 
 The WildFly [messaging subsystem](https://docs.jboss.org/author/display/WFLY8/Messaging+configuration) can be configured from within the standard WildFly XML configuration files, standalone.xml or domain.xml.
 
-For the examples that follow we use the embedded HornetQ in memory instance. We first configure a new JMS queue on the messaging subsystem by adding the following XML configuration to the jms-destinations section.
+For the examples that follow we use the embedded ActiveMQ Artemis in memory instance. We first configure a new JMS queue on the messaging subsystem by adding the following XML configuration to the jms-destinations section.
 ```xml
 <jms-queue name="WildFlyCamelQueue">
   <entry name="java:/jms/queue/WildFlyCamelQueue"/>
@@ -22,7 +22,7 @@ jms-queue add --queue-address=WildFlyCamelQueue --entries=queue/WildFlyCamelQueu
 Or, you could create a `messaging-deployment` configuration within a custom jms.xml deployment descriptor. See section 'Deployment of -jms.xml files' within the WildFly messaging subsystem documentation for more information.
 
 ### Camel route configuration
-The following JMS producer and consumer examples make use of WildFly's embedded HornetQ sever to publish and consume messages to and from destinations.
+The following JMS producer and consumer examples make use of WildFly's embedded ActiveMQ Artemis sever to publish and consume messages to and from destinations.
 
 The examples also use CDI in conjunction with the camel-cdi component. JMS ConnectionFactory instances are injected into the Camel RouteBuilder through JNDI lookups.
 
@@ -152,7 +152,7 @@ public class JMSRouteBuilder extends RouteBuilder {
 
 #### Remote JMS destinations
 
-It's possible for one WildFly instance to send messages to HornetQ destinations configured on another WildFly instance through [remote JNDI](https://docs.jboss.org/author/display/WFLY8/Remote+JNDI+Reference).
+It's possible for one WildFly instance to send messages to ActiveMQ Artemis destinations configured on another WildFly instance through [remote JNDI](https://docs.jboss.org/author/display/WFLY8/Remote+JNDI+Reference).
 
 Some additional WildFly configuration is required to achieve this. First an exported JMS queue is configured.
 
