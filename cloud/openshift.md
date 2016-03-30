@@ -144,7 +144,7 @@ rest-service   name=camel-srv   name=camel-pod   172.30.103.178   8080/TCP
 From a remote client, you should now be able to access the service like this
 
 ```
-$ curl http://172.30.103.178:8080/example-camel-rest/rest/greet/hello/Kermit
+$ curl http://172.30.103.178:8080/rest/greet/hello/Kermit
 Hello Kermit from 172.17.0.51
 ```
 
