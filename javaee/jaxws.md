@@ -2,8 +2,6 @@
 
 WebService support is provided through the [camel-cxf](http://camel.apache.org/cxf.html) component which integrates with the WildFly WebServices subsystem that also uses [Apache CXF](http://cxf.apache.org/).
 
-> **IMPORTANT: At present the WildFly Camel Subsytem does not support CXF consumers. E.g endpoints defined as from("cxf://..."). Although, it is possible to mimic CXF consumer behaviour using the [CamelProxy](http://camel.apache.org/using-camelproxy.html).**
-
 
 ### JAX-WS CXF Producer
 The following code example uses CXF to consume a web service which has been deployed by the [WildFly web services subsystem](https://docs.jboss.org/author/display/WFLY8/JAX-WS+User+Guide).
@@ -58,6 +56,30 @@ String name = "Kermit"
 ProducerTemplate producer = camelContext.createProducerTemplate();
 Object[] serviceParams = new Object[] {message, name};
 String result = producer.requestBody("direct:start", serviceParams, String.class);
+```
+
+### Camel CXF JAX-WS Consumer
+```xml
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:cxf="http://camel.apache.org/schema/cxf"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf.xsd
+        http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+
+    <cxf:cxfEndpoint id="cxfConsumer"
+                     address="http://localhost:8080/webservices/greeting"
+                     serviceClass="org.wildfly.camel.examples.cxf.jaxws.GreetingService" />
+
+    <camelContext id="cxfws-camel-context" xmlns="http://camel.apache.org/schema/spring">
+        <route>
+            <from uri="cxf:bean:cxfConsumer" />
+            <to uri="log:ws" />
+        </route>
+    </camelContext>
+
+</beans>
 ```
 
 ### JAX-WS Consumer with CamelProxy
@@ -141,5 +163,4 @@ Refer to the [JAX-WS security section](../security/jaxws.md).
 
 Example JAX-WS applications are available on GitHub.
 
-* [camel-cxf application](https://github.com/wildfly-extras/wildfly-camel/tree/{{ book.version }}/examples/camel-cxf)
-* [camel-jaxws application](https://github.com/wildfly-extras/wildfly-camel/tree/{{ book.version }}/examples/camel-jaxws)
+* [Camel CXF application](https://github.com/wildfly-extras/wildfly-camel/tree/{{ book.version }}/examples/camel-cxf-jaxws)

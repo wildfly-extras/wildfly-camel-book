@@ -1,9 +1,43 @@
 ## Integration with JAX-RS
-JAX-RS consumer support is provided by two mechanisms. The [Camel REST DSL](../components/camel-rest.md) and by leveraging the WildFly [RESTEasy](http://resteasy.jboss.org/) JAX-RS subsystem to publish RESTful services in conjunction with the [CamelProxy](http://camel.apache.org/using-camelproxy.html).
+JAX-RS consumer support is provided by:
 
-JAX-RS producer endpoint support is provided by the [camel-restlet](http://camel.apache.org/restlet.html) component.
+* [Camel CXF-RS](http://camel.apache.org/cxfrs.html)
+* [Camel REST DSL](../components/camel-rest.md)
+* Leveraging the WildFly [RESTEasy](http://resteasy.jboss.org/) JAX-RS subsystem to publish RESTful services in conjunction with the [CamelProxy](http://camel.apache.org/using-camelproxy.html).
 
-> **IMPORTANT: At present the WildFly Camel Subsytem does not support JAX-RS CXF or Restlet consumers. E.g endpoints defined as from("cxfrs://...") or from("restlet://"). Other JAX-RS consumer endpoint solutions are described later in this document.**
+JAX-RS producer endpoint support is provided by:
+
+* [Camel CXF-RS](http://camel.apache.org/cxfrs.html)
+* [Camel Restlet](http://camel.apache.org/restlet.html)
+
+### CXF-RS Producer
+```xml
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:cxf="http://camel.apache.org/schema/cxf"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf.xsd
+        http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+
+    <cxf:rsClient id="cxfProducer"
+                  address="http://localhost:8080/rest"
+                  serviceClass="org.wildfly.camel.examples.cxf.jaxrs.GreetingService" />
+
+    <camelContext id="cxfrs-camel-context" xmlns="http://camel.apache.org/schema/spring">
+        <route>
+            <from uri="direct:start" />
+            <setHeader headerName="operationName">
+                <simple>greet</simple>
+            </setHeader>
+            <setHeader headerName="CamelCxfRsUsingHttpAPI">
+                <constant>false</constant>
+            </setHeader>
+            <to uri="cxfrs:bean:cxfProducer" />
+        </route>
+    </camelContext>
+</beans>
+```
 
 ### JAX-RS Restlet Producer
 
@@ -64,6 +98,31 @@ public class RestProducerRouteBuilder extends RouteBuilder {
 }
 ```
 
+### CXF-RS Consumer
+```xml
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:cxf="http://camel.apache.org/schema/cxf"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf.xsd
+        http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+
+    <cxf:rsServer id="cxfConsumer"
+                  address="http://localhost:8080/rest"
+                  serviceClass="org.wildfly.camel.examples.cxf.jaxrs.GreetingService" />
+
+    <camelContext id="cxfrs-camel-context" xmlns="http://camel.apache.org/schema/spring">
+        <route>
+            <from uri="cxfrs:bean:cxfConsumer" />
+            <setBody>
+                <constant>Hello world</constant>
+            </setBody>
+        </route>
+    </camelContext>
+</beans>
+```
+
 ### JAX-RS Consumer with the Camel REST DSL
 
 The Camel REST DSL gives the capability to write Camel routes that act as JAX-RS consumers. The following RouteBuilder class demonstrates this.
@@ -103,10 +162,9 @@ public class RestConsumerRouteBuilder extends RouteBuilder {
 }
 ```
 
-Note that the REST DSL configuration starts with `restConfiguration().component("servlet")`. **The WildFly Camel Subsystem only supports camel-servlet for use with the REST DSL. Attempts to configure other components will not work**.
+Note that the REST DSL configuration starts with `restConfiguration().component("servlet")`. **The WildFly Camel Subsystem only supports camel-servlet and camel-undertow for use with the REST DSL. Attempts to configure other components will not work**.
 
 By setting the binding mode, Camel can marshal and unmarshal JSON data either by specifying a 'produces()' or 'type()' configuration step.
-
 
 
 ### JAX-RS Consumer with CamelProxy
@@ -184,4 +242,4 @@ Refer to the [JAX-RS security section](../security/jaxrs.md).
 
 ### Code examples on GitHub
 
-An example [camel-rest application](https://github.com/wildfly-extras/wildfly-camel/tree/{{ book.version }}/examples/camel-rest) is available on GitHub.
+An example [Camel CXF application](https://github.com/wildfly-extras/wildfly-camel/tree/{{ book.version }}/examples/camel-cxf-jaxrs) is available on GitHub.
