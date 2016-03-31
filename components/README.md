@@ -9,6 +9,7 @@ The following lists the set of supported Camel components that are available to 
 * [camel-activemq](camel-activemq.md)
 * [camel-atom](camel-atom.md)
 * [camel-bindy](camel-bindy.md)
+* [camel-braintree](camel-braintree.md)
 * [camel-cdi](camel-cdi.md)
 * [camel-crypto](camel-crypto.md)
 * [camel-cxf](camel-cxf.md)
