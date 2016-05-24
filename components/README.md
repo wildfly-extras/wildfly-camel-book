@@ -13,6 +13,7 @@ The following lists the set of supported Camel components that are available to 
 * [camel-cdi](camel-cdi.md)
 * [camel-crypto](camel-crypto.md)
 * [camel-cxf](camel-cxf.md)
+* [camel-dns](camel-dns.md)
 * [camel-dozer](camel-dozer.md)
 * [camel-ejb](camel-ejb.md)
 * [camel-elasticsearch](camel-elasticsearch.md)

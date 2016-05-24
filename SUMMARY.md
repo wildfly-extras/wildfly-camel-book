@@ -28,6 +28,7 @@
    * [camel-cdi](components/camel-cdi.md)
    * [camel-crypto](components/camel-crypto.md)
    * [camel-cxf](components/camel-cxf.md)
+   * [camel-dns](components/camel-dns.md)
    * [camel-dozer](components/camel-dozer.md)
    * [camel-ejb](components/camel-ejb.md)
    * [camel-elasticsearch](components/camel-elasticsearch.md)
@@ -77,4 +78,3 @@
    * [JMS](security/jms.md)
    * [Policy](security/policy.md)
 * [Developer Guide](developer/README.md)
-
