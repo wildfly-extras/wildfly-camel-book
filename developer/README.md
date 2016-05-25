@@ -2,11 +2,11 @@
 
 ## Source
 
-https://github.com/wildflyext/wildfly-camel
+https://github.com/wildfly-extras/wildfly-camel
 
 ## Issues
 
-https://github.com/wildflyext/wildfly-camel/issues
+https://github.com/wildfly-extras/wildfly-camel/issues
 
 ## Jenkins
 
@@ -14,7 +14,7 @@ https://fabric8-ci.fusesource.com/job/wildfly-camel/
 
 ## Downloads
 
-https://github.com/wildflyext/wildfly-camel/releases
+https://github.com/wildfly-extras/wildfly-camel/releases
 
 ## Forums, Lists, IRC
 
