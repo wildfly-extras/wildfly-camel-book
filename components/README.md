@@ -35,6 +35,7 @@ The following lists the set of supported Camel components that are available to 
 * [camel-mina2](camel-mina2.md)
 * [camel-mqtt](camel-mqtt.md)
 * [camel-mvel](camel-mvel.md)
+* [camel-nats](camel-netty4.md)
 * [camel-netty4](camel-netty4.md)
 * [camel-ognl](camel-ognl.md)
 * [camel-quartz2](camel-quartz2.md)
