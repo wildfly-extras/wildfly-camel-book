@@ -30,6 +30,7 @@ The following lists the set of supported Camel components that are available to 
 * [camel-jpa](camel-jpa.md)
 * [camel-kafka](camel-kafka.md)
 * [camel-ldap](camel-ldap.md)
+* [camel-linkedin](camel-linkedin.md)
 * [camel-lucene](camel-lucene.md)
 * [camel-mail](camel-mail.md)
 * [camel-metrics](camel-metrics.md)
