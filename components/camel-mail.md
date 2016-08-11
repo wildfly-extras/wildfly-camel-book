@@ -51,53 +51,30 @@ If you need to configure POP3 sessions, the principals are the same as defined i
 This example uses the SMTPS protocol, together with CDI in conjunction with the camel-cdi component. The Java mail session that we configured within the WildFly configuration is injected into a Camel RouteBuilder through JNDI.
 
 ##### Route builder SMTPS example
-The GMail mail session is injected into our RouteBuilder class using the `@Resource` annotation with a reference to the `jndi-name` attribute that we  previously configured.
-
-The `configureMailEndpoint` method takes care of some required configuration for the SMTP `MailEndpoint`. This is done so as not to duplicate the username & password details that we already defined within the WildFly configuration.
+The GMail mail session is injected into a Producer class using the `@Resource` annotation with a reference to the `jndi-name` attribute that we  previously configured. This allows us to reference the mail session on the camel-mail endpoint configuration.
 
 ```java
-@Startup
-@ApplicationScoped
-@ContextName("mail-camel-context")
-public class MailRouteBuilder extends RouteBuilder {
+public class MailSessionProducer {
+    @Resource(lookup = "java:jboss/mail/greenmail")
+    private Session mailSession;
 
-  @Resource(mappedName = "java:jboss/mail/gmail")
-  private Session mailSession;
-
-  @Override
-  public void configure() throws Exception {
-    MailEndpoint mailEndpoint = (MailEndpoint) getContext().getEndpoint("smtps://smtp.gmail.com");
-    configureMailEndpoint(mailEndpoint);
-
-    from("direct:start")
-      .to(mailEndpoint);
-  }
-
-  private void configureMailEndpoint(MailEndpoint endpoint) throws UnknownHostException {
-    MailConfiguration configuration = endpoint.getConfiguration();
-
-    // Wildfly seems to configure things under the SMTP / IMAP and not SMTPS / IMAPS
-    String protocol = configuration.getProtocol();
-    if(protocol.equals("smtps")) {
-      protocol = "smtp";
-    } else if(protocol.equals("imaps")) {
-      protocol = "imap";
+    @Produces
+    @Named
+    public Session getMailSession() {
+        return mailSession;
     }
-
-    // Fetch mail session credentials from the session
-    String host = mailSession.getProperty("mail." + protocol + ".host");
-    String user = mailSession.getProperty("mail." + protocol + ".user");
-
-    int port = Integer.parseInt(mailSession.getProperty("mail." + protocol + ".port"));
-    InetAddress address = InetAddress.getByName(host);
-
-    PasswordAuthentication auth = mailSession.requestPasswordAuthentication(address, port, protocol, null, user);
-    configuration.setPort(port);
-    configuration.setUsername(auth.getUserName());
-    configuration.setPassword(auth.getPassword());
-  }
 }
 ```
+```java
+public class MailRouteBuilder extends RouteBuilder {
+    @Override
+    public void configure() throws Exception {
+        from("direct:start")
+        .to("smtps://smtp.gmail.com?session=#mailSession");
+    }
+}
+```
+
 To send an email we can create a ProducerTemplate and send an appropriate body together with the necessary email headers.
 
 ```java
@@ -116,11 +93,8 @@ template.sendBodyAndHeaders("direct:start", body, headers);
 To receive email we use an IMAP MailEndpoint. The Camel route configuration looks like the following.
 ```java
 public void configure() throws Exception {
-   MailEndpoint mailEndpoint = (MailEndpoint) getContext().getEndpoint("imaps://imap.gmail.com");
-   configureMailEndpoint(mailEndpoint);
-
-   from(mailEndpoint)
-    .to("log:email");
+   from("imaps://imap.gmail.com?session=#mailSession")
+   .to("log:email");
 }
 ```
 
