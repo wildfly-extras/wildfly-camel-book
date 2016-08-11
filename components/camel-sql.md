@@ -13,6 +13,8 @@ The [camel-sql](http://camel.apache.org/sql-component.html) component allows you
     });
 ```
 
+> __NOTE:__ The JNDI datasource lookup shown above works only when configuring a `DefaultCamelContext`. See below for `CdiCamelContext` and `SpringCamelContext` examples.
+
 When used in conjunction with the [camel-cdi](camel-cdi.md) component, Java EE annotations can make a datasource available to Camel. This example uses the `@Named` annotation so that Camel can discover the desired datasource.
 
 ```java
@@ -41,6 +43,29 @@ public class CdiRouteBuilder extends RouteBuilder {
         .to("direct:end");
     }
 }
+```
+
+When using [camel-spring](camel-spring.md) the route configuration would look like:
+
+```xml
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
+       http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd">
+
+    <jee:jndi-lookup id="wildFlyExampleDS" jndi-name="java:jboss/datasources/ExampleDS"/>
+
+    <camelContext id="sql-spring-context" xmlns="http://camel.apache.org/schema/spring">
+        <route>
+            <from uri="sql:select name from information_schema.users?dataSource=#wildFlyExampleDS" />
+            <to uru="direct:end" />
+        </route>
+    </camelContext>
+
+</beans>
 ```
 
 ### Spring JDBC XML namespace support
