@@ -51,6 +51,7 @@ The following lists the set of supported Camel components that are available to 
 * [camel-servlet](camel-servlet.md)
 * [camel-smpp](camel-smpp.md)
 * [camel-sql](camel-sql.md)
+* [camel-spring](camel-spring.md)
 * [camel-stream](camel-stream.md)
 * [camel-swagger](camel-swagger.md)
 * [camel-twitter](camel-twitter.md)
