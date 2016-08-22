@@ -36,6 +36,7 @@ The following lists the set of supported Camel components that are available to 
 * [camel-mail](camel-mail.md)
 * [camel-metrics](camel-metrics.md)
 * [camel-mina2](camel-mina2.md)
+* [camel-mongodb](camel-mongodb.md)
 * [camel-mqtt](camel-mqtt.md)
 * [camel-mvel](camel-mvel.md)
 * [camel-nats](camel-nats.md)
