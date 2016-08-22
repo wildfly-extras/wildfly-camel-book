@@ -51,6 +51,7 @@ The following lists the set of supported Camel components that are available to 
 * [camel-script](camel-script.md)
 * [camel-servlet](camel-servlet.md)
 * [camel-smpp](camel-smpp.md)
+* [camel-snakeyaml](camel-snakeyaml.md)
 * [camel-sql](camel-sql.md)
 * [camel-spring](camel-spring.md)
 * [camel-stream](camel-stream.md)

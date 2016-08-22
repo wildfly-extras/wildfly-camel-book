@@ -18,4 +18,5 @@ The following lists supported Data Formats
 * [XmlBeans](http://camel.apache.org/xmlbeans.html)
 * [XMLSecurity](http://camel.apache.org/xml-security-component.html)
 * [XStream](http://camel.apache.org/xstream.html)
+* [YAML](http://camel.apache.org/yaml-data-format.html)
 * [Zip](http://camel.apache.org/zip-file-dataformat.html)
