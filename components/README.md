@@ -23,6 +23,7 @@ The following lists the set of supported Camel components that are available to 
 * [camel-hl7](camel-hl7.md)
 * [camel-http4](camel-http4.md)
 * [camel-infinispan](camel-infinispan.md)
+* [camel-irc](camel-irc.md)
 * [camel-jasypt](camel-jasypt.md)
 * [camel-jaxb](camel-jaxb.md)
 * [camel-jgroups](camel-jgroups.md)
