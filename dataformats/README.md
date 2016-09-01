@@ -2,6 +2,7 @@
 
 The following lists supported Data Formats
 
+* [Base64](http://camel.apache.org/base64.html)
 * [Bindy](http://camel.apache.org/bindy.html)
 * [Castor](http://camel.apache.org/castor.html)
 * [Crypto](http://camel.apache.org/crypto.html)

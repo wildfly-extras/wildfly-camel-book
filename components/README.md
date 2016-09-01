@@ -8,6 +8,7 @@ The following lists the set of supported Camel components that are available to 
 
 * [camel-activemq](camel-activemq.md)
 * [camel-atom](camel-atom.md)
+* [camel-base64](camel-base64.md)
 * [camel-bean-validator](camel-bean-validator.md)
 * [camel-bindy](camel-bindy.md)
 * [camel-braintree](camel-braintree.md)
