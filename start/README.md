@@ -79,7 +79,7 @@ mvn archetype:generate -DarchetypeGroupId=org.wildfly.camel.archetypes \
                        -DarchetypeVersion={{ book.version }} \
                        -DgroupId=com.mycompany \
                        -DartifactId=my-camel-cdi-application
-</pre></code>
+</code></pre>
 
 To generate a Camel Spring XML application, run the following from the command line.
 
@@ -89,6 +89,6 @@ mvn archetype:generate -DarchetypeGroupId=org.wildfly.camel.archetypes \
                        -DarchetypeVersion={{ book.version }} \
                        -DgroupId=com.mycompany \
                        -DartifactId=my-camel-spring-application
-</pre></code>
+</code></pre>
 
 Instructions on how to build, test and run the project can be found within the generated README files. 
