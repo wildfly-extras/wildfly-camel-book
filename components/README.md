@@ -27,6 +27,7 @@ The following lists the set of supported Camel components that are available to 
 * [camel-irc](camel-irc.md)
 * [camel-jasypt](camel-jasypt.md)
 * [camel-jaxb](camel-jaxb.md)
+* [camel-jdbc](camel-jdbc.md)
 * [camel-jgroups](camel-jgroups.md)
 * [camel-jms](camel-jms.md)
 * [camel-jmx](camel-jmx.md)
