@@ -47,6 +47,7 @@ The following lists the set of supported Camel components that are available to 
 * [camel-nats](camel-nats.md)
 * [camel-netty4](camel-netty4.md)
 * [camel-ognl](camel-ognl.md)
+* [camel-olingo2](camel-olingo2.md)
 * [camel-quartz2](camel-quartz2.md)
 * [camel-rest](camel-rest.md)
 * [camel-restlet](camel-restlet.md)
