@@ -67,6 +67,7 @@ The following lists the set of supported Camel components that are available to 
 * [camel-twitter](camel-twitter.md)
 * [camel-undertow](camel-undertow.md)
 * [camel-velocity](camel-velocity.md)
+* [camel-vertx](camel-vertx.md)
 * [camel-weather](camel-weather.md)
 * [camel-xstream](camel-xstream.md)
 * [camel-zookeeper](camel-zookeeper.md)
