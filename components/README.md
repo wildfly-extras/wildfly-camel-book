@@ -12,6 +12,7 @@ The following lists the set of supported Camel components that are available to 
 * [camel-bean-validator](camel-bean-validator.md)
 * [camel-bindy](camel-bindy.md)
 * [camel-braintree](camel-braintree.md)
+* [camel-cassandra](camel-cassandra.md)
 * [camel-cdi](camel-cdi.md)
 * [camel-crypto](camel-crypto.md)
 * [camel-cxf](camel-cxf.md)
