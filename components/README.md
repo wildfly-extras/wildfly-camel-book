@@ -71,6 +71,7 @@ The following lists the set of supported Camel components that are available to 
 * [camel-vertx](camel-vertx.md)
 * [camel-weather](camel-weather.md)
 * [camel-xstream](camel-xstream.md)
+* [camel-zipkin](camel-zipkin.md)
 * [camel-zookeeper](camel-zookeeper.md)
 
 ## Adding Components
