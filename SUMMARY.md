@@ -82,12 +82,12 @@
    * [camel-swagger](components/camel-swagger.md)
    * [camel-undertow](components/camel-undertow.md)
    * [camel-velocity](components/camel-velocity.md)
+   * camel-vertx
    * [camel-weather](components/camel-weather.md)
    * [camel-xstream](components/camel-xstream.md)
    * [camel-zookeeper](components/camel-zookeeper.md)
    * [camel-zipkin](components/camel-zipkin.md)
    * camel-pdf
-   * camel-vertx
 * [Data Formats](dataformats/README.md)
 * [Languages](scripting/README.md)
 * [Cloud](cloud/README.md)
