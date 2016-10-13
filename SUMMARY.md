@@ -87,6 +87,7 @@
    * [camel-zookeeper](components/camel-zookeeper.md)
    * [camel-zipkin](components/camel-zipkin.md)
    * camel-pdf
+   * camel-vertx
 * [Data Formats](dataformats/README.md)
 * [Languages](scripting/README.md)
 * [Cloud](cloud/README.md)
