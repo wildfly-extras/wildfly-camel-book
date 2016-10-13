@@ -82,7 +82,7 @@
    * [camel-swagger](components/camel-swagger.md)
    * [camel-undertow](components/camel-undertow.md)
    * [camel-velocity](components/camel-velocity.md)
-   * camel-vertx
+   * [camel-vertx](components/camel-vertx.md)
    * [camel-weather](components/camel-weather.md)
    * [camel-xstream](components/camel-xstream.md)
    * [camel-zookeeper](components/camel-zookeeper.md)
