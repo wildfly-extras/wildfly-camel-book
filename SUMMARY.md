@@ -66,7 +66,6 @@
    * [camel-ognl](components/camel-ognl.md)
    * [camel-olingo2](components/camel-olingo2.md)
    * [camel-pdf](components/camel-pdf.md)
-   * camel-pdf
    * [camel-quartz2](components/camel-quartz2.md)
    * [camel-rest](components/camel-rest.md)
    * [camel-rss](components/camel-rss.md)
