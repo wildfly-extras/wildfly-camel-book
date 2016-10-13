@@ -16,7 +16,7 @@ $ docker run -p 8080:8080 wildfly-camel-example-cdi
 
 ### S2I with OpenShift Origin
 
-For convenience, WildFly-Camel provides an OpenShift [ImageStream](https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/{{ book.version }}/sources/wildfly-camel-image-streams.json) template and an [application template](https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/{{ book.version }}/sources/wildfly-camel-template.json) which enable you to to perform S2I build and deployments in OpenShift origin.
+For convenience, WildFly-Camel provides an OpenShift [ImageStream](https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/{{ book.version }}/sources/wildfly-camel-imagestreams.json) template and an [application template](https://raw.githubusercontent.com/wildfly-extras/wildfly-camel-book/{{ book.version }}/sources/wildfly-camel-template.json) which enable you to to perform S2I build and deployments in OpenShift origin.
 
 First add the WildFly-Camel S2I ImageStream.
 ```
