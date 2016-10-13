@@ -8,7 +8,6 @@ The following lists the set of supported Camel components that are available to 
 
 * [camel-activemq](camel-activemq.md)
 * [camel-atom](camel-atom.md)
-* [camel-base64](camel-base64.md)
 * [camel-bean-validator](camel-bean-validator.md)
 * [camel-bindy](camel-bindy.md)
 * [camel-braintree](camel-braintree.md)
@@ -49,7 +48,6 @@ The following lists the set of supported Camel components that are available to 
 * [camel-netty4](camel-netty4.md)
 * [camel-ognl](camel-ognl.md)
 * [camel-olingo2](camel-olingo2.md)
-* [camel-pdf](camel-pdf.md)
 * [camel-quartz2](camel-quartz2.md)
 * [camel-rest](camel-rest.md)
 * [camel-restlet](camel-restlet.md)
@@ -68,7 +66,6 @@ The following lists the set of supported Camel components that are available to 
 * [camel-twitter](camel-twitter.md)
 * [camel-undertow](camel-undertow.md)
 * [camel-velocity](camel-velocity.md)
-* [camel-vertx](camel-vertx.md)
 * [camel-weather](camel-weather.md)
 * [camel-xstream](camel-xstream.md)
 * [camel-zipkin](camel-zipkin.md)
