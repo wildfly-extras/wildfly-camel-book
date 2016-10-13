@@ -242,4 +242,4 @@ Refer to the [JAX-RS security section](../security/jaxrs.md).
 
 ### Code examples on GitHub
 
-An example [Camel CXF application](https://github.com/wildfly-extras/wildfly-camel/tree/{{ book.version }}/examples/camel-cxf-jaxrs) is available on GitHub.
+An example [Camel CXF application](https://github.com/wildfly-extras/wildfly-camel-examples/tree/{{ book.version }}/camel-cxf-jaxrs) is available on GitHub.

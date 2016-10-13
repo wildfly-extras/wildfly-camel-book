@@ -120,4 +120,4 @@ Camel endpoint security documentation can be found on the [camel-mail](http://ca
 
 ### Code examples on GitHub
 
-An example [camel-mail application](https://github.com/wildfly-extras/wildfly-camel/tree/{{ book.version }}/examples/camel-mail) is available on GitHub for you to try out sending / receiving email.
+An example [camel-mail application](https://github.com/wildfly-extras/wildfly-camel-examples/tree/{{ book.version }}/camel-mail) is available on GitHub for you to try out sending / receiving email.
