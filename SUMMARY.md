@@ -85,6 +85,7 @@
    * [camel-xstream](components/camel-xstream.md)
    * [camel-zookeeper](components/camel-zookeeper.md)
    * [camel-zipkin](components/camel-zipkin.md)
+   * camel-base64
 * [Data Formats](dataformats/README.md)
 * [Languages](scripting/README.md)
 * [Cloud](cloud/README.md)
