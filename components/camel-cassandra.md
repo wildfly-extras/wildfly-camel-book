@@ -1,3 +1,0 @@
-## camel-cassandra
-
-The [camel-cassandra](http://camel.apache.org/cassandra.html) component is an open source NoSQL database designed to handle large amounts on commodity hardware. Like Amazon's DynamoDB, Cassandra has a peer-to-peer and master-less architecture to avoid single point of failure and garanty high availability. Like Google's BigTable, Cassandra data is structured using column families which can be accessed through the Thrift RPC API or a SQL-like API called CQL.
