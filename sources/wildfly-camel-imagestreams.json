@@ -42,7 +42,7 @@
             },
             "from": {
               "kind": "DockerImage",
-              "name": "jamesnetherton/s2i-wildfly-camel:4.3.0"
+              "name": "wildflyext/s2i-wildfly-camel:4.3.0"
             }
           }
         ]
