@@ -8,7 +8,6 @@ JAX-RS consumer support is provided by:
 JAX-RS producer endpoint support is provided by:
 
 * [Camel CXF-RS](http://camel.apache.org/cxfrs.html)
-* [Camel Restlet](http://camel.apache.org/restlet.html)
 
 ### CXF-RS Producer
 ```xml
@@ -37,65 +36,6 @@ JAX-RS producer endpoint support is provided by:
         </route>
     </camelContext>
 </beans>
-```
-
-### JAX-RS Restlet Producer
-
-The following code example uses the camel-restlet component to consume a JAX-RS service which has been deployed by the [WildFly JAX-RS subsystem](https://docs.jboss.org/author/display/WFLY8/Java+API+for+RESTful+Web+Services+&#40;JAX-RS&#41;).
-
-#### JAX-RS service
-This RESTful service desribes a simple interface which will return a list of Customer POJOs as a JSON string. The service will be published to the path `GET /rest/customer`.
-
-```java
-// Service interface
-@Path("/customer")
-public interface CustomerService {
-  @GET
-  @Produces(MediaType.APPLICATION_JSON)
-  Response getCustomers();
-}
-
-// Service implementation
-public class CustomerServiceImpl implements CustomerService {
-  @Override
-  public Response getCustomers() {
-    List<Customer> customers = customerService.getCustomers();
-    return Response.ok(customers).build();
-  }
-}
-
-// Application bootstrap class
-@ApplicationPath("/rest")
-public class RestApplication extends Application {
-  @Override
-  public Set<Class<?>> getClasses() {
-    final Set<Class<?>> classes = new HashSet<>();
-    classes.add(CustomerServiceImpl.class);
-    return classes;
-  }
-}
-```
-
-#### Camel route configuration
-The Restlet component can be used to consume RESTful services as shown in the following Camel RouteBuilder example. CDI in conjunction with the camel-cdi component is used to bootstrap the RouteBuilder and CamelContext.
-
-```java
-@Startup
-@ApplicationScoped
-@ContextName("rest-camel-context")
-public class RestProducerRouteBuilder extends RouteBuilder {
-  @Override
-  public void configure() throws Exception {
-    from("direct:start")
-    .to("restlet://http://localhost:8080/rest/customer")
-    .process(new Processor() {
-      @Override
-      public void process(Exchange exchange) throws Exception {
-        // Do something useful with the REST service response
-      }
-    });
-  }
-}
 ```
 
 ### CXF-RS Consumer
